@@ -1,0 +1,22 @@
+Dans ce dossier, nous allons avoir uniquement les routes pour notre API. 
+Bien sûr, on n'ajoute aucune logique métier ici, on appelle simplement les fonctions via notre contrôleur.
+Pareil pour les middlewares, on les importe et on les utilise.
+
+Voici un exemple :
+
+// routes/userRoutes.js
+const express = require('express');
+const router = express.Router();
+const { register, login, getProfile, updateProfile, deleteProfile } = require('../controllers/userController');
+const { verifyToken } = require('../middlewares/authMiddleware');
+
+// Route publique
+router.post('/register', register);
+router.post('/login', login);
+
+// Routes protégées (avec middleware d'authentification)
+router.get('/profile', verifyToken, getProfile);
+router.put('/profile', verifyToken, updateProfile);
+router.delete('/profile', verifyToken, deleteProfile);
+
+module.exports = router;
