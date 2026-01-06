@@ -1,0 +1,1 @@
+Dans ce dossier, nous allons retrouver toutes les tables de notre BDD. Chaque dossier créé doit d'abord contenir le nom "model" ensuite le nom du fichier, exemple : modelUser.

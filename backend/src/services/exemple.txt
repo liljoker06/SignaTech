@@ -1,0 +1,1 @@
+Ici dans ce dossier nous allons avoir le pont qui relie avec les services externes notamment notre API avec notre IA.
