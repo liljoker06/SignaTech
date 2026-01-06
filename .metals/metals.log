@@ -1,0 +1,225 @@
+2026.01.06 15:36:55 WARN  Using H2 2.4.240 which is newer than the version Flyway has been verified with. The latest verified version of H2 is 2.3.232.
+2026.01.06 15:36:55 INFO  no build target found for D:\Cours\scala\SignaTech\scala\build.sbt. Using presentation compiler with project's scala-library version: 3.3.6
+janv. 06, 2026 3:36:57 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+AVERTISSEMENT: Unmatched cancel notification for request id 1
+2026.01.06 15:36:57 INFO  no build target found for D:\Cours\scala\SignaTech\scala\build.sbt. Using presentation compiler with project's scala-library version: 3.3.6
+2026.01.06 15:36:57 INFO  no build target found for D:\Cours\scala\SignaTech\scala\build.sbt. Using presentation compiler with project's scala-library version: 3.3.6
+2026.01.06 15:36:57 INFO  no build target found for D:\Cours\scala\SignaTech\scala\build.sbt. Using presentation compiler with project's scala-library version: 3.3.6
+2026.01.06 15:36:57 INFO  no build target found for D:\Cours\scala\SignaTech\scala\build.sbt. Using presentation compiler with project's scala-library version: 3.3.6
+2026.01.06 15:36:58 INFO  no build target found for D:\Cours\scala\SignaTech\scala\build.sbt. Using presentation compiler with project's scala-library version: 3.3.6
+2026.01.06 15:36:58 WARN  Could not find semantic tokens for: file:///D:/Cours/scala/SignaTech/scala/build.sbt
+2026.01.06 15:37:05 INFO  running 'C:\Program Files\Eclipse Adoptium\jdk-17.0.15.6-hotspot\bin\java.exe -Djline.terminal=jline.UnsupportedTerminal -Dsbt.log.noformat=true -Dfile.encoding=UTF-8 -jar C:\Users\joker\AppData\Local\Temp\metals9940733250005224017\sbt-launch.jar -Dbloop.export-jar-classifiers=sources bloopInstall'
+2026.01.06 15:37:05 INFO  no build target found for D:\Cours\scala\SignaTech\scala\build.sbt. Using presentation compiler with project's scala-library version: 3.3.6
+2026.01.06 15:37:05 ERROR [info] [launcher] getting org.scala-sbt sbt 1.9.9  (this may take some time)...
+2026.01.06 15:37:07 ERROR [info] [launcher] getting Scala 2.12.18 (for sbt)...
+2026.01.06 15:37:09 INFO  [info] welcome to sbt 1.9.9 (Eclipse Adoptium Java 17.0.15)
+2026.01.06 15:37:10 INFO  [info] loading settings for project scala-build-build from metals.sbt ...
+2026.01.06 15:37:10 INFO  [info] loading project definition from D:\Cours\scala\SignaTech\scala\project\project
+2026.01.06 15:37:12 INFO  [info] loading settings for project scala-build from metals.sbt ...
+2026.01.06 15:37:12 INFO  [info] loading project definition from D:\Cours\scala\SignaTech\scala\project
+2026.01.06 15:37:14 INFO  [success] Generated .bloop\scala-build.json
+2026.01.06 15:37:14 INFO  [success] Total time: 2 s, completed 6 janv. 2026, 15:37:14
+2026.01.06 15:37:14 INFO  [info] loading settings for project scala from build.sbt ...
+2026.01.06 15:37:14 INFO  [info] set current project to scala (in build file:/D:/Cours/scala/SignaTech/scala/)
+2026.01.06 15:37:14 INFO  [success] Generated .bloop\scala.json
+2026.01.06 15:37:14 INFO  [success] Generated .bloop\scala-test.json
+2026.01.06 15:37:14 INFO  [success] Total time: 0 s, completed 6 janv. 2026, 15:37:15
+2026.01.06 15:37:15 INFO  time: ran 'sbt bloopInstall' in 10s
+2026.01.06 15:37:15 INFO  Attempting to connect to the build server...
+2026.01.06 15:37:15 INFO  No running Bloop server found, starting one.
+2026.01.06 15:37:18 INFO  Starting compilation server
+2026.01.06 15:37:19 INFO  tracing is disabled for protocol BSP, to enable tracing of incoming and outgoing JSON messages create an empty file at D:\Cours\scala\SignaTech\.metals\bsp.trace.json or C:\Users\joker\AppData\Local\scalameta\metals\cache\bsp.trace.json
+2026.01.06 15:37:19 INFO  time: Connected to build server in 4.38s
+2026.01.06 15:37:19 INFO  Connected to Build server: Bloop v2.0.17
+2026.01.06 15:37:22 WARN  Using H2 2.4.240 which is newer than the version Flyway has been verified with. The latest verified version of H2 is 2.3.232.
+2026.01.06 15:37:28 INFO  time: indexed workspace in 8.4s
+2026.01.06 15:37:28 WARN  no build target for: D:\Cours\scala\SignaTech\scala\build.sbt
+2026.01.06 15:37:28 INFO  no build target found for D:\Cours\scala\SignaTech\scala\build.sbt. Using presentation compiler with project's scala-library version: 2.12.18
+2026.01.06 15:37:28 WARN  no build target for: D:\Cours\scala\SignaTech\scala\build.sbt
+2026.01.06 15:37:28 WARN  no build target for: D:\Cours\scala\SignaTech\scala\project\metals.sbt
+2026.01.06 15:37:28 INFO  no build target found for D:\Cours\scala\SignaTech\scala\project\metals.sbt. Using presentation compiler with project's scala-library version: 2.12.18
+2026.01.06 15:37:28 INFO  no build target found for D:\Cours\scala\SignaTech\scala\project\metals.sbt. Using presentation compiler with project's scala-library version: 2.12.18
+2026.01.06 15:37:29 INFO  no build target found for D:\Cours\scala\SignaTech\scala\project\metals.sbt. Using presentation compiler with project's scala-library version: 2.12.18
+2026.01.06 15:37:29 INFO  time: code lens generation in 1.29s
+2026.01.06 15:37:29 INFO  time: code lens generation in 1.29s
+2026.01.06 15:37:29 INFO  time: code lens generation in 1.29s
+2026.01.06 15:37:30 INFO  no build target found for D:\Cours\scala\SignaTech\scala\project\metals.sbt. Using presentation compiler with project's scala-library version: 2.12.18
+2026.01.06 15:37:53 INFO  no build target found for d:\Cours\scala\SignaTech\scala\project\metals.sbt. Using presentation compiler with project's scala-library version: 2.12.18
+2026.01.06 15:37:53 INFO  no build target found for D:\Cours\scala\SignaTech\scala\build.sbt. Using presentation compiler with project's scala-library version: 2.12.18
+2026.01.06 15:37:53 INFO  no build target found for D:\Cours\scala\SignaTech\scala\build.sbt. Using presentation compiler with project's scala-library version: 2.12.18
+2026.01.06 15:37:53 WARN  no build target for: D:\Cours\scala\SignaTech\scala\build.sbt
+2026.01.06 15:37:53 INFO  no build target found for D:\Cours\scala\SignaTech\scala\build.sbt. Using presentation compiler with project's scala-library version: 2.12.18
+2026.01.06 15:37:53 INFO  no build target found for D:\Cours\scala\SignaTech\scala\build.sbt. Using presentation compiler with project's scala-library version: 2.12.18
+2026.01.06 15:38:01 INFO  no build target found for d:\Cours\scala\SignaTech\scala\build.sbt. Using presentation compiler with project's scala-library version: 2.12.18
+2026.01.06 15:38:24 INFO  no build target found for D:\Cours\scala\SignaTech\scala\build.sbt. Using presentation compiler with project's scala-library version: 2.12.18
+2026.01.06 15:38:24 WARN  no build target for: D:\Cours\scala\SignaTech\scala\build.sbt
+2026.01.06 15:38:24 INFO  no build target found for D:\Cours\scala\SignaTech\scala\build.sbt. Using presentation compiler with project's scala-library version: 2.12.18
+2026.01.06 15:38:24 INFO  no build target found for D:\Cours\scala\SignaTech\scala\build.sbt. Using presentation compiler with project's scala-library version: 2.12.18
+2026.01.06 15:38:26 INFO  no build target found for D:\Cours\scala\SignaTech\scala\build.sbt. Using presentation compiler with project's scala-library version: 2.12.18
+2026.01.06 15:38:26 INFO  no build target found for D:\Cours\scala\SignaTech\scala\build.sbt. Using presentation compiler with project's scala-library version: 2.12.18
+2026.01.06 15:38:26 INFO  no build target found for D:\Cours\scala\SignaTech\scala\build.sbt. Using presentation compiler with project's scala-library version: 2.12.18
+2026.01.06 15:38:26 WARN  no build target for: D:\Cours\scala\SignaTech\scala\build.sbt
+2026.01.06 15:38:26 INFO  no build target found for D:\Cours\scala\SignaTech\scala\build.sbt. Using presentation compiler with project's scala-library version: 2.12.18
+2026.01.06 15:38:28 INFO  no build target found for D:\Cours\scala\SignaTech\scala\build.sbt. Using presentation compiler with project's scala-library version: 2.12.18
+2026.01.06 15:38:28 INFO  no build target found for D:\Cours\scala\SignaTech\scala\build.sbt. Using presentation compiler with project's scala-library version: 2.12.18
+2026.01.06 15:38:29 INFO  no build target found for D:\Cours\scala\SignaTech\scala\build.sbt. Using presentation compiler with project's scala-library version: 2.12.18
+2026.01.06 15:38:29 INFO  no build target found for D:\Cours\scala\SignaTech\scala\build.sbt. Using presentation compiler with project's scala-library version: 2.12.18
+2026.01.06 15:38:31 INFO  no build target found for D:\Cours\scala\SignaTech\scala\build.sbt. Using presentation compiler with project's scala-library version: 2.12.18
+2026.01.06 15:38:32 INFO  no build target found for D:\Cours\scala\SignaTech\scala\build.sbt. Using presentation compiler with project's scala-library version: 2.12.18
+2026.01.06 15:38:32 INFO  no build target found for D:\Cours\scala\SignaTech\scala\build.sbt. Using presentation compiler with project's scala-library version: 2.12.18
+2026.01.06 15:38:31 INFO  no build target found for D:\Cours\scala\SignaTech\scala\build.sbt. Using presentation compiler with project's scala-library version: 2.12.18
+2026.01.06 15:38:32 INFO  no build target found for D:\Cours\scala\SignaTech\scala\build.sbt. Using presentation compiler with project's scala-library version: 2.12.18
+2026.01.06 15:38:33 INFO  no build target found for D:\Cours\scala\SignaTech\scala\build.sbt. Using presentation compiler with project's scala-library version: 2.12.18
+2026.01.06 15:38:33 INFO  no build target found for D:\Cours\scala\SignaTech\scala\build.sbt. Using presentation compiler with project's scala-library version: 2.12.18
+2026.01.06 15:38:33 INFO  no build target found for D:\Cours\scala\SignaTech\scala\build.sbt. Using presentation compiler with project's scala-library version: 2.12.18
+2026.01.06 15:38:33 INFO  no build target found for D:\Cours\scala\SignaTech\scala\build.sbt. Using presentation compiler with project's scala-library version: 2.12.18
+2026.01.06 15:38:33 INFO  no build target found for D:\Cours\scala\SignaTech\scala\build.sbt. Using presentation compiler with project's scala-library version: 2.12.18
+2026.01.06 15:38:33 INFO  no build target found for D:\Cours\scala\SignaTech\scala\build.sbt. Using presentation compiler with project's scala-library version: 2.12.18
+2026.01.06 15:38:35 INFO  no build target found for D:\Cours\scala\SignaTech\scala\build.sbt. Using presentation compiler with project's scala-library version: 2.12.18
+2026.01.06 15:38:35 INFO  no build target found for D:\Cours\scala\SignaTech\scala\build.sbt. Using presentation compiler with project's scala-library version: 2.12.18
+2026.01.06 15:38:35 INFO  no build target found for D:\Cours\scala\SignaTech\scala\build.sbt. Using presentation compiler with project's scala-library version: 2.12.18
+2026.01.06 15:38:36 INFO  no build target found for D:\Cours\scala\SignaTech\scala\build.sbt. Using presentation compiler with project's scala-library version: 2.12.18
+2026.01.06 15:38:36 INFO  no build target found for D:\Cours\scala\SignaTech\scala\build.sbt. Using presentation compiler with project's scala-library version: 2.12.18
+2026.01.06 15:38:37 INFO  no build target found for D:\Cours\scala\SignaTech\scala\build.sbt. Using presentation compiler with project's scala-library version: 2.12.18
+2026.01.06 15:38:39 WARN  no build target for: D:\Cours\scala\SignaTech\scala\build.sbt
+2026.01.06 15:38:39 INFO  no build target found for D:\Cours\scala\SignaTech\scala\build.sbt. Using presentation compiler with project's scala-library version: 2.12.18
+2026.01.06 15:39:03 INFO  Created report: Optional.empty
+2026.01.06 15:39:03 INFO  No project associated with Uri(file:/D:/Cours/scala/SignaTech/scala/?id=scala) (full report at: "D:\Cours\scala\SignaTech\.metals\.reports\bloop\2026-01-06\r_No project associate..._15-39-03-728.md")
+2026.01.06 15:39:03 INFO  No project associated with Uri(file:/D:/Cours/scala/SignaTech/scala/?id=scala) (full report at: "D:\Cours\scala\SignaTech\.metals\.reports\bloop\2026-01-06\r_No project associate..._15-39-03-728.md")
+2026.01.06 15:39:03 INFO  No project associated with Uri(file:/D:/Cours/scala/SignaTech/scala/?id=scala) (full report at: "D:\Cours\scala\SignaTech\.metals\.reports\bloop\2026-01-06\r_No project associate..._15-39-03-728.md")
+2026.01.06 15:39:07 INFO  No project associated with Uri(file:/D:/Cours/scala/SignaTech/scala/?id=scala) (full report at: "D:\Cours\scala\SignaTech\.metals\.reports\bloop\2026-01-06\r_No project associate..._15-39-03-728.md")
+2026.01.06 15:39:07 INFO  No project associated with Uri(file:/D:/Cours/scala/SignaTech/scala/?id=scala) (full report at: "D:\Cours\scala\SignaTech\.metals\.reports\bloop\2026-01-06\r_No project associate..._15-39-03-728.md")
+2026.01.06 15:39:07 INFO  No project associated with Uri(file:/D:/Cours/scala/SignaTech/scala/?id=scala) (full report at: "D:\Cours\scala\SignaTech\.metals\.reports\bloop\2026-01-06\r_No project associate..._15-39-03-728.md")
+2026.01.06 15:39:15 INFO  No project associated with Uri(file:/D:/Cours/scala/SignaTech/scala/?id=scala) (full report at: "D:\Cours\scala\SignaTech\.metals\.reports\bloop\2026-01-06\r_No project associate..._15-39-03-728.md")
+2026.01.06 15:39:15 INFO  No project associated with Uri(file:/D:/Cours/scala/SignaTech/scala/?id=scala) (full report at: "D:\Cours\scala\SignaTech\.metals\.reports\bloop\2026-01-06\r_No project associate..._15-39-03-728.md")
+2026.01.06 15:39:15 INFO  No project associated with Uri(file:/D:/Cours/scala/SignaTech/scala/?id=scala) (full report at: "D:\Cours\scala\SignaTech\.metals\.reports\bloop\2026-01-06\r_No project associate..._15-39-03-728.md")
+2026.01.06 15:48:20 INFO  no build target found for D:\Cours\scala\SignaTech\scala\build.sbt. Using presentation compiler with project's scala-library version: 2.12.18
+2026.01.06 15:48:20 WARN  no build target for: D:\Cours\scala\SignaTech\scala\build.sbt
+2026.01.06 15:48:20 INFO  no build target found for D:\Cours\scala\SignaTech\scala\build.sbt. Using presentation compiler with project's scala-library version: 2.12.18
+2026.01.06 15:48:29 INFO  no build target found for D:\Cours\scala\SignaTech\scala\build.sbt. Using presentation compiler with project's scala-library version: 2.12.18
+2026.01.06 15:48:30 INFO  no build target found for D:\Cours\scala\SignaTech\scala\build.sbt. Using presentation compiler with project's scala-library version: 2.12.18
+2026.01.06 15:48:30 INFO  no build target found for D:\Cours\scala\SignaTech\scala\build.sbt. Using presentation compiler with project's scala-library version: 2.12.18
+2026.01.06 15:48:31 INFO  no build target found for D:\Cours\scala\SignaTech\scala\build.sbt. Using presentation compiler with project's scala-library version: 2.12.18
+2026.01.06 15:48:31 INFO  no build target found for D:\Cours\scala\SignaTech\scala\build.sbt. Using presentation compiler with project's scala-library version: 2.12.18
+2026.01.06 15:48:33 INFO  no build target found for D:\Cours\scala\SignaTech\scala\build.sbt. Using presentation compiler with project's scala-library version: 2.12.18
+2026.01.06 15:48:33 INFO  no build target found for D:\Cours\scala\SignaTech\scala\build.sbt. Using presentation compiler with project's scala-library version: 2.12.18
+2026.01.06 15:48:33 INFO  no build target found for D:\Cours\scala\SignaTech\scala\build.sbt. Using presentation compiler with project's scala-library version: 2.12.18
+2026.01.06 15:48:34 INFO  no build target found for D:\Cours\scala\SignaTech\scala\build.sbt. Using presentation compiler with project's scala-library version: 2.12.18
+2026.01.06 15:48:34 INFO  no build target found for D:\Cours\scala\SignaTech\scala\build.sbt. Using presentation compiler with project's scala-library version: 2.12.18
+2026.01.06 15:48:33 INFO  no build target found for D:\Cours\scala\SignaTech\scala\build.sbt. Using presentation compiler with project's scala-library version: 2.12.18
+2026.01.06 15:48:37 INFO  no build target found for D:\Cours\scala\SignaTech\scala\build.sbt. Using presentation compiler with project's scala-library version: 2.12.18
+2026.01.06 15:48:37 INFO  no build target found for D:\Cours\scala\SignaTech\scala\build.sbt. Using presentation compiler with project's scala-library version: 2.12.18
+2026.01.06 15:48:37 INFO  no build target found for D:\Cours\scala\SignaTech\scala\build.sbt. Using presentation compiler with project's scala-library version: 2.12.18
+2026.01.06 15:48:37 INFO  no build target found for D:\Cours\scala\SignaTech\scala\build.sbt. Using presentation compiler with project's scala-library version: 2.12.18
+2026.01.06 15:48:38 INFO  no build target found for D:\Cours\scala\SignaTech\scala\build.sbt. Using presentation compiler with project's scala-library version: 2.12.18
+2026.01.06 15:48:38 INFO  no build target found for D:\Cours\scala\SignaTech\scala\build.sbt. Using presentation compiler with project's scala-library version: 2.12.18
+2026.01.06 15:48:38 INFO  no build target found for D:\Cours\scala\SignaTech\scala\build.sbt. Using presentation compiler with project's scala-library version: 2.12.18
+2026.01.06 15:48:38 INFO  no build target found for D:\Cours\scala\SignaTech\scala\build.sbt. Using presentation compiler with project's scala-library version: 2.12.18
+2026.01.06 15:48:39 INFO  no build target found for D:\Cours\scala\SignaTech\scala\build.sbt. Using presentation compiler with project's scala-library version: 2.12.18
+2026.01.06 15:48:39 INFO  no build target found for D:\Cours\scala\SignaTech\scala\build.sbt. Using presentation compiler with project's scala-library version: 2.12.18
+2026.01.06 15:48:39 INFO  no build target found for D:\Cours\scala\SignaTech\scala\build.sbt. Using presentation compiler with project's scala-library version: 2.12.18
+2026.01.06 15:48:39 INFO  no build target found for D:\Cours\scala\SignaTech\scala\build.sbt. Using presentation compiler with project's scala-library version: 2.12.18
+2026.01.06 15:48:39 INFO  no build target found for D:\Cours\scala\SignaTech\scala\build.sbt. Using presentation compiler with project's scala-library version: 2.12.18
+2026.01.06 15:48:40 INFO  no build target found for D:\Cours\scala\SignaTech\scala\build.sbt. Using presentation compiler with project's scala-library version: 2.12.18
+2026.01.06 15:48:40 INFO  no build target found for D:\Cours\scala\SignaTech\scala\build.sbt. Using presentation compiler with project's scala-library version: 2.12.18
+2026.01.06 15:48:40 INFO  no build target found for D:\Cours\scala\SignaTech\scala\build.sbt. Using presentation compiler with project's scala-library version: 2.12.18
+2026.01.06 15:48:40 INFO  no build target found for D:\Cours\scala\SignaTech\scala\build.sbt. Using presentation compiler with project's scala-library version: 2.12.18
+2026.01.06 15:48:40 INFO  no build target found for D:\Cours\scala\SignaTech\scala\build.sbt. Using presentation compiler with project's scala-library version: 2.12.18
+2026.01.06 15:48:40 INFO  no build target found for D:\Cours\scala\SignaTech\scala\build.sbt. Using presentation compiler with project's scala-library version: 2.12.18
+2026.01.06 15:48:40 INFO  no build target found for D:\Cours\scala\SignaTech\scala\build.sbt. Using presentation compiler with project's scala-library version: 2.12.18
+2026.01.06 15:48:44 INFO  no build target found for D:\Cours\scala\SignaTech\scala\build.sbt. Using presentation compiler with project's scala-library version: 2.12.18
+2026.01.06 15:48:44 INFO  no build target found for D:\Cours\scala\SignaTech\scala\build.sbt. Using presentation compiler with project's scala-library version: 2.12.18
+2026.01.06 15:48:44 INFO  no build target found for D:\Cours\scala\SignaTech\scala\build.sbt. Using presentation compiler with project's scala-library version: 2.12.18
+2026.01.06 15:48:44 INFO  no build target found for D:\Cours\scala\SignaTech\scala\build.sbt. Using presentation compiler with project's scala-library version: 2.12.18
+2026.01.06 15:48:44 INFO  no build target found for D:\Cours\scala\SignaTech\scala\build.sbt. Using presentation compiler with project's scala-library version: 2.12.18
+2026.01.06 15:48:44 INFO  no build target found for D:\Cours\scala\SignaTech\scala\build.sbt. Using presentation compiler with project's scala-library version: 2.12.18
+2026.01.06 15:48:45 INFO  no build target found for D:\Cours\scala\SignaTech\scala\build.sbt. Using presentation compiler with project's scala-library version: 2.12.18
+2026.01.06 15:48:45 INFO  no build target found for D:\Cours\scala\SignaTech\scala\build.sbt. Using presentation compiler with project's scala-library version: 2.12.18
+2026.01.06 15:48:45 INFO  no build target found for D:\Cours\scala\SignaTech\scala\build.sbt. Using presentation compiler with project's scala-library version: 2.12.18
+2026.01.06 15:48:47 INFO  no build target found for D:\Cours\scala\SignaTech\scala\build.sbt. Using presentation compiler with project's scala-library version: 2.12.18
+2026.01.06 15:48:50 WARN  no build target for: D:\Cours\scala\SignaTech\scala\build.sbt
+2026.01.06 15:48:50 INFO  no build target found for D:\Cours\scala\SignaTech\scala\build.sbt. Using presentation compiler with project's scala-library version: 2.12.18
+2026.01.06 15:49:12 INFO  No project associated with Uri(file:/D:/Cours/scala/SignaTech/scala/?id=scala) (full report at: "D:\Cours\scala\SignaTech\.metals\.reports\bloop\2026-01-06\r_No project associate..._15-39-03-728.md")
+2026.01.06 15:49:12 INFO  No project associated with Uri(file:/D:/Cours/scala/SignaTech/scala/?id=scala) (full report at: "D:\Cours\scala\SignaTech\.metals\.reports\bloop\2026-01-06\r_No project associate..._15-39-03-728.md")
+2026.01.06 15:49:12 INFO  No project associated with Uri(file:/D:/Cours/scala/SignaTech/scala/?id=scala) (full report at: "D:\Cours\scala\SignaTech\.metals\.reports\bloop\2026-01-06\r_No project associate..._15-39-03-728.md")
+2026.01.06 15:50:06 INFO  No project associated with Uri(file:/D:/Cours/scala/SignaTech/scala/?id=scala) (full report at: "D:\Cours\scala\SignaTech\.metals\.reports\bloop\2026-01-06\r_No project associate..._15-39-03-728.md")
+2026.01.06 15:50:06 INFO  No project associated with Uri(file:/D:/Cours/scala/SignaTech/scala/?id=scala) (full report at: "D:\Cours\scala\SignaTech\.metals\.reports\bloop\2026-01-06\r_No project associate..._15-39-03-728.md")
+2026.01.06 15:50:06 INFO  No project associated with Uri(file:/D:/Cours/scala/SignaTech/scala/?id=scala) (full report at: "D:\Cours\scala\SignaTech\.metals\.reports\bloop\2026-01-06\r_No project associate..._15-39-03-728.md")
+2026.01.06 15:52:07 INFO  no build target found for D:\Cours\scala\SignaTech\scala\build.sbt. Using presentation compiler with project's scala-library version: 2.12.18
+2026.01.06 15:52:07 WARN  no build target for: D:\Cours\scala\SignaTech\scala\build.sbt
+2026.01.06 15:52:07 INFO  no build target found for D:\Cours\scala\SignaTech\scala\build.sbt. Using presentation compiler with project's scala-library version: 2.12.18
+2026.01.06 15:52:10 INFO  no build target found for D:\Cours\scala\SignaTech\scala\build.sbt. Using presentation compiler with project's scala-library version: 2.12.18
+2026.01.06 15:52:10 WARN  no build target for: D:\Cours\scala\SignaTech\scala\build.sbt
+2026.01.06 15:52:10 INFO  no build target found for D:\Cours\scala\SignaTech\scala\build.sbt. Using presentation compiler with project's scala-library version: 2.12.18
+2026.01.06 15:52:19 INFO  no build target found for D:\Cours\scala\SignaTech\scala\build.sbt. Using presentation compiler with project's scala-library version: 2.12.18
+2026.01.06 15:52:19 INFO  no build target found for D:\Cours\scala\SignaTech\scala\build.sbt. Using presentation compiler with project's scala-library version: 2.12.18
+2026.01.06 15:52:19 INFO  no build target found for D:\Cours\scala\SignaTech\scala\build.sbt. Using presentation compiler with project's scala-library version: 2.12.18
+2026.01.06 15:52:22 INFO  no build target found for D:\Cours\scala\SignaTech\scala\build.sbt. Using presentation compiler with project's scala-library version: 2.12.18
+2026.01.06 15:52:23 INFO  no build target found for D:\Cours\scala\SignaTech\scala\build.sbt. Using presentation compiler with project's scala-library version: 2.12.18
+2026.01.06 15:52:23 INFO  no build target found for D:\Cours\scala\SignaTech\scala\build.sbt. Using presentation compiler with project's scala-library version: 2.12.18
+2026.01.06 15:52:26 INFO  no build target found for D:\Cours\scala\SignaTech\scala\build.sbt. Using presentation compiler with project's scala-library version: 2.12.18
+2026.01.06 15:52:30 INFO  no build target found for D:\Cours\scala\SignaTech\scala\build.sbt. Using presentation compiler with project's scala-library version: 2.12.18
+2026.01.06 15:56:01 INFO  no build target found for D:\Cours\scala\SignaTech\scala\build.sbt. Using presentation compiler with project's scala-library version: 2.12.18
+2026.01.06 15:56:01 WARN  no build target for: D:\Cours\scala\SignaTech\scala\build.sbt
+2026.01.06 15:56:01 INFO  no build target found for D:\Cours\scala\SignaTech\scala\build.sbt. Using presentation compiler with project's scala-library version: 2.12.18
+2026.01.06 15:56:04 INFO  no build target found for D:\Cours\scala\SignaTech\scala\build.sbt. Using presentation compiler with project's scala-library version: 2.12.18
+2026.01.06 15:56:04 WARN  no build target for: D:\Cours\scala\SignaTech\scala\build.sbt
+2026.01.06 15:56:04 INFO  no build target found for D:\Cours\scala\SignaTech\scala\build.sbt. Using presentation compiler with project's scala-library version: 2.12.18
+2026.01.06 15:56:10 INFO  no build target found for D:\Cours\scala\SignaTech\scala\build.sbt. Using presentation compiler with project's scala-library version: 2.12.18
+2026.01.06 15:56:10 WARN  no build target for: D:\Cours\scala\SignaTech\scala\build.sbt
+2026.01.06 15:56:10 INFO  no build target found for D:\Cours\scala\SignaTech\scala\build.sbt. Using presentation compiler with project's scala-library version: 2.12.18
+2026.01.06 16:00:03 INFO  No project associated with Uri(file:/D:/Cours/scala/SignaTech/scala/?id=scala) (full report at: "D:\Cours\scala\SignaTech\.metals\.reports\bloop\2026-01-06\r_No project associate..._15-39-03-728.md")
+2026.01.06 16:00:03 INFO  No project associated with Uri(file:/D:/Cours/scala/SignaTech/scala/?id=scala) (full report at: "D:\Cours\scala\SignaTech\.metals\.reports\bloop\2026-01-06\r_No project associate..._15-39-03-728.md")
+2026.01.06 16:00:03 INFO  No project associated with Uri(file:/D:/Cours/scala/SignaTech/scala/?id=scala) (full report at: "D:\Cours\scala\SignaTech\.metals\.reports\bloop\2026-01-06\r_No project associate..._15-39-03-728.md")
+2026.01.06 16:00:03 INFO  No project associated with Uri(file:/D:/Cours/scala/SignaTech/scala/?id=scala) (full report at: "D:\Cours\scala\SignaTech\.metals\.reports\bloop\2026-01-06\r_No project associate..._15-39-03-728.md")
+2026.01.06 16:00:03 INFO  No project associated with Uri(file:/D:/Cours/scala/SignaTech/scala/?id=scala) (full report at: "D:\Cours\scala\SignaTech\.metals\.reports\bloop\2026-01-06\r_No project associate..._15-39-03-728.md")
+2026.01.06 16:00:03 INFO  No project associated with Uri(file:/D:/Cours/scala/SignaTech/scala/?id=scala) (full report at: "D:\Cours\scala\SignaTech\.metals\.reports\bloop\2026-01-06\r_No project associate..._15-39-03-728.md")
+2026.01.06 16:00:05 INFO  No project associated with Uri(file:/D:/Cours/scala/SignaTech/scala/?id=scala) (full report at: "D:\Cours\scala\SignaTech\.metals\.reports\bloop\2026-01-06\r_No project associate..._15-39-03-728.md")
+2026.01.06 16:00:05 INFO  No project associated with Uri(file:/D:/Cours/scala/SignaTech/scala/?id=scala) (full report at: "D:\Cours\scala\SignaTech\.metals\.reports\bloop\2026-01-06\r_No project associate..._15-39-03-728.md")
+2026.01.06 16:00:05 INFO  No project associated with Uri(file:/D:/Cours/scala/SignaTech/scala/?id=scala) (full report at: "D:\Cours\scala\SignaTech\.metals\.reports\bloop\2026-01-06\r_No project associate..._15-39-03-728.md")
+2026.01.06 16:00:05 INFO  No project associated with Uri(file:/D:/Cours/scala/SignaTech/scala/?id=scala) (full report at: "D:\Cours\scala\SignaTech\.metals\.reports\bloop\2026-01-06\r_No project associate..._15-39-03-728.md")
+2026.01.06 16:00:05 INFO  No project associated with Uri(file:/D:/Cours/scala/SignaTech/scala/?id=scala) (full report at: "D:\Cours\scala\SignaTech\.metals\.reports\bloop\2026-01-06\r_No project associate..._15-39-03-728.md")
+2026.01.06 16:00:05 INFO  No project associated with Uri(file:/D:/Cours/scala/SignaTech/scala/?id=scala) (full report at: "D:\Cours\scala\SignaTech\.metals\.reports\bloop\2026-01-06\r_No project associate..._15-39-03-728.md")
+2026.01.06 16:00:54 INFO  No project associated with Uri(file:/D:/Cours/scala/SignaTech/scala/?id=scala) (full report at: "D:\Cours\scala\SignaTech\.metals\.reports\bloop\2026-01-06\r_No project associate..._15-39-03-728.md")
+2026.01.06 16:00:54 INFO  No project associated with Uri(file:/D:/Cours/scala/SignaTech/scala/?id=scala) (full report at: "D:\Cours\scala\SignaTech\.metals\.reports\bloop\2026-01-06\r_No project associate..._15-39-03-728.md")
+2026.01.06 16:00:54 INFO  No project associated with Uri(file:/D:/Cours/scala/SignaTech/scala/?id=scala) (full report at: "D:\Cours\scala\SignaTech\.metals\.reports\bloop\2026-01-06\r_No project associate..._15-39-03-728.md")
+2026.01.06 16:01:12 INFO  No project associated with Uri(file:/D:/Cours/scala/SignaTech/scala/?id=scala) (full report at: "D:\Cours\scala\SignaTech\.metals\.reports\bloop\2026-01-06\r_No project associate..._15-39-03-728.md")
+2026.01.06 16:01:12 INFO  No project associated with Uri(file:/D:/Cours/scala/SignaTech/scala/?id=scala) (full report at: "D:\Cours\scala\SignaTech\.metals\.reports\bloop\2026-01-06\r_No project associate..._15-39-03-728.md")
+2026.01.06 16:01:12 INFO  No project associated with Uri(file:/D:/Cours/scala/SignaTech/scala/?id=scala) (full report at: "D:\Cours\scala\SignaTech\.metals\.reports\bloop\2026-01-06\r_No project associate..._15-39-03-728.md")
+2026.01.06 16:01:22 INFO  No project associated with Uri(file:/D:/Cours/scala/SignaTech/scala/?id=scala) (full report at: "D:\Cours\scala\SignaTech\.metals\.reports\bloop\2026-01-06\r_No project associate..._15-39-03-728.md")
+2026.01.06 16:01:22 INFO  No project associated with Uri(file:/D:/Cours/scala/SignaTech/scala/?id=scala) (full report at: "D:\Cours\scala\SignaTech\.metals\.reports\bloop\2026-01-06\r_No project associate..._15-39-03-728.md")
+2026.01.06 16:01:22 INFO  No project associated with Uri(file:/D:/Cours/scala/SignaTech/scala/?id=scala) (full report at: "D:\Cours\scala\SignaTech\.metals\.reports\bloop\2026-01-06\r_No project associate..._15-39-03-728.md")
+2026.01.06 16:02:31 INFO  No project associated with Uri(file:/D:/Cours/scala/SignaTech/scala/?id=scala) (full report at: "D:\Cours\scala\SignaTech\.metals\.reports\bloop\2026-01-06\r_No project associate..._15-39-03-728.md")
+2026.01.06 16:02:31 INFO  No project associated with Uri(file:/D:/Cours/scala/SignaTech/scala/?id=scala) (full report at: "D:\Cours\scala\SignaTech\.metals\.reports\bloop\2026-01-06\r_No project associate..._15-39-03-728.md")
+2026.01.06 16:02:31 INFO  No project associated with Uri(file:/D:/Cours/scala/SignaTech/scala/?id=scala) (full report at: "D:\Cours\scala\SignaTech\.metals\.reports\bloop\2026-01-06\r_No project associate..._15-39-03-728.md")
+2026.01.06 16:09:00 INFO  No project associated with Uri(file:/D:/Cours/scala/SignaTech/scala/?id=scala) (full report at: "D:\Cours\scala\SignaTech\.metals\.reports\bloop\2026-01-06\r_No project associate..._15-39-03-728.md")
+2026.01.06 16:09:00 INFO  No project associated with Uri(file:/D:/Cours/scala/SignaTech/scala/?id=scala) (full report at: "D:\Cours\scala\SignaTech\.metals\.reports\bloop\2026-01-06\r_No project associate..._15-39-03-728.md")
+2026.01.06 16:09:00 INFO  No project associated with Uri(file:/D:/Cours/scala/SignaTech/scala/?id=scala) (full report at: "D:\Cours\scala\SignaTech\.metals\.reports\bloop\2026-01-06\r_No project associate..._15-39-03-728.md")
+janv. 06, 2026 4:09:33 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+AVERTISSEMENT: Unmatched cancel notification for request id 1095
+janv. 06, 2026 4:09:33 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+AVERTISSEMENT: Unmatched cancel notification for request id 1097
+janv. 06, 2026 4:10:24 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+AVERTISSEMENT: Unmatched cancel notification for request id 1266
+janv. 06, 2026 4:10:37 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+AVERTISSEMENT: Unmatched cancel notification for request id 1366
+2026.01.06 16:11:08 INFO  No project associated with Uri(file:/D:/Cours/scala/SignaTech/scala/?id=scala) (full report at: "D:\Cours\scala\SignaTech\.metals\.reports\bloop\2026-01-06\r_No project associate..._15-39-03-728.md")
+2026.01.06 16:11:08 INFO  No project associated with Uri(file:/D:/Cours/scala/SignaTech/scala/?id=scala) (full report at: "D:\Cours\scala\SignaTech\.metals\.reports\bloop\2026-01-06\r_No project associate..._15-39-03-728.md")
+2026.01.06 16:11:08 INFO  No project associated with Uri(file:/D:/Cours/scala/SignaTech/scala/?id=scala) (full report at: "D:\Cours\scala\SignaTech\.metals\.reports\bloop\2026-01-06\r_No project associate..._15-39-03-728.md")
+2026.01.06 16:12:11 INFO  no build target found for D:\Cours\scala\SignaTech\scala\build.sbt. Using presentation compiler with project's scala-library version: 2.12.18
+2026.01.06 16:12:11 WARN  no build target for: D:\Cours\scala\SignaTech\scala\build.sbt
+2026.01.06 16:12:11 INFO  no build target found for D:\Cours\scala\SignaTech\scala\build.sbt. Using presentation compiler with project's scala-library version: 2.12.18
+2026.01.06 16:14:02 INFO  No project associated with Uri(file:/D:/Cours/scala/SignaTech/scala/?id=scala) (full report at: "D:\Cours\scala\SignaTech\.metals\.reports\bloop\2026-01-06\r_No project associate..._15-39-03-728.md")
+2026.01.06 16:14:02 INFO  No project associated with Uri(file:/D:/Cours/scala/SignaTech/scala/?id=scala) (full report at: "D:\Cours\scala\SignaTech\.metals\.reports\bloop\2026-01-06\r_No project associate..._15-39-03-728.md")
+2026.01.06 16:14:02 INFO  No project associated with Uri(file:/D:/Cours/scala/SignaTech/scala/?id=scala) (full report at: "D:\Cours\scala\SignaTech\.metals\.reports\bloop\2026-01-06\r_No project associate..._15-39-03-728.md")
+2026.01.06 16:14:02 INFO  No project associated with Uri(file:/D:/Cours/scala/SignaTech/scala/?id=scala) (full report at: "D:\Cours\scala\SignaTech\.metals\.reports\bloop\2026-01-06\r_No project associate..._15-39-03-728.md")
+2026.01.06 16:14:02 INFO  No project associated with Uri(file:/D:/Cours/scala/SignaTech/scala/?id=scala) (full report at: "D:\Cours\scala\SignaTech\.metals\.reports\bloop\2026-01-06\r_No project associate..._15-39-03-728.md")
+2026.01.06 16:14:02 INFO  No project associated with Uri(file:/D:/Cours/scala/SignaTech/scala/?id=scala) (full report at: "D:\Cours\scala\SignaTech\.metals\.reports\bloop\2026-01-06\r_No project associate..._15-39-03-728.md")
+2026.01.06 16:14:31 INFO  No project associated with Uri(file:/D:/Cours/scala/SignaTech/scala/?id=scala) (full report at: "D:\Cours\scala\SignaTech\.metals\.reports\bloop\2026-01-06\r_No project associate..._15-39-03-728.md")
+2026.01.06 16:14:31 INFO  No project associated with Uri(file:/D:/Cours/scala/SignaTech/scala/?id=scala) (full report at: "D:\Cours\scala\SignaTech\.metals\.reports\bloop\2026-01-06\r_No project associate..._15-39-03-728.md")
+2026.01.06 16:14:31 INFO  No project associated with Uri(file:/D:/Cours/scala/SignaTech/scala/?id=scala) (full report at: "D:\Cours\scala\SignaTech\.metals\.reports\bloop\2026-01-06\r_No project associate..._15-39-03-728.md")
+2026.01.06 16:16:50 INFO  No project associated with Uri(file:/D:/Cours/scala/SignaTech/scala/?id=scala) (full report at: "D:\Cours\scala\SignaTech\.metals\.reports\bloop\2026-01-06\r_No project associate..._15-39-03-728.md")
+2026.01.06 16:16:50 INFO  No project associated with Uri(file:/D:/Cours/scala/SignaTech/scala/?id=scala) (full report at: "D:\Cours\scala\SignaTech\.metals\.reports\bloop\2026-01-06\r_No project associate..._15-39-03-728.md")
+2026.01.06 16:16:50 INFO  No project associated with Uri(file:/D:/Cours/scala/SignaTech/scala/?id=scala) (full report at: "D:\Cours\scala\SignaTech\.metals\.reports\bloop\2026-01-06\r_No project associate..._15-39-03-728.md")
+2026.01.06 16:16:50 INFO  Created report: Optional[file:///D:/Cours/scala/SignaTech/scala/src/main/scala/com/signatech/service/MessageHandler.scala]
+2026.01.06 16:16:50 INFO  empty definition using pc, found symbol in pc:  (full report at: "D:\Cours\scala\SignaTech\.metals\.reports\metals-full\2026-01-06\r_empty-definition_(scala)_16-16-50-792.md")
