@@ -1,6 +1,5 @@
 import React, { createContext, useState, useEffect, useContext } from 'react';
 import AsyncStorage from '@react-native-async-storage/async-storage';
-// import { authAPI } from '../services/api'; // On remplace par Apollo
 import { apolloClient } from '../../lib/apollo'; // Chemin à adapter si besoin
 import { LOGIN_MUTATION, SIGNUP_MUTATION } from '../../lib/graphql/mutations';
 
@@ -48,9 +47,7 @@ export const AuthProvider = ({ children }) => {
 
   const register = async (userDataInput) => {
     try {
-        // Adaptation des données pour la mutation
-        // La mutation attend { username, email, password, birthDate }
-        const { username, email, password, birthDate } = userDataInput;
+      const { username, email, password, birthDate } = userDataInput;
 
       const { data } = await apolloClient.mutate({
         mutation: SIGNUP_MUTATION,
@@ -71,10 +68,10 @@ export const AuthProvider = ({ children }) => {
   };
 
   const logout = async () => {
-    // await authAPI.logout(); // Pas de logout API en GraphQL stateless souvent, on supprime juste le token local
+    // await authAPI.logout();
     await AsyncStorage.removeItem('authToken');
     await AsyncStorage.removeItem('user');
-    await apolloClient.clearStore(); // Vider le cache Apollo
+    await apolloClient.clearStore(); 
     setUser(null);
   };
 
