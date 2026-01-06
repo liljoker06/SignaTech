@@ -46,6 +46,11 @@ const typeDefs = gql`
     id: ID!
     name: String!
     description: String
+    address: String
+    city: String
+    country: String
+    website: String
+    contact_email: String
   }
 
   type Query {

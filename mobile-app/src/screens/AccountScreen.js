@@ -33,7 +33,7 @@ const AccountScreen = () => {
         <View style={styles.avatarContainer}>
           <Ionicons name="person-circle" size={120} color="#FFD700" />
         </View>
-        <Text style={styles.name}>{user?.name || 'Utilisateur'}</Text>
+        <Text style={styles.name}>{user?.username || 'Utilisateur'}</Text>
         <Text style={styles.email}>{user?.email}</Text>
       </View>
 
@@ -50,7 +50,7 @@ const AccountScreen = () => {
           <Ionicons name="person-outline" size={24} color="#FFD700" />
           <View style={styles.infoTextContainer}>
             <Text style={styles.infoLabel}>Nom</Text>
-            <Text style={styles.infoValue}>{user?.name}</Text>
+            <Text style={styles.infoValue}>{user?.username}</Text>
           </View>
         </View>
       </View>

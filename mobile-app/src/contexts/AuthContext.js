@@ -1,6 +1,8 @@
 import React, { createContext, useState, useEffect, useContext } from 'react';
 import AsyncStorage from '@react-native-async-storage/async-storage';
-import { authAPI } from '../services/api';
+// import { authAPI } from '../services/api'; // On remplace par Apollo
+import { apolloClient } from '../../lib/apollo'; // Chemin à adapter si besoin
+import { LOGIN_MUTATION, SIGNUP_MUTATION } from '../../lib/graphql/mutations';
 
 const AuthContext = createContext({});
 
@@ -14,10 +16,8 @@ export const AuthProvider = ({ children }) => {
 
   const loadStorageData = async () => {
     try {
-      const token = await AsyncStorage.getItem('token');
-      const userData = await AsyncStorage.getItem('user');
-      if (token && userData) {
-        setUser(JSON.parse(userData));
+      const token = await AsyncStorage.getItem('authToken'); 
+      if (token) {
       }
     } catch (error) {
       console.error('Error loading auth data:', error);
@@ -28,33 +28,53 @@ export const AuthProvider = ({ children }) => {
 
   const login = async (email, password) => {
     try {
-      const response = await authAPI.login(email, password);
-      const { token, user: userData } = response.data;
-      await AsyncStorage.setItem('token', token);
+      const { data } = await apolloClient.mutate({
+        mutation: LOGIN_MUTATION,
+        variables: { email, password }
+      });
+      
+      const { token, user: userData } = data.login;
+      
+      await AsyncStorage.setItem('authToken', token); // synchro avec apollo.ts
       await AsyncStorage.setItem('user', JSON.stringify(userData));
+      
       setUser(userData);
-      return response.data;
+      return data.login;
     } catch (error) {
+      console.error("Login Context Error", error);
       throw error;
     }
   };
 
-  const register = async (userData) => {
+  const register = async (userDataInput) => {
     try {
-      const response = await authAPI.register(userData);
-      const { token, user: newUser } = response.data;
-      await AsyncStorage.setItem('token', token);
+        // Adaptation des données pour la mutation
+        // La mutation attend { username, email, password, birthDate }
+        const { username, email, password, birthDate } = userDataInput;
+
+      const { data } = await apolloClient.mutate({
+        mutation: SIGNUP_MUTATION,
+        variables: { username, email, password, birthDate }
+      });
+
+      const { token, user: newUser } = data.signup;
+      
+      await AsyncStorage.setItem('authToken', token);
       await AsyncStorage.setItem('user', JSON.stringify(newUser));
+      
       setUser(newUser);
-      return response.data;
+      return data.signup;
     } catch (error) {
-      throw error;
+        console.error("Register Context Error", error);
+        throw error;
     }
   };
 
   const logout = async () => {
-    await authAPI.logout();
+    // await authAPI.logout(); // Pas de logout API en GraphQL stateless souvent, on supprime juste le token local
+    await AsyncStorage.removeItem('authToken');
     await AsyncStorage.removeItem('user');
+    await apolloClient.clearStore(); // Vider le cache Apollo
     setUser(null);
   };
 

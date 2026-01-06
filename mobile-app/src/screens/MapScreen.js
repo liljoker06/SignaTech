@@ -1,16 +1,18 @@
 import React, { useState, useEffect } from 'react';
-import { View, StyleSheet, TextInput, ActivityIndicator, Platform } from 'react-native';
+import { View, StyleSheet, TextInput, ActivityIndicator, Platform, Text } from 'react-native';
 import MapView, { Marker, PROVIDER_GOOGLE } from 'react-native-maps';
 import { useTranslation } from 'react-i18next';
-import { schoolsAPI } from '../services/api';
+// import { schoolsAPI } from '../services/api';
 import * as Location from 'expo-location';
+import { useQuery } from '@apollo/client/react';
+import { SCHOOLS_QUERY } from '../../lib/graphql/queries';
 
 const MapScreen = () => {
   const { t } = useTranslation();
-  const [schools, setSchools] = useState([]);
+  // const [schools, setSchools] = useState([]); // Géré par useQuery
   const [filteredSchools, setFilteredSchools] = useState([]);
   const [search, setSearch] = useState('');
-  const [loading, setLoading] = useState(true);
+  // const [loading, setLoading] = useState(true); // Géré par useQuery
   const [region, setRegion] = useState({
     latitude: 48.8566,
     longitude: 2.3522,
@@ -18,22 +20,39 @@ const MapScreen = () => {
     longitudeDelta: 0.5,
   });
 
+  const { data, loading, error } = useQuery(SCHOOLS_QUERY);
+  const addMockCoordinates = (schoolList) => {
+    return schoolList.map((school, index) => {
+      const baseLat = 48.8566;
+      const baseLng = 2.3522;
+      return {
+        ...school,
+        latitude: school.latitude || (baseLat + (Math.random() - 0.5) * 0.1),
+        longitude: school.longitude || (baseLng + (Math.random() - 0.5) * 0.1),
+      };
+    });
+  };
+
   useEffect(() => {
-    loadSchools();
+    // loadSchools();
     getUserLocation();
   }, []);
 
   useEffect(() => {
-    if (search) {
-      const filtered = schools.filter(school =>
-        school.name.toLowerCase().includes(search.toLowerCase()) ||
-        school.address.toLowerCase().includes(search.toLowerCase())
-      );
-      setFilteredSchools(filtered);
-    } else {
-      setFilteredSchools(schools);
+    if (data && data.schools) {
+      const schoolsWithCoords = addMockCoordinates(data.schools);
+      
+      if (search) {
+        const filtered = schoolsWithCoords.filter(school =>
+          school.name.toLowerCase().includes(search.toLowerCase()) ||
+          (school.address && school.address.toLowerCase().includes(search.toLowerCase()))
+        );
+        setFilteredSchools(filtered);
+      } else {
+        setFilteredSchools(schoolsWithCoords);
+      }
     }
-  }, [search, schools]);
+  }, [search, data]);
 
   const getUserLocation = async () => {
     try {
@@ -82,13 +101,22 @@ const MapScreen = () => {
       setLoading(false);
     }
   };
-
+  
   if (loading) {
     return (
       <View style={styles.loadingContainer}>
         <ActivityIndicator size="large" color="#FFD700" />
       </View>
     );
+  }
+
+  if (error) {
+     console.log("Map Error", error);
+     return (
+        <View style={styles.loadingContainer}>
+            <Text style={{color: 'white'}}>Erreur de chargement des écoles</Text>
+        </View>
+     )
   }
 
   return (
