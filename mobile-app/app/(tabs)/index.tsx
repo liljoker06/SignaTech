@@ -39,6 +39,7 @@ export default function HomeScreen() {
 
           {/* Main Action Button */}
           <Pressable 
+            onPress={() => router.push('/(tabs)/translate')}
             style={({ pressed }) => [styles.mainActionCard, pressed && styles.pressed]}
           >
             <LinearGradient

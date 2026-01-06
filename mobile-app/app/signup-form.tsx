@@ -10,7 +10,7 @@ import DateTimePicker from '@react-native-community/datetimepicker';
 export default function SignupFormScreen() {
   const router = useRouter();
   const [name, setName] = useState('');
-  const [birthDate, setBirthDate] = useState(new Date(2000, 0, 1)); // Date par défaut
+  const [birthDate, setBirthDate] = useState(new Date(2000, 0, 1));
   const [showDatePicker, setShowDatePicker] = useState(false);
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
