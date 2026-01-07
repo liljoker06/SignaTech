@@ -1,5 +1,5 @@
 const app = require('./src/app');
-const setupGraphQL = require('./src/graphql/server');
+const setupGraphQL = require('./src/routes/graphql/server');
 const { sequelize } = require('./src/config/database');
 
 const PORT = 4000;
