@@ -22,5 +22,8 @@ libraryDependencies ++= Seq(
   "io.circe" %% "circe-parser" % "0.14.6",
   
   // Client HTTP pour le scraping
-  "com.softwaremill.sttp.client3" %% "core" % "3.11.0"
+  "com.softwaremill.sttp.client3" %% "core" % "3.11.0",
+  
+  // Driver PostgreSQL
+  "org.postgresql" % "postgresql" % "42.7.3"
 )

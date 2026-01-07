@@ -2,6 +2,7 @@ package com.signatech
 
 import akka.actor.ActorSystem
 import com.signatech.websocket.WebSocketServer
+import com.signatech.bootstrap.AutoImport
 import scala.io.StdIn
 
 object Main {
@@ -9,8 +10,12 @@ object Main {
     implicit val system: ActorSystem = ActorSystem("signatech")
     implicit val ec = system.dispatcher
 
-    WebSocketServer.start()
 
+    AutoImport.run()
+    
+    WebSocketServer.start()
+    
+ 
     println("Scala SignaTech engine started. Press Ctrl+C to stop.")
     StdIn.readLine()
 
