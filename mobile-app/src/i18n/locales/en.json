@@ -1,0 +1,44 @@
+{
+  "nav": {
+    "home": "Home",
+    "translate": "Translate",
+    "explore": "Explore",
+    "account": "Account",
+    "settings": "Settings"
+  },
+  "auth": {
+    "login": "Login",
+    "register": "Sign Up",
+    "email": "Email",
+    "password": "Password",
+    "confirmPassword": "Confirm Password",
+    "name": "Name",
+    "logout": "Logout",
+    "welcome": "Welcome",
+    "signInPrompt": "Sign in to continue",
+    "noAccount": "No account?",
+    "hasAccount": "Already have an account?"
+  },
+  "settings": {
+    "language": "Language",
+    "french": "French",
+    "english": "English",
+    "title": "Settings"
+  },
+  "map": {
+    "title": "Sign Language Schools",
+    "searchPlaceholder": "Search for a school..."
+  },
+  "home": {
+    "title": "SignaTech",
+    "subtitle": "Translate sign language in real time",
+    "startTranslation": "Start translation",
+    "useCamera": "Use your camera to translate"
+  },
+  "translate": {
+    "permissionMessage": "We need your permission to use the camera",
+    "allowCamera": "Allow camera",
+    "tapToStart": "Tap to start",
+    "translating": "Translating..."
+  }
+}

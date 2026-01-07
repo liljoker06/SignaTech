@@ -1,0 +1,44 @@
+{
+  "nav": {
+    "home": "Accueil",
+    "translate": "Traduire",
+    "explore": "Explorer",
+    "account": "Compte",
+    "settings": "Paramètres"
+  },
+  "auth": {
+    "login": "Connexion",
+    "register": "Inscription",
+    "email": "Email",
+    "password": "Mot de passe",
+    "confirmPassword": "Confirmer le mot de passe",
+    "name": "Nom",
+    "logout": "Déconnexion",
+    "welcome": "Bienvenue",
+    "signInPrompt": "Connectez-vous pour continuer",
+    "noAccount": "Pas de compte ?",
+    "hasAccount": "Déjà un compte ?"
+  },
+  "settings": {
+    "language": "Langue",
+    "french": "Français",
+    "english": "English",
+    "title": "Paramètres"
+  },
+  "map": {
+    "title": "Écoles de langue des signes",
+    "searchPlaceholder": "Rechercher une école..."
+  },
+  "home": {
+    "title": "SignaTech",
+    "subtitle": "Traduisez la langue des signes en temps réel",
+    "startTranslation": "Démarrer la traduction",
+    "useCamera": "Utilisez votre caméra pour traduire"
+  },
+  "translate": {
+    "permissionMessage": "Nous avons besoin de votre permission pour utiliser la caméra",
+    "allowCamera": "Autoriser la caméra",
+    "tapToStart": "Appuyez pour commencer",
+    "translating": "Traduction en cours..."
+  }
+}
