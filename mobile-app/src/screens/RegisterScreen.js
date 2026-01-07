@@ -9,11 +9,13 @@ import {
   KeyboardAvoidingView,
   Platform,
   ScrollView,
+  Modal,
 } from 'react-native';
 import { LinearGradient } from 'expo-linear-gradient';
 import { useTranslation } from 'react-i18next';
 import { useAuth } from '../contexts/AuthContext';
 import Ionicons from '@expo/vector-icons/Ionicons';
+import DateTimePicker from '@react-native-community/datetimepicker';
 
 const RegisterScreen = ({ navigation }) => {
   const { t } = useTranslation();
@@ -24,6 +26,32 @@ const RegisterScreen = ({ navigation }) => {
   const [confirmPassword, setConfirmPassword] = useState('');
   const [loading, setLoading] = useState(false);
   const [showPassword, setShowPassword] = useState(false);
+
+  const [birthDate, setBirthDate] = useState(new Date(2000, 0, 1));
+  const [showDatePicker, setShowDatePicker] = useState(false);
+
+  const handleDateChange = (event, selectedDate) => {
+    if (Platform.OS === 'android') {
+      setShowDatePicker(false);
+    }
+    if (selectedDate) {
+      setBirthDate(selectedDate);
+    }
+  };
+
+  const formatDate = (date) => {
+    const day = date.getDate().toString().padStart(2, '0');
+    const month = (date.getMonth() + 1).toString().padStart(2, '0');
+    const year = date.getFullYear();
+    return `${day}/${month}/${year}`;
+  };
+
+  const formatDateForAPI = (date) => {
+    const day = date.getDate().toString().padStart(2, '0');
+    const month = (date.getMonth() + 1).toString().padStart(2, '0');
+    const year = date.getFullYear();
+    return `${year}-${month}-${day}`;
+  };
 
   const handleRegister = async () => {
     if (!name || !email || !password || !confirmPassword) {
@@ -38,9 +66,16 @@ const RegisterScreen = ({ navigation }) => {
 
     setLoading(true);
     try {
-      await register({ name, email, password });
+      const formattedBirthDate = formatDateForAPI(birthDate);
+      await register({ 
+        username: name, 
+        email, 
+        password,
+        birthDate: formattedBirthDate
+      });
     } catch (error) {
-      Alert.alert('Erreur', error.response?.data?.message || 'Inscription échouée');
+      console.log(error);
+      Alert.alert('Erreur', error.message || 'Inscription échouée');
     } finally {
       setLoading(false);
     }
@@ -70,6 +105,60 @@ const RegisterScreen = ({ navigation }) => {
                 onChangeText={setName}
               />
             </View>
+
+            <View style={styles.inputContainer}>
+              <Ionicons name="calendar-outline" size={20} color="#FFD700" style={styles.inputIcon} />
+              <TouchableOpacity onPress={() => setShowDatePicker(true)} style={{ flex: 1 }}>
+                <Text style={[styles.input, { paddingVertical: 15 }]}>
+                  {formatDate(birthDate)}
+                </Text>
+              </TouchableOpacity>
+            </View>
+
+            {/* DatePicker */}
+            {Platform.OS === 'android' && showDatePicker && (
+              <DateTimePicker
+                value={birthDate}
+                mode="date"
+                display="default"
+                onChange={handleDateChange}
+                maximumDate={new Date()}
+                minimumDate={new Date(1900, 0, 1)}
+              />
+            )}
+            {/* DatePicker ios*/}
+            {Platform.OS === 'ios' && (
+              <Modal
+                visible={showDatePicker}
+                transparent={true}
+                animationType="slide"
+                onRequestClose={() => setShowDatePicker(false)}
+              >
+                <View style={styles.modalContainer}>
+                  <View style={styles.modalContent}>
+                    <View style={styles.modalHeader}>
+                      <TouchableOpacity onPress={() => setShowDatePicker(false)}>
+                        <Text style={styles.modalDetailsText}>Annuler</Text>
+                      </TouchableOpacity>
+                      <TouchableOpacity onPress={() => setShowDatePicker(false)}>
+                        <Text style={styles.modalDoneText}>Valider</Text>
+                      </TouchableOpacity>
+                    </View>
+                    <DateTimePicker
+                      value={birthDate}
+                      mode="date"
+                      display="spinner"
+                      onChange={handleDateChange}
+                      maximumDate={new Date()}
+                      minimumDate={new Date(1900, 0, 1)}
+                      textColor="white"
+                      themeVariant="dark"
+                      style={{ height: 200 }}
+                    />
+                  </View>
+                </View>
+              </Modal>
+            )}
 
             <View style={styles.inputContainer}>
               <Ionicons name="mail-outline" size={20} color="#FFD700" style={styles.inputIcon} />
@@ -225,6 +314,33 @@ const styles = StyleSheet.create({
   linkBold: {
     color: '#FFD700',
     fontWeight: 'bold',
+  },
+  modalContainer: {
+    flex: 1,
+    justifyContent: 'flex-end',
+    backgroundColor: 'rgba(0, 0, 0, 0.5)',
+  },
+  modalContent: {
+    backgroundColor: '#1C1C1E',
+    borderTopLeftRadius: 20,
+    borderTopRightRadius: 20,
+    paddingBottom: 40,
+  },
+  modalHeader: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    padding: 16,
+    borderBottomWidth: 1,
+    borderBottomColor: 'rgba(255, 255, 255, 0.1)',
+  },
+  modalDoneText: {
+    color: '#FFD700',
+    fontSize: 16,
+    fontWeight: '600',
+  },
+  modalDetailsText: {
+    color: '#999',
+    fontSize: 16,
   },
 });
 

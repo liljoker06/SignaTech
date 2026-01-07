@@ -1,15 +1,24 @@
-import React from 'react';
-import { View, Text, TouchableOpacity, StyleSheet, Alert } from 'react-native';
+import React, { useEffect } from 'react';
+import { View, Text, TouchableOpacity, StyleSheet, Alert, ActivityIndicator } from 'react-native';
 import { LinearGradient } from 'expo-linear-gradient';
 import { useTranslation } from 'react-i18next';
 import { useRouter } from 'expo-router';
 import { useAuth } from '../contexts/AuthContext';
 import Ionicons from '@expo/vector-icons/Ionicons';
+import { useQuery } from '@apollo/client/react';
+import { ME_QUERY } from '../../lib/graphql/queries';
 
 const AccountScreen = () => {
   const { t } = useTranslation();
-  const { user, logout } = useAuth();
+  const { user: contextUser, logout } = useAuth();
   const router = useRouter();
+  
+  const { data, loading, error, refetch } = useQuery(ME_QUERY);
+  const user = data?.me || contextUser;
+
+  useEffect(() => {
+    refetch();
+  }, [data]);
 
   const handleLogout = () => {
     Alert.alert(
@@ -22,6 +31,24 @@ const AccountScreen = () => {
     );
   };
 
+  const formatDate = (dateString) => {
+    if (!dateString) return t('notSpecified') || 'Non spécifié';
+    const date = new Date(dateString);
+    return date.toLocaleDateString('fr-FR', { 
+      year: 'numeric', 
+      month: 'long', 
+      day: 'numeric' 
+    });
+  };
+
+  if (loading && !contextUser) {
+    return (
+      <LinearGradient colors={['#0f2027', '#203a43', '#2c5364']} style={styles.container}>
+        <ActivityIndicator size="large" color="#FFD700" />
+      </LinearGradient>
+    );
+  }
+
   return (
     <LinearGradient colors={['#0f2027', '#203a43', '#2c5364']} style={styles.container}>
       {/* Bouton retour */}
@@ -33,7 +60,7 @@ const AccountScreen = () => {
         <View style={styles.avatarContainer}>
           <Ionicons name="person-circle" size={120} color="#FFD700" />
         </View>
-        <Text style={styles.name}>{user?.name || 'Utilisateur'}</Text>
+        <Text style={styles.name}>{user?.username || 'Utilisateur'}</Text>
         <Text style={styles.email}>{user?.email}</Text>
       </View>
 
@@ -50,7 +77,15 @@ const AccountScreen = () => {
           <Ionicons name="person-outline" size={24} color="#FFD700" />
           <View style={styles.infoTextContainer}>
             <Text style={styles.infoLabel}>Nom</Text>
-            <Text style={styles.infoValue}>{user?.name}</Text>
+            <Text style={styles.infoValue}>{user?.username}</Text>
+          </View>
+        </View>
+
+        <View style={styles.infoCard}>
+          <Ionicons name="calendar-outline" size={24} color="#FFD700" />
+          <View style={styles.infoTextContainer}>
+            <Text style={styles.infoLabel}>Date de naissance</Text>
+            <Text style={styles.infoValue}>{formatDate(user?.birthDate)}</Text>
           </View>
         </View>
       </View>

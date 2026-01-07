@@ -1,0 +1,23 @@
+
+# Dossiers de build sbt
+target/
+project/target/
+.project
+.classpath
+
+# Logs
+*.log
+
+# IntelliJ IDEA
+.idea/
+*.iml
+
+# VS Code
+.vscode/
+
+# Metals (Scala language server)
+.metals/
+.bloop/
+
+# Coursier cache
+.coursier/

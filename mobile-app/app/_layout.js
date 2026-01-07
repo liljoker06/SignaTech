@@ -2,6 +2,8 @@ import { Slot, useRouter, useSegments, useRootNavigationState } from 'expo-route
 import { AuthProvider, useAuth } from '../src/contexts/AuthContext';
 import { useEffect } from 'react';
 import '../src/i18n';
+import { ApolloProvider } from '@apollo/client/react';
+import { apolloClient } from '../lib/apollo';
 
 function RootLayoutNav() {
   const { user, loading } = useAuth();
@@ -28,8 +30,10 @@ function RootLayoutNav() {
 
 export default function Layout() {
   return (
-    <AuthProvider>
-      <RootLayoutNav />
-    </AuthProvider>
+    <ApolloProvider client={apolloClient}>
+      <AuthProvider>
+        <RootLayoutNav />
+      </AuthProvider>
+    </ApolloProvider>
   );
 }

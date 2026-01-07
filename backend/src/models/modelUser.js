@@ -35,7 +35,15 @@ const User = sequelize.define('User', {
   }
 }, {
   tableName: 'users',
-  timestamps: false
+  timestamps: false,
+  getterMethods: {
+    birthDate() {
+      return this.getDataValue('birth_date');
+    },
+    createdAt() {
+      return this.getDataValue('created_at');
+    }
+  }
 });
 
 module.exports = User;
