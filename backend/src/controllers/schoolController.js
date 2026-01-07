@@ -1,6 +1,6 @@
 const { School } = require('../models');
 
-class SchoolService {
+class SchoolController {
   /**
    * Récupérer toutes les écoles
    */
@@ -24,9 +24,17 @@ class SchoolService {
   /**
    * Créer une nouvelle école
    */
-  async createSchool({ name, description }) {
-    return await School.create({ name, description });
+  async createSchool({ name, description, address, city, country, website, contactEmail }) {
+    return await School.create({ 
+      name, 
+      description,
+      address,
+      city,
+      country,
+      website,
+      contact_email: contactEmail
+    });
   }
 }
 
-module.exports = new SchoolService();
+module.exports = new SchoolController();

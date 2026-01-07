@@ -1,7 +1,7 @@
 import React, { createContext, useState, useEffect, useContext } from 'react';
 import AsyncStorage from '@react-native-async-storage/async-storage';
-import { apolloClient } from '../../lib/apollo'; // Chemin à adapter si besoin
-import { LOGIN_MUTATION, SIGNUP_MUTATION } from '../../lib/graphql/mutations';
+import { apolloClient } from '../../lib/apollo';
+import { LOGIN_MUTATION, SIGNUP_MUTATION } from '../services/graphql/userMutations';
 
 const AuthContext = createContext({});
 
