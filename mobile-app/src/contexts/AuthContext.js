@@ -68,7 +68,6 @@ export const AuthProvider = ({ children }) => {
   };
 
   const logout = async () => {
-    // await authAPI.logout();
     await AsyncStorage.removeItem('authToken');
     await AsyncStorage.removeItem('user');
     await apolloClient.clearStore(); 

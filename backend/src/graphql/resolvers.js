@@ -7,6 +7,12 @@ const schoolService = require('../services/schoolService');
 
 const resolvers = {
   Query: { // query = GET 
+    me: async (_, __, context) => {
+      if (!context.user) {
+        throw new Error('Non authentifié');
+      }
+      return await userService.getUserById(context.user.userId);
+    },
     users: async () => await userService.getAllUsers(),
     user: async (_, { id }) => await userService.getUserById(id),
     images: async () => await imageService.getAllImages(),

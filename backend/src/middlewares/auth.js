@@ -19,27 +19,5 @@ const authMiddleware = (req) => {
   }
 };
 
-// Middleware pour REST API
-const verifyToken = (req, res, next) => {
-  const token = req.headers.authorization?.replace('Bearer ', '');
-
-  if (!token) {
-    return res.status(401).json({ 
-      error: 'Token d\'authentification manquant' 
-    });
-  }
-
-  try {
-    const decoded = jwt.verify(token, JWT_SECRET);
-    req.userId = decoded.userId;
-    req.userEmail = decoded.email;
-    next();
-  } catch (error) {
-    return res.status(401).json({ 
-      error: 'Token invalide ou expiré' 
-    });
-  }
-};
 
 module.exports = authMiddleware;
-module.exports.verifyToken = verifyToken;
