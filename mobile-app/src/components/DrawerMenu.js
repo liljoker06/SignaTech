@@ -80,11 +80,11 @@ export default function DrawerMenu({ visible, onClose }) {
                   style={styles.avatarGradient}
                 >
                   <Text style={styles.avatarText}>
-                    {user?.name?.charAt(0)?.toUpperCase() || 'U'}
+                    {user?.username?.charAt(0)?.toUpperCase() || 'U'}
                   </Text>
                 </LinearGradient>
               </View>
-              <Text style={styles.userName}>{user?.name || 'Utilisateur'}</Text>
+              <Text style={styles.userName}>{user?.username || 'Utilisateur'}</Text>
               <Text style={styles.userEmail}>{user?.email}</Text>
             </View>
 

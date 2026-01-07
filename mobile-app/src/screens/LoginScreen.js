@@ -33,7 +33,8 @@ const LoginScreen = ({ navigation }) => {
     try {
       await login(email, password);
     } catch (error) {
-      Alert.alert('Erreur', error.response?.data?.message || 'Connexion échouée');
+      console.log(error);
+      Alert.alert('Erreur', error.message || 'Connexion échouée');
     } finally {
       setLoading(false);
     }
