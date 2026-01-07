@@ -1,6 +1,6 @@
 // Paramètres globaux
 ThisBuild / organization := "com.signatech"
-ThisBuild / scalaVersion := "2.13.12"
+ThisBuild / scalaVersion := "2.13.14"
 
 // Infos projet
 name := "signatech-scala"
@@ -19,5 +19,11 @@ libraryDependencies ++= Seq(
 
   "io.circe" %% "circe-core" % "0.14.6",
   "io.circe" %% "circe-generic" % "0.14.6",
-  "io.circe" %% "circe-parser" % "0.14.6"
+  "io.circe" %% "circe-parser" % "0.14.6",
+  
+  // Client HTTP pour le scraping
+  "com.softwaremill.sttp.client3" %% "core" % "3.11.0",
+  
+  // Driver PostgreSQL
+  "org.postgresql" % "postgresql" % "42.7.3"
 )

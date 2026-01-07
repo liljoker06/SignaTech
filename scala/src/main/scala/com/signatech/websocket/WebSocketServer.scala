@@ -7,6 +7,7 @@ import akka.http.scaladsl.server.Directives._
 import akka.stream.scaladsl._
 
 import com.signatech.model.SocketMessage
+import com.signatech.service.MessageHandler
 
 import io.circe.parser._
 import io.circe.syntax._
@@ -26,13 +27,7 @@ object WebSocketServer {
             case Right(msg) =>
               println(s" ${msg.`type`} → ${msg.payload}")
 
-              val response = msg.`type` match {
-                case "ping" =>
-                  SocketMessage("pong", msg.payload)
-
-                case _ =>
-                  SocketMessage("error", "unknown message type")
-              }
+              val response = MessageHandler.handle(msg)
 
               TextMessage(response.asJson.noSpaces)
 
