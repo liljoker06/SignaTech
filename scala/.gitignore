@@ -21,3 +21,8 @@ project/target/
 
 # Coursier cache
 .coursier/
+
+target/
+.cache/
+scrapping/
+build.properties/
