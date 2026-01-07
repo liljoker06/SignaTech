@@ -63,7 +63,7 @@ CREATE TABLE IF NOT EXISTS schools_levels (
   name VARCHAR(255) NOT NULL,
   description TEXT,
   duration_months INTEGER,
-  price FLOAT
+  school_type VARCHAR
 );
 
 
