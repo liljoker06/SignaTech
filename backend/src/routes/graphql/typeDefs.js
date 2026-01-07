@@ -53,6 +53,15 @@ const typeDefs = gql`
     contact_email: String
   }
 
+  type SchoolLevel {
+    id: ID!
+    schoolId: ID!
+    name: String!
+    description: String
+    durationMonths: Int
+    schoolType: String
+  }
+
   type Query {
     me: User
     users: [User!]!
@@ -67,6 +76,9 @@ const typeDefs = gql`
     prediction(id: ID!): Prediction
     schools: [School!]!
     school(id: ID!): School
+    schoolLevels: [SchoolLevel!]!
+    schoolLevel(id: ID!): SchoolLevel
+    schoolLevelsBySchool(schoolId: ID!): [SchoolLevel!]!
   }
 
   type Mutation {
@@ -77,7 +89,8 @@ const typeDefs = gql`
     createModel(name: String!, version: String!): Model!
     createClass(label: String!, description: String): Class!
     createPrediction(imageId: ID!, modelId: ID!, predictedClassId: ID!, confidenceScore: Float!): Prediction!
-    createSchool(name: String!, description: String): School!
+    createSchool(name: String!, description: String, address: String, city: String, country: String, website: String, contactEmail: String): School!
+    createSchoolLevel(schoolId: ID!, name: String!, description: String, durationMonths: Int, schoolType: String): SchoolLevel!
   }
 `;
 

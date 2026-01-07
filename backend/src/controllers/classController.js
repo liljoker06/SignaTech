@@ -1,6 +1,6 @@
 const { Class } = require('../models');
 
-class ClassService {
+class ClassController {
   /**
    * Récupérer toutes les classes
    */
@@ -29,4 +29,4 @@ class ClassService {
   }
 }
 
-module.exports = new ClassService();
+module.exports = new ClassController();
