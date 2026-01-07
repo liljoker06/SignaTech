@@ -27,8 +27,8 @@ const SchoolLevel = sequelize.define('SchoolLevel', {
     type: DataTypes.INTEGER,
     allowNull: true
   },
-  price: {
-    type: DataTypes.FLOAT,
+  type: {
+    type: DataTypes.STRING(100),
     allowNull: true
   }
 }, {
