@@ -1,0 +1,52 @@
+table users
+id pk int
+username varchar
+email varchar 
+password_hash varchar 
+birth_date date
+created_at datetime
+
+table images
+id pk int
+user_id fk 
+intimage_path varchar 
+uploaded_at datetime
+
+models
+id pk int
+name varchar 
+version varchar 
+accuracy float 
+is_active boolean
+created_at datetime
+
+classes
+id pk int
+label varchar 
+description varchar 
+
+predictions
+id pk int
+image_id fk int
+model_id fk int
+predicted_class_id fk int
+confidence_score float
+predicted_at datetime
+
+
+schools
+id pk int
+name varchar 
+description text
+address varchar 
+city varchar 
+country varchar 
+website varchar 
+contact_email varchar 
+
+schools_lebvels
+school_id fk int
+name varchar 
+description text
+duration_months int
+price float
