@@ -6,7 +6,7 @@ const bodyParser = require('body-parser');
 
 const typeDefs = require('./typeDefs');
 const resolvers = require('./resolvers');
-const authMiddleware = require('../middlewares/auth');
+const authMiddleware = require('../../middlewares/auth');
 
 module.exports = async (app) => {
   const apolloServer = new ApolloServer({

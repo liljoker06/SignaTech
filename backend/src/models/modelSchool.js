@@ -40,7 +40,12 @@ const School = sequelize.define('School', {
   }
 }, {
   tableName: 'schools',
-  timestamps: false
+  timestamps: false,
+  getterMethods: {
+    contactEmail() {
+      return this.getDataValue('contact_email');
+    }
+  }
 });
 
 module.exports = School;

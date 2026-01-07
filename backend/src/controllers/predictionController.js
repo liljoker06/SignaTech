@@ -1,6 +1,6 @@
 const { Prediction } = require('../models');
 
-class PredictionService {
+class PredictionController {
   /**
    * Récupérer toutes les prédictions
    */
@@ -43,4 +43,4 @@ class PredictionService {
   }
 }
 
-module.exports = new PredictionService();
+module.exports = new PredictionController();

@@ -4,7 +4,7 @@ import MapView, { Marker, PROVIDER_GOOGLE } from 'react-native-maps';
 import { useTranslation } from 'react-i18next';
 import * as Location from 'expo-location';
 import { useQuery } from '@apollo/client/react';
-import { SCHOOLS_QUERY } from '../../lib/graphql/queries';
+import { SCHOOLS_QUERY } from '../services/graphql/schoolQueries';
 
 const MapScreen = () => {
   const { t } = useTranslation();

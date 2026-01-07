@@ -4,12 +4,11 @@ const { User } = require('../models');
 
 const JWT_SECRET = process.env.JWT_SECRET || 'votre_secret_jwt_a_changer';
 
-class UserService {
+class UserController {
   /**
    * Inscription d'un nouvel utilisateur
    */
   async signup({ username, email, password, birthDate }) {
-    // Vérifier si l'utilisateur existe déjà
     const existingUser = await User.findOne({ where: { email } });
     if (existingUser) {
       throw new Error('Un utilisateur avec cet email existe déjà');
@@ -106,4 +105,4 @@ class UserService {
   }
 }
 
-module.exports = new UserService();
+module.exports = new UserController();
