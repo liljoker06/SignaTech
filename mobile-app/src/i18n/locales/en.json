@@ -1,6 +1,7 @@
 {
   "nav": {
     "home": "Home",
+    "courses": "Courses",
     "translate": "Translate",
     "explore": "Explore",
     "account": "Account",
@@ -40,5 +41,10 @@
     "allowCamera": "Allow camera",
     "tapToStart": "Tap to start",
     "translating": "Translating..."
+  },
+  "courses": {
+    "title": "Sign Language Courses",
+    "subtitle": "Learn sign language at your own pace",
+    "searchPlaceholder": "Search for a course..."
   }
 }

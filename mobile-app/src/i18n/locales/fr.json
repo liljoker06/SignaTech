@@ -1,6 +1,7 @@
 {
   "nav": {
     "home": "Accueil",
+    "courses": "Cours",
     "translate": "Traduire",
     "explore": "Explorer",
     "account": "Compte",
@@ -40,5 +41,10 @@
     "allowCamera": "Autoriser la caméra",
     "tapToStart": "Appuyez pour commencer",
     "translating": "Traduction en cours..."
+  },
+  "courses": {
+    "title": "Cours de LSF",
+    "subtitle": "Apprenez la langue des signes à votre rythme",
+    "searchPlaceholder": "Rechercher un cours..."
   }
 }

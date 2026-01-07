@@ -128,4 +128,37 @@ export const schoolsAPI = {
   },
 };
 
+export const coursesAPI = {
+  getAll: async () => {
+    if (OFFLINE_MODE) {
+      await mockDelay();
+      return {
+        data: [
+          {
+            id: 1,
+            title: 'Alphabet en LSF',
+            lessons: [
+              {
+                id: 1,
+                title: 'Les lettres A-E',
+                videoUrl: 'https://example.com/videos/alphabet-a-e.mp4',
+                duration: '3:45',
+              },
+            ],
+          },
+        ],
+      };
+    }
+    return api.get('/courses');
+  },
+  
+  getById: async (id) => {
+    if (OFFLINE_MODE) {
+      await mockDelay();
+      return { data: { id, title: 'Cours test', lessons: [] } };
+    }
+    return api.get(`/courses/${id}`);
+  },
+};
+
 export default api;

@@ -49,6 +49,15 @@ export default function TabsLayout() {
           }}
         />
         <Tabs.Screen
+          name="courses"
+          options={{
+            title: t('nav.courses'),
+            tabBarIcon: ({ color, size }) => (
+              <Ionicons name="school" size={size} color={color} />
+            ),
+          }}
+        />
+        <Tabs.Screen
           name="translate"
           options={{
             title: t('nav.translate'),
