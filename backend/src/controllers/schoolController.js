@@ -1,6 +1,6 @@
 const { School } = require('../models');
 
-class SchoolService {
+class SchoolController {
   /**
    * Récupérer toutes les écoles
    */
@@ -29,4 +29,4 @@ class SchoolService {
   }
 }
 
-module.exports = new SchoolService();
+module.exports = new SchoolController();

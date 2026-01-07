@@ -1,6 +1,6 @@
 const { Image } = require('../models');
 
-class ImageService {
+class ImageController {
   /**
    * Récupérer toutes les images
    */
@@ -41,4 +41,4 @@ class ImageService {
   }
 }
 
-module.exports = new ImageService();
+module.exports = new ImageController();

@@ -6,7 +6,7 @@ import { useRouter } from 'expo-router';
 import { useAuth } from '../contexts/AuthContext';
 import Ionicons from '@expo/vector-icons/Ionicons';
 import { useQuery } from '@apollo/client/react';
-import { ME_QUERY } from '../../lib/graphql/queries';
+import { ME_QUERY } from '../services/graphql/userQueries';
 
 const AccountScreen = () => {
   const { t } = useTranslation();
