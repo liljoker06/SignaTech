@@ -33,7 +33,15 @@ const SchoolLevel = sequelize.define('SchoolLevel', {
   }
 }, {
   tableName: 'schools_levels',
-  timestamps: false
+  timestamps: false,
+  getterMethods: {
+    schoolId() {
+      return this.getDataValue('school_id');
+    },
+    durationMonths() {
+      return this.getDataValue('duration_months');
+    }
+  }
 });
 
 module.exports = SchoolLevel;

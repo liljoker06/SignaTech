@@ -1,5 +1,6 @@
 const userResolvers = require('./userResolvers');
 const schoolResolvers = require('./schoolResolvers');
+const schoolLevelResolvers = require('./schoolLevelResolvers');
 const imageResolvers = require('./imageResolvers');
 const modelResolvers = require('./modelResolvers');
 const classResolvers = require('./classResolvers');
@@ -9,6 +10,7 @@ const resolvers = {
   Query: {
     ...userResolvers.Query,
     ...schoolResolvers.Query,
+    ...schoolLevelResolvers.Query,
     ...imageResolvers.Query,
     ...modelResolvers.Query,
     ...classResolvers.Query,
@@ -17,6 +19,7 @@ const resolvers = {
   Mutation: {
     ...userResolvers.Mutation,
     ...schoolResolvers.Mutation,
+    ...schoolLevelResolvers.Mutation,
     ...imageResolvers.Mutation,
     ...modelResolvers.Mutation,
     ...classResolvers.Mutation,
