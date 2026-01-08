@@ -1,6 +1,4 @@
-import { StyleSheet, Text, type TextProps } from 'react-native';
-
-import { useThemeColor } from '@/hooks/use-theme-color';
+import { Text, type TextProps, StyleSheet } from 'react-native';
 
 export type ThemedTextProps = TextProps & {
   lightColor?: string;
@@ -15,7 +13,7 @@ export function ThemedText({
   type = 'default',
   ...rest
 }: ThemedTextProps) {
-  const color = useThemeColor({ light: lightColor, dark: darkColor }, 'text');
+  const color = '#FFFFFF'; // Couleur par défaut pour votre thème sombre
 
   return (
     <Text
@@ -55,6 +53,6 @@ const styles = StyleSheet.create({
   link: {
     lineHeight: 30,
     fontSize: 16,
-    color: '#0a7ea4',
+    color: '#FFD700',
   },
 });
