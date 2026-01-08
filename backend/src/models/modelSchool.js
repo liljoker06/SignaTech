@@ -15,10 +15,6 @@ const School = sequelize.define('School', {
     type: DataTypes.TEXT,
     allowNull: true
   },
-  address: {
-    type: DataTypes.STRING(255),
-    allowNull: true
-  },
   longitude: {
     type: DataTypes.DOUBLE,
     allowNull: true
