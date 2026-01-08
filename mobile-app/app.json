@@ -12,7 +12,10 @@
       "supportsTablet": true,
       "bundleIdentifier": "com.signatech.app",
       "infoPlist": {
-        "NSLocationWhenInUseUsageDescription": "Cette application utilise votre position pour afficher les écoles de langue des signes à proximité."
+        "NSLocationWhenInUseUsageDescription": "Cette application utilise votre position pour afficher les écoles de langue des signes à proximité.",
+        "NSAppTransportSecurity": {
+          "NSAllowsArbitraryLoads": true
+        }
       },
       "config": {
         "googleMapsApiKey": "VOTRE_CLE_API_GOOGLE_MAPS"
