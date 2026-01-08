@@ -31,10 +31,18 @@ const LoginScreen = ({ navigation }) => {
 
     setLoading(true);
     try {
-      await login(email, password);
+      const result = await login(email, password);
+      
+      // Vérifier si c'est en mode dégradé (pas de token)
+      if (!result?.data?.token) {
+        Alert.alert(
+          '✅ Connexion réussie !',
+          'Mode hors ligne activé. Les données sont stockées localement.',
+          [{ text: 'OK' }]
+        );
+      }
     } catch (error) {
-      console.log(error);
-      Alert.alert('Erreur', error.message || 'Connexion échouée');
+      Alert.alert('Erreur', 'Email ou mot de passe incorrect');
     } finally {
       setLoading(false);
     }
