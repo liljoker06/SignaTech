@@ -1,6 +1,7 @@
 package com.signatech.model
 
 case class Etablissement(
+
   nom_etablissement: Option[String],
   type_etablissement: Option[String],
   statut_public_prive: Option[String],
