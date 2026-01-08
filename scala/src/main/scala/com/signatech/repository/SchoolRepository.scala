@@ -1,3 +1,4 @@
+
 package com.signatech.repository
 
 import com.signatech.db.Database
@@ -7,11 +8,10 @@ class SchoolRepository {
 
   def insert(e: Etablissement): Unit = {
     val conn = Database.getConnection()
-
     val sql =
       """
         INSERT INTO schools (
-          name, description, , country, website, contact_email, latitude, longitude
+          name, description, city , country, website, contact_email, latitude, longitude
         ) VALUES (?, ?, ?, ?, ?, ?, ?, ?)
       """
 
