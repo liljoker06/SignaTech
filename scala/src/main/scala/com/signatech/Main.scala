@@ -5,9 +5,11 @@ import akka.actor.typed.scaladsl.Behaviors
 import com.signatech.ai.inference.ModelRegistry
 import com.signatech.websocket.WebSocketServer
 import com.typesafe.scalalogging.StrictLogging
+import com.signatech.bootstrap.AutoImport
 
 import scala.concurrent.ExecutionContextExecutor
 import scala.io.StdIn
+import scala.util.{Failure, Success, Try}
 
 object Main extends StrictLogging {
 
@@ -18,6 +20,15 @@ object Main extends StrictLogging {
 
     implicit val ec: ExecutionContextExecutor =
       system.executionContext
+
+    // Import des données (optionnel - nécessite PostgreSQL)
+    Try(AutoImport.run()) match {
+      case Success(_) =>
+        logger.info("✓ Données importées avec succès")
+      case Failure(ex) =>
+        logger.warn(s"⚠ Import des données échoué (PostgreSQL non disponible?) : ${ex.getMessage}")
+        logger.info("→ L'application continue sans base de données")
+    }
 
     logger.info("SignaTech AI - Démarrage")
 
