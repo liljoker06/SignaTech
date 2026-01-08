@@ -56,7 +56,7 @@ class WebSocketServer(implicit system: ActorSystem[_], ec: ExecutionContext)
         msg.`type` match {
           case "video_frame" => processVideoFrame(msg.payload)
           case "ping"        => """{"type":"pong","payload":""}"""
-          case other =>
+          case other         =>
             logger.warn(s"[WebSocket] Type inconnu: $other")
             s"""{"type":"error","payload":"Type de message inconnu: $other"}"""
         }
@@ -71,8 +71,12 @@ class WebSocketServer(implicit system: ActorSystem[_], ec: ExecutionContext)
       case Right(frame) =>
         val startTime = System.currentTimeMillis()
 
+        // TODO: remplacer par vraie extraction de keypoints
+        val dummyPoseSequence: Array[Float] =
+          Array.fill(258)(0.0f)
+
         val prediction =
-          ModelRegistry.signRecognitionModel.predict(frame.frameData)
+          ModelRegistry.signRecognitionModel.predict(dummyPoseSequence)
 
         val processingTime = System.currentTimeMillis() - startTime
 

@@ -7,25 +7,39 @@ import java.util.concurrent.ConcurrentHashMap
 
 final class OnnxRuntimeProvider private () extends StrictLogging {
 
-  private val env: OrtEnvironment = OrtEnvironment.getEnvironment
-  private val sessions = new ConcurrentHashMap[String, OrtSession]()
+  private val env: OrtEnvironment =
+    OrtEnvironment.getEnvironment
+
+  private val sessions =
+    new ConcurrentHashMap[String, OrtSession]()
+
+  /** Expose l'environnement ONNX (requis pour créer des tensors) */
+  def environment: OrtEnvironment = env
 
   /** Charge (ou renvoie) une session ONNX. tente CUDA si échec -> CPU */
   def getSession(modelPath: String, preferCuda: Boolean = true): OrtSession = {
-    sessions.computeIfAbsent(modelPath, _ => createSession(modelPath, preferCuda))
+    sessions.computeIfAbsent(
+      modelPath,
+      _ => createSession(modelPath, preferCuda)
+    )
   }
 
-  private def createSession(modelPath: String, preferCuda: Boolean): OrtSession = {
+  private def createSession(
+    modelPath: String,
+    preferCuda: Boolean
+  ): OrtSession = {
+
     val options = new OrtSession.SessionOptions()
 
     if (preferCuda) {
       try {
-        // Nécessite onnxruntime-gpu + CUDA libs compatibles sur la machine
         options.addCUDA()
         logger.info(s"[ONNX] CUDA enabled for model: $modelPath")
       } catch {
         case e: Throwable =>
-          logger.warn(s"[ONNX] CUDA not available, fallback to CPU for: $modelPath (${e.getMessage})")
+          logger.warn(
+            s"[ONNX] CUDA not available, fallback to CPU for: $modelPath (${e.getMessage})"
+          )
       }
     } else {
       logger.info(s"[ONNX] Using CPU for model: $modelPath")
@@ -53,6 +67,7 @@ final class OnnxRuntimeProvider private () extends StrictLogging {
 }
 
 object OnnxRuntimeProvider {
-  // Singleton simple pour ton app (server)
-  lazy val instance: OnnxRuntimeProvider = new OnnxRuntimeProvider()
+  // Singleton simple pour app (server)
+  lazy val instance: OnnxRuntimeProvider =
+    new OnnxRuntimeProvider()
 }

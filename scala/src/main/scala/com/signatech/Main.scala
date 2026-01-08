@@ -24,6 +24,7 @@ object Main extends StrictLogging {
     //Charger le modèle UNE SEULE FOIS (RAM / VRAM)
     val signModel = ModelRegistry.signRecognitionModel
     signModel.debug() // affiche inputs / outputs ONNX
+    signModel.debugIO()
 
     logger.info("✓ Modèle de reconnaissance chargé")
 
