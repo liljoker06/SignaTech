@@ -33,7 +33,7 @@ export default function CoursesScreen() {
       description: 'Apprenez l\'alphabet en langue des signes française',
       duration: '15 min',
       level: 'beginner',
-      thumbnail: 'https://via.placeholder.com/300x180/FFD700/000000?text=Alphabet',
+      thumbnail: null, // Pas d'image externe
       lessons: 26,
     },
     {
@@ -42,7 +42,7 @@ export default function CoursesScreen() {
       description: 'Bonjour, merci, au revoir et plus encore',
       duration: '20 min',
       level: 'beginner',
-      thumbnail: 'https://via.placeholder.com/300x180/FFA500/000000?text=Salutations',
+      thumbnail: null,
       lessons: 10,
     },
     {
@@ -51,7 +51,7 @@ export default function CoursesScreen() {
       description: 'Vocabulaire pour les situations quotidiennes',
       duration: '30 min',
       level: 'intermediate',
-      thumbnail: 'https://via.placeholder.com/300x180/FF6B6B/FFFFFF?text=Quotidien',
+      thumbnail: null,
       lessons: 15,
     },
     {
@@ -60,7 +60,7 @@ export default function CoursesScreen() {
       description: 'Phrases et expressions courantes en LSF',
       duration: '25 min',
       level: 'intermediate',
-      thumbnail: 'https://via.placeholder.com/300x180/4ECDC4/000000?text=Expressions',
+      thumbnail: null,
       lessons: 12,
     },
     {
@@ -69,7 +69,7 @@ export default function CoursesScreen() {
       description: 'Dialogues complexes et grammaire avancée',
       duration: '40 min',
       level: 'advanced',
-      thumbnail: 'https://via.placeholder.com/300x180/95E1D3/000000?text=Avancé',
+      thumbnail: null,
       lessons: 20,
     },
   ];
@@ -161,10 +161,10 @@ export default function CoursesScreen() {
               onPress={() => router.push(`/course/${course.id}`)}
             >
               <View style={styles.thumbnailContainer}>
-                <Image
-                  source={{ uri: course.thumbnail }}
-                  style={styles.thumbnail}
-                />
+                {/* Placeholder avec icône au lieu d'image externe */}
+                <View style={[styles.thumbnailPlaceholder, { backgroundColor: getLevelColor(course.level) }]}>
+                  <Ionicons name="videocam" size={60} color="#fff" />
+                </View>
                 <View style={styles.playButton}>
                   <Ionicons name="play" size={30} color="#fff" />
                 </View>
@@ -289,9 +289,12 @@ const styles = StyleSheet.create({
     width: '100%',
     height: 180,
   },
-  thumbnail: {
+  thumbnailPlaceholder: {
     width: '100%',
     height: '100%',
+    justifyContent: 'center',
+    alignItems: 'center',
+    opacity: 0.3,
   },
   playButton: {
     position: 'absolute',

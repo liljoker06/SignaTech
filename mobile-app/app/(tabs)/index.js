@@ -5,8 +5,8 @@ import {
   StyleSheet,
   TouchableOpacity,
   Image,
-  SafeAreaView,
 } from 'react-native';
+import { SafeAreaView } from 'react-native-safe-area-context';
 import { useRouter } from 'expo-router';
 import { LinearGradient } from 'expo-linear-gradient';
 import Ionicons from '@expo/vector-icons/Ionicons';
@@ -15,7 +15,7 @@ export default function HomeScreen() {
   const router = useRouter();
 
   return (
-    <SafeAreaView style={styles.container}>
+    <SafeAreaView style={styles.container} edges={['top', 'bottom']}>
       <LinearGradient
         colors={['#0f2027', '#203a43', '#2c5364']}
         style={styles.gradient}
