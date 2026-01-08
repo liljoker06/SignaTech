@@ -12,11 +12,12 @@ const GET_SCHOOLS = gql`
       id
       name
       description
-      address
       city
       country
       website
       contact_email
+      latitude
+      longitude
     }
   }
 `;
@@ -40,22 +41,20 @@ const MapScreen = () => {
 
   useEffect(() => {
     if (data?.schools) {
-      // Le backend ne fournit pas latitude/longitude, on les simule
-      const schoolsWithCoords = data.schools.map((school, index) => ({
-        ...school,
-        latitude: 48.8566 + (index * 0.1),
-        longitude: 2.3522 + (index * 0.1),
-      }));
+      const schoolsWithValidCoords = data.schools.filter(
+        school => school.latitude != null && school.longitude != null
+      );
 
       if (search) {
-        const filtered = schoolsWithCoords.filter(school =>
+        const filtered = schoolsWithValidCoords.filter(school =>
           school.name?.toLowerCase().includes(search.toLowerCase()) ||
           school.city?.toLowerCase().includes(search.toLowerCase()) ||
-          school.address?.toLowerCase().includes(search.toLowerCase())
+          school.country?.toLowerCase().includes(search.toLowerCase()) ||
+          school.description?.toLowerCase().includes(search.toLowerCase())
         );
         setFilteredSchools(filtered);
       } else {
-        setFilteredSchools(schoolsWithCoords);
+        setFilteredSchools(schoolsWithValidCoords);
       }
     }
   }, [search, data]);
@@ -174,11 +173,11 @@ const MapScreen = () => {
           <Marker
             key={school.id}
             coordinate={{
-              latitude: school.latitude,
-              longitude: school.longitude,
+              latitude: parseFloat(school.latitude),
+              longitude: parseFloat(school.longitude),
             }}
             title={school.name}
-            description={`${school.city || ''} - ${school.address || ''}`}
+            description={`${school.city || ''}, ${school.country || ''}`}
             pinColor="#FFD700"
           />
         ))}
