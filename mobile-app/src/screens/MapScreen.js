@@ -3,7 +3,8 @@ import { View, StyleSheet, TextInput, ActivityIndicator, Platform, Text } from '
 import MapView, { Marker, PROVIDER_GOOGLE } from 'react-native-maps';
 import { useTranslation } from 'react-i18next';
 import * as Location from 'expo-location';
-import { gql, useQuery } from '@apollo/client';
+import { gql } from '@apollo/client';
+import { useQuery } from '@apollo/client/react';
 
 const GET_SCHOOLS = gql`
   query GetSchools {
