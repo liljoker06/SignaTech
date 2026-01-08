@@ -1,19 +1,43 @@
 const youtubeSearch = require("youtube-search-without-api-key");
+const fetch = require("node-fetch");
+
+const GRAPHQL_URL = "http://localhost:4000/graphql";
+
+async function insertVideo(titre, url) {
+  const query = `
+    mutation ($titre: String!, $url: String!) {
+      createVideo(titre: $titre, url: $url) {
+        id
+      }
+    }
+  `;
+
+  await fetch(GRAPHQL_URL, {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({
+      query,
+      variables: { titre, url }
+    })
+  });
+}
 
 (async () => {
-  console.log("🚀 Scraping YouTube...");
+  console.log("🚀 Scraping YouTube");
 
   const results = await youtubeSearch.search(
-    "language de signes françaises",
+    "langue  des signes française",
     { limit: 50 }
   );
 
-  const videos = results.map(v => ({
-    title: v.title,
-    url: v.url
-  }));
+  let count = 0;
 
-  console.table(videos);
+  for (const v of results) {
+    if (!v.title || !v.url) continue;
 
-  console.log(`\n✅ ${videos.length} vidéos récupérées`);
+    await insertVideo(v.title.trim(), v.url);
+    count++;
+  }
+
+  console.log(`✅ ${count} vidéos traitées`);
 })();
