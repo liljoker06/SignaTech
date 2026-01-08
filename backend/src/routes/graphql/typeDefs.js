@@ -42,11 +42,18 @@ const typeDefs = gql`
     predictedAt: String!
   }
 
+  type Video {
+    id: ID!
+    url: String!
+    titre: String!
+  }
+
   type School {
     id: ID!
     name: String!
     description: String
-    address: String
+    longitude: Float
+    latitude: Float
     city: String
     country: String
     website: String
@@ -74,6 +81,8 @@ const typeDefs = gql`
     class(id: ID!): Class
     predictions: [Prediction!]!
     prediction(id: ID!): Prediction
+    videos: [Video!]!
+    video(id: ID!): Video
     schools: [School!]!
     school(id: ID!): School
     schoolLevels: [SchoolLevel!]!
@@ -89,8 +98,9 @@ const typeDefs = gql`
     createModel(name: String!, version: String!): Model!
     createClass(label: String!, description: String): Class!
     createPrediction(imageId: ID!, modelId: ID!, predictedClassId: ID!, confidenceScore: Float!): Prediction!
-    createSchool(name: String!, description: String, address: String, city: String, country: String, website: String, contactEmail: String): School!
+    createSchool(name: String!, description: String, longitude: Float, latitude: Float, city: String, country: String, website: String, contactEmail: String): School!
     createSchoolLevel(schoolId: ID!, name: String!, description: String, durationMonths: Int, schoolType: String): SchoolLevel!
+    createVideo(url: String!, titre: String!): Video!
   }
 `;
 
