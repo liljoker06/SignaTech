@@ -1,48 +1,108 @@
 package com.signatech.websocket
 
-import akka.actor.ActorSystem
+import akka.actor.typed.ActorSystem
 import akka.http.scaladsl.Http
-import akka.http.scaladsl.model.ws._
+import akka.http.scaladsl.model.ws.{Message, TextMessage}
 import akka.http.scaladsl.server.Directives._
-import akka.stream.scaladsl._
-
-import com.signatech.model.SocketMessage
-import com.signatech.service.MessageHandler
-
+import akka.http.scaladsl.server.Route
+import akka.stream.scaladsl.Flow
+import com.signatech.ai.inference.ModelRegistry
+import com.signatech.model.{SocketMessage, VideoFrame}
+import com.signatech.websocket.model.{PredictionPayload, PredictionResponse}
+import com.typesafe.config.ConfigFactory
+import com.typesafe.scalalogging.StrictLogging
+import io.circe.generic.auto._
 import io.circe.parser._
 import io.circe.syntax._
-import io.circe.generic.auto._
 
-import scala.concurrent.ExecutionContextExecutor
+import scala.concurrent.{ExecutionContext, Future}
+import scala.util.{Failure, Success}
 
-object WebSocketServer {
+class WebSocketServer(implicit system: ActorSystem[_], ec: ExecutionContext)
+    extends StrictLogging {
 
-  def start()(implicit system: ActorSystem, ec: ExecutionContextExecutor): Unit = {
+  private val config = ConfigFactory.load()
+  private val host = config.getString("signatech.websocket.host")
+  private val port = config.getInt("signatech.websocket.port")
 
-    val wsFlow: Flow[Message, Message, Any] =
-      Flow[Message].collect {
-        case TextMessage.Strict(text) =>
-          decode[SocketMessage](text) match {
-
-            case Right(msg) =>
-              println(s" ${msg.`type`} → ${msg.payload}")
-
-              val response = MessageHandler.handle(msg)
-
-              TextMessage(response.asJson.noSpaces)
-
-            case Left(_) =>
-              TextMessage("""{"type":"error","payload":"invalid json"}""")
-          }
+  def routes: Route =
+    pathPrefix("ws") {
+      path("translate") {
+        get {
+          logger.info("[WebSocket] Nouvelle connexion client")
+          handleWebSocketMessages(translationFlow)
+        }
+      }
+    } ~
+      path("health") {
+        get {
+          complete("OK - SignaTech AI WebSocket Server")
+        }
       }
 
-    val route =
-      path("ws") {
-        handleWebSocketMessages(wsFlow)
-      }
+  private def translationFlow: Flow[Message, Message, Any] =
+    Flow[Message]
+      .collect { case TextMessage.Strict(text) => text }
+      .map(processMessage)
+      .map(TextMessage(_))
 
-    Http().newServerAt("0.0.0.0", 9001).bind(route)
+  private def processMessage(text: String): String =
+    decode[SocketMessage](text) match {
+      case Right(msg) =>
+        logger.debug(
+          s"[WebSocket] Message reçu: ${msg.`type`} → ${msg.payload.take(50)}..."
+        )
 
-    println("Scala WebSocket listening on ws://localhost:9001/ws")
+        msg.`type` match {
+          case "video_frame" => processVideoFrame(msg.payload)
+          case "ping"        => """{"type":"pong","payload":""}"""
+          case other =>
+            logger.warn(s"[WebSocket] Type inconnu: $other")
+            s"""{"type":"error","payload":"Type de message inconnu: $other"}"""
+        }
+
+      case Left(error) =>
+        logger.error(s"[WebSocket] Erreur parsing JSON: $error")
+        s"""{"type":"error","payload":"Format JSON invalide"}"""
+    }
+
+  private def processVideoFrame(payload: String): String =
+    decode[VideoFrame](payload) match {
+      case Right(frame) =>
+        val startTime = System.currentTimeMillis()
+
+        val prediction =
+          ModelRegistry.signRecognitionModel.predict(frame.frameData)
+
+        val processingTime = System.currentTimeMillis() - startTime
+
+        PredictionResponse(
+          `type` = "prediction",
+          payload = PredictionPayload(
+            gesture = prediction.gesture,
+            confidence = prediction.confidence,
+            timestamp = prediction.timestamp,
+            alternatives = prediction.alternatives,
+            processingTimeMs = processingTime
+          )
+        ).asJson.noSpaces
+
+      case Left(error) =>
+        logger.error(s"[WebSocket] Erreur parsing VideoFrame: $error")
+        s"""{"type":"error","payload":"Format VideoFrame invalide"}"""
+    }
+
+  def start(): Future[Http.ServerBinding] = {
+    val binding =
+      Http().newServerAt(host, port).bind(routes)
+
+    binding.onComplete {
+      case Success(b) =>
+        logger.info(s"✓ WebSocket server démarré sur ${b.localAddress}")
+      case Failure(ex) =>
+        logger.error(s"✗ Échec du démarrage WebSocket: ${ex.getMessage}")
+    }
+
+    binding
   }
 }
