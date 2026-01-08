@@ -47,6 +47,8 @@ const typeDefs = gql`
     name: String!
     description: String
     address: String
+    longitude: Float
+    latitude: Float
     city: String
     country: String
     website: String
@@ -89,7 +91,7 @@ const typeDefs = gql`
     createModel(name: String!, version: String!): Model!
     createClass(label: String!, description: String): Class!
     createPrediction(imageId: ID!, modelId: ID!, predictedClassId: ID!, confidenceScore: Float!): Prediction!
-    createSchool(name: String!, description: String, address: String, city: String, country: String, website: String, contactEmail: String): School!
+    createSchool(name: String!, description: String, address: String, longitude: Float, latitude: Float, city: String, country: String, website: String, contactEmail: String): School!
     createSchoolLevel(schoolId: ID!, name: String!, description: String, durationMonths: Int, schoolType: String): SchoolLevel!
   }
 `;

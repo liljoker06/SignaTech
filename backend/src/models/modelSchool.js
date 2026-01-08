@@ -19,6 +19,14 @@ const School = sequelize.define('School', {
     type: DataTypes.STRING(255),
     allowNull: true
   },
+  longitude: {
+    type: DataTypes.DOUBLE,
+    allowNull: true
+  },
+  latitude: {
+    type: DataTypes.DOUBLE,
+    allowNull: true
+  },
   city: {
     type: DataTypes.STRING(100),
     allowNull: true

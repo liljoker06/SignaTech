@@ -24,11 +24,13 @@ class SchoolController {
   /**
    * Créer une nouvelle école
    */
-  async createSchool({ name, description, address, city, country, website, contactEmail }) {
+  async createSchool({ name, description, address, longitude, latitude, city, country, website, contactEmail }) {
     return await School.create({ 
       name, 
       description,
       address,
+      longitude,
+      latitude,
       city,
       country,
       website,
