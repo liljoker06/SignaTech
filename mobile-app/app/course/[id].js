@@ -1,94 +1,15 @@
-import React, { useRef, useState } from 'react';
+import React from 'react';
 import { View, Text, StyleSheet, TouchableOpacity, ScrollView } from 'react-native';
 import { useLocalSearchParams, useRouter } from 'expo-router';
-import { Video, ResizeMode } from 'expo-av';
 import { LinearGradient } from 'expo-linear-gradient';
 import Ionicons from '@expo/vector-icons/Ionicons';
+import YouTubePlayer from '../../src/components/YouTubePlayer';
+import { coursesData } from '../../src/services/youtubeService';
 
 export default function CourseDetailScreen() {
   const { id } = useLocalSearchParams();
   const router = useRouter();
-  const videoRef = useRef(null);
-  const [status, setStatus] = useState({});
-
-  // Données des cours avec vidéos locales
-  const coursesData = {
-    1: {
-      title: '',
-      description: 'Apprenez l\'alphabet complet en langue des signes française',
-      lessons: [
-        {
-          id: 1,
-          title: 'une journée',
-          videoSource: require('../../../assets/videos/une-journee.mp4'),
-          duration: '3:45',
-          description: 'Apprenez les 26 lettres de l\'alphabet',
-        },
-      ],
-    },
-    2: {
-      title: 'Salutations de base',
-      description: 'Maîtrisez les expressions courantes',
-      lessons: [
-        {
-          id: 1,
-          title: 'Bonjour, Au revoir, Merci',
-          videoSource: require('../../../assets/videos/salutations.mp4'),
-          duration: '2:30',
-          description: 'Les salutations essentielles',
-        },
-      ],
-    },
-    3: {
-      title: 'Vie quotidienne',
-      description: 'Vocabulaire pratique',
-      lessons: [
-        {
-          id: 1,
-          title: 'Vocabulaire quotidien',
-          videoSource: require('../../../assets/videos/vie-quotidienne.mp4'),
-          duration: '5:00',
-          description: 'Mots et expressions du quotidien',
-        },
-      ],
-    },
-    4: {
-      title: 'Expressions idiomatiques',
-      description: 'Phrases courantes en LSF',
-      lessons: [
-        {
-          id: 1,
-          title: 'Expressions usuelles',
-          videoSource: require('../../../assets/videos/expressions.mp4'),
-          duration: '4:20',
-          description: 'Les expressions les plus utilisées',
-        },
-      ],
-    },
-    5: {
-      title: 'Conversations avancées',
-      description: 'Niveau avancé',
-      lessons: [
-        {
-          id: 1,
-          title: 'Dialogue complexe',
-          videoSource: require('../../../assets/videos/famille.mp4'),
-          duration: '8:00',
-          description: 'Conversations avancées en LSF',
-        },
-      ],
-    },
-  };
-
   const course = coursesData[id] || coursesData[1];
-
-  const handlePlayPause = async (video) => {
-    if (status.isPlaying) {
-      await video.current.pauseAsync();
-    } else {
-      await video.current.playAsync();
-    }
-  };
 
   return (
     <LinearGradient colors={['#0f2027', '#203a43', '#2c5364']} style={styles.container}>
@@ -102,47 +23,27 @@ export default function CourseDetailScreen() {
           <Text style={styles.description}>{course.description}</Text>
         </View>
 
-        {course.lessons.map((lesson) => {
-          const lessonVideoRef = useRef(null);
-          
-          return (
-            <View key={lesson.id} style={styles.lessonCard}>
-              <Text style={styles.lessonTitle}>{lesson.title}</Text>
-              <Text style={styles.lessonDescription}>{lesson.description}</Text>
-              <View style={styles.lessonMeta}>
-                <Ionicons name="time-outline" size={16} color="#FFD700" />
-                <Text style={styles.lessonDuration}>{lesson.duration}</Text>
-              </View>
-              
-              <View style={styles.videoContainer}>
-                <Video
-                  ref={lessonVideoRef}
-                  source={lesson.videoSource}
-                  style={styles.video}
-                  useNativeControls
-                  resizeMode={ResizeMode.CONTAIN}
-                  onPlaybackStatusUpdate={status => setStatus(() => status)}
-                />
-              </View>
-
-              <View style={styles.controls}>
-                <TouchableOpacity
-                  style={styles.controlButton}
-                  onPress={() => handlePlayPause(lessonVideoRef)}
-                >
-                  <Ionicons
-                    name={status.isPlaying ? 'pause' : 'play'}
-                    size={24}
-                    color="#FFD700"
-                  />
-                  <Text style={styles.controlText}>
-                    {status.isPlaying ? 'Pause' : 'Lecture'}
-                  </Text>
-                </TouchableOpacity>
-              </View>
+        {course.lessons.map((lesson) => (
+          <View key={lesson.id} style={styles.lessonCard}>
+            <Text style={styles.lessonTitle}>{lesson.title}</Text>
+            <Text style={styles.lessonDescription}>{lesson.description}</Text>
+            
+            <View style={styles.lessonMeta}>
+              <Ionicons name="time-outline" size={16} color="#FFD700" />
+              <Text style={styles.lessonDuration}>{lesson.duration}</Text>
             </View>
-          );
-        })}
+            
+            {/* Lecteur YouTube intégré */}
+            <View style={styles.videoContainer}>
+              <YouTubePlayer videoId={lesson.youtubeId} height={220} />
+            </View>
+
+            <View style={styles.playInfo}>
+              <Ionicons name="logo-youtube" size={20} color="#FF0000" />
+              <Text style={styles.playInfoText}>Vidéo YouTube</Text>
+            </View>
+          </View>
+        ))}
       </ScrollView>
     </LinearGradient>
   );
@@ -209,33 +110,21 @@ const styles = StyleSheet.create({
     fontWeight: '600',
   },
   videoContainer: {
+    marginBottom: 15,
     borderRadius: 10,
     overflow: 'hidden',
-    backgroundColor: '#000',
-    marginBottom: 15,
+    borderWidth: 2,
+    borderColor: 'rgba(255, 215, 0, 0.3)',
   },
-  video: {
-    width: '100%',
-    height: 200,
-  },
-  controls: {
-    flexDirection: 'row',
-    justifyContent: 'center',
-  },
-  controlButton: {
+  playInfo: {
     flexDirection: 'row',
     alignItems: 'center',
-    backgroundColor: 'rgba(255, 215, 0, 0.1)',
-    paddingHorizontal: 20,
-    paddingVertical: 10,
-    borderRadius: 20,
-    borderWidth: 1,
-    borderColor: '#FFD700',
+    justifyContent: 'center',
+    paddingVertical: 8,
   },
-  controlText: {
-    color: '#FFD700',
+  playInfoText: {
+    color: '#999',
     marginLeft: 8,
-    fontSize: 16,
-    fontWeight: '600',
+    fontSize: 14,
   },
 });

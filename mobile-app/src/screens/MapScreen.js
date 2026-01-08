@@ -3,79 +3,59 @@ import { View, StyleSheet, TextInput, ActivityIndicator, Platform, Text } from '
 import MapView, { Marker, PROVIDER_GOOGLE } from 'react-native-maps';
 import { useTranslation } from 'react-i18next';
 import * as Location from 'expo-location';
-import { useQuery } from '@apollo/client/react';
-import { SCHOOLS_QUERY } from '../services/graphql/schoolQueries';
+import { gql, useQuery } from '@apollo/client';
+
+const GET_SCHOOLS = gql`
+  query GetSchools {
+    schools {
+      id
+      name
+      description
+      address
+      city
+      country
+      website
+      contact_email
+    }
+  }
+`;
 
 const MapScreen = () => {
   const { t } = useTranslation();
   const [filteredSchools, setFilteredSchools] = useState([]);
   const [search, setSearch] = useState('');
-  const [region, setRegion] = useState(null);
+  const [region, setRegion] = useState({
+    latitude: 48.8566,
+    longitude: 2.3522,
+    latitudeDelta: 0.5,
+    longitudeDelta: 0.5,
+  });
 
-  const { data, loading, error } = useQuery(SCHOOLS_QUERY);
-  
-  const mockSchools = [
-    {
-      id: 1,
-      name: 'École LSF Paris',
-      description: 'Centre de formation en langue des signes',
-      address: '10 Rue de Rivoli, 75001 Paris',
-      city: 'Paris',
-      country: 'France',
-      latitude: 48.8566,
-      longitude: 2.3522
-    },
-    {
-      id: 2,
-      name: 'Centre LSF Lyon',
-      description: 'Institut de langue des signes française',
-      address: '5 Place Bellecour, 69002 Lyon',
-      city: 'Lyon',
-      country: 'France',
-      latitude: 45.7597,
-      longitude: 4.8322
-    },
-    {
-      id: 3,
-      name: 'Institut LSF Marseille',
-      description: 'Formation et apprentissage LSF',
-      address: 'Vieux Port, 13001 Marseille',
-      city: 'Marseille',
-      country: 'France',
-      latitude: 43.2965,
-      longitude: 5.3698
-    }
-  ];
-  
-  const addMockCoordinates = (schoolList) => {
-    return schoolList.map((school, index) => {
-      const baseLat = 48.8566;
-      const baseLng = 2.3522;
-      return {
-        ...school,
-        latitude: school.latitude || (baseLat + (Math.random() - 0.5) * 0.1),
-        longitude: school.longitude || (baseLng + (Math.random() - 0.5) * 0.1),
-      };
-    });
-  };
+  const { loading, error, data } = useQuery(GET_SCHOOLS);
 
   useEffect(() => {
     getUserLocation();
   }, []);
 
   useEffect(() => {
-    // données graphql si dispo, sinon données de test
-    const schoolsData = (data && data.schools && data.schools.length > 0) ? data.schools : mockSchools;
-    const schoolsWithCoords = addMockCoordinates(schoolsData);
-    
-    if (search) {
-      const filtered = schoolsWithCoords.filter(school =>
-        school.name.toLowerCase().includes(search.toLowerCase()) ||
-        (school.address && school.address.toLowerCase().includes(search.toLowerCase()))
-      );
-      setFilteredSchools(filtered);
-    } else {
-      setFilteredSchools(schoolsWithCoords);
+    if (data?.schools) {
+      // Le backend ne fournit pas latitude/longitude, on les simule
+      const schoolsWithCoords = data.schools.map((school, index) => ({
+        ...school,
+        latitude: 48.8566 + (index * 0.1),
+        longitude: 2.3522 + (index * 0.1),
+      }));
+
+      if (search) {
+        const filtered = schoolsWithCoords.filter(school =>
+          school.name?.toLowerCase().includes(search.toLowerCase()) ||
+          school.city?.toLowerCase().includes(search.toLowerCase()) ||
+          school.address?.toLowerCase().includes(search.toLowerCase())
+        );
+        setFilteredSchools(filtered);
+      } else {
+        setFilteredSchools(schoolsWithCoords);
+      }
     }
   }, [search, data]);
 
@@ -90,28 +70,13 @@ const MapScreen = () => {
           latitudeDelta: 0.5,
           longitudeDelta: 0.5,
         });
-      } else {
-        // si permission refusée, Paris en affichage
-        setRegion({
-          latitude: 48.8566,
-          longitude: 2.3522,
-          latitudeDelta: 0.5,
-          longitudeDelta: 0.5,
-        });
       }
     } catch (error) {
       console.error('Error getting location:', error);
-      // si erreur, Paris en affichage
-      setRegion({
-        latitude: 48.8566,
-        longitude: 2.3522,
-        latitudeDelta: 0.5,
-        longitudeDelta: 0.5,
-      });
     }
   };
-  
-  if (loading && filteredSchools.length === 0) {
+
+  if (loading) {
     return (
       <View style={styles.loadingContainer}>
         <ActivityIndicator size="large" color="#FFD700" />
@@ -120,14 +85,66 @@ const MapScreen = () => {
   }
 
   if (error) {
-     console.log("Map Error - Utilisation des données de test", error);
-  }
-
-  if (!region) {
+    console.error('GraphQL Error:', error);
+    
+    // Utiliser des données mockées en cas d'erreur
+    const mockSchools = [
+      {
+        id: 1,
+        name: 'École LSF Paris',
+        address: '10 Rue de Rivoli, 75001 Paris',
+        latitude: 48.8566,
+        longitude: 2.3522,
+      },
+      {
+        id: 2,
+        name: 'Centre LSF Lyon',
+        address: '5 Place Bellecour, 69002 Lyon',
+        latitude: 45.7597,
+        longitude: 4.8322,
+      },
+    ];
+    
     return (
-      <View style={styles.loadingContainer}>
-        <ActivityIndicator size="large" color="#FFD700" />
-        <Text style={{ color: '#FFD700', marginTop: 10 }}>Chargement de la localisation...</Text>
+      <View style={styles.container}>
+        <View style={styles.searchContainer}>
+          <TextInput
+            style={styles.searchInput}
+            placeholder={t('map.searchPlaceholder')}
+            placeholderTextColor="#999"
+            value={search}
+            onChangeText={setSearch}
+          />
+        </View>
+
+        <MapView
+          style={styles.map}
+          provider={Platform.OS === 'android' ? PROVIDER_GOOGLE : undefined}
+          initialRegion={region}
+          showsUserLocation
+          showsMyLocationButton
+          mapType="standard"
+        >
+          {mockSchools.map((school) => (
+            <Marker
+              key={school.id}
+              coordinate={{
+                latitude: school.latitude,
+                longitude: school.longitude,
+              }}
+              title={school.name}
+              description={school.address}
+              pinColor="#FFD700"
+            />
+          ))}
+        </MapView>
+        
+        {/* Message d'erreur discret */}
+        <View style={{ position: 'absolute', bottom: 20, left: 20, right: 20, backgroundColor: 'rgba(255, 215, 0, 0.9)', padding: 10, borderRadius: 8 }}>
+          <Text style={{ color: '#000', fontSize: 12, textAlign: 'center' }}>
+            ⚠️ Connexion au serveur limitée - Données de démonstration affichées
+          </Text>
+        </View>
       </View>
     );
   }
@@ -160,7 +177,7 @@ const MapScreen = () => {
               longitude: school.longitude,
             }}
             title={school.name}
-            description={school.address}
+            description={`${school.city || ''} - ${school.address || ''}`}
             pinColor="#FFD700"
           />
         ))}
