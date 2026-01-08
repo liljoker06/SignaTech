@@ -1,10 +1,11 @@
 import React, { useState, useEffect } from 'react';
-import { View, StyleSheet, TextInput, ActivityIndicator, Platform, Text } from 'react-native';
+import { View, StyleSheet, TextInput, ActivityIndicator, Platform, Text, TouchableOpacity } from 'react-native';
 import MapView, { Marker, PROVIDER_GOOGLE } from 'react-native-maps';
 import { useTranslation } from 'react-i18next';
 import * as Location from 'expo-location';
 import { gql } from '@apollo/client';
 import { useQuery } from '@apollo/client/react';
+import Ionicons from 'react-native-vector-icons/Ionicons';
 
 const GET_SCHOOLS = gql`
   query GetSchools {
@@ -29,8 +30,8 @@ const MapScreen = () => {
   const [region, setRegion] = useState({
     latitude: 48.8566,
     longitude: 2.3522,
-    latitudeDelta: 0.5,
-    longitudeDelta: 0.5,
+    latitudeDelta: 5,
+    longitudeDelta: 5,
   });
 
   const { loading, error, data } = useQuery(GET_SCHOOLS);
@@ -45,14 +46,37 @@ const MapScreen = () => {
         school => school.latitude != null && school.longitude != null
       );
 
-      if (search) {
-        const filtered = schoolsWithValidCoords.filter(school =>
-          school.name?.toLowerCase().includes(search.toLowerCase()) ||
-          school.city?.toLowerCase().includes(search.toLowerCase()) ||
-          school.country?.toLowerCase().includes(search.toLowerCase()) ||
-          school.description?.toLowerCase().includes(search.toLowerCase())
-        );
+      if (search && search.trim() !== '') {
+        const searchLower = search.toLowerCase().trim();
+        const filtered = schoolsWithValidCoords.filter(school => {
+          const name = (school.name || '').toLowerCase();
+          const city = (school.city || '').toLowerCase();
+          const country = (school.country || '').toLowerCase();
+          const description = (school.description || '').toLowerCase();
+          
+          return name.includes(searchLower) ||
+                 city.includes(searchLower) ||
+                 country.includes(searchLower) ||
+                 description.includes(searchLower);
+        });
         setFilteredSchools(filtered);
+        
+        // Ajuster la vue de la carte pour afficher tous les résultats
+        if (filtered.length > 0) {
+          const latitudes = filtered.map(s => parseFloat(s.latitude));
+          const longitudes = filtered.map(s => parseFloat(s.longitude));
+          const minLat = Math.min(...latitudes);
+          const maxLat = Math.max(...latitudes);
+          const minLon = Math.min(...longitudes);
+          const maxLon = Math.max(...longitudes);
+          
+          setRegion({
+            latitude: (minLat + maxLat) / 2,
+            longitude: (minLon + maxLon) / 2,
+            latitudeDelta: Math.max(maxLat - minLat + 0.5, 0.5),
+            longitudeDelta: Math.max(maxLon - minLon + 0.5, 0.5),
+          });
+        }
       } else {
         setFilteredSchools(schoolsWithValidCoords);
       }
@@ -152,19 +176,36 @@ const MapScreen = () => {
   return (
     <View style={styles.container}>
       <View style={styles.searchContainer}>
+        <Ionicons name="search" size={20} color="#FFD700" style={styles.searchIcon} />
         <TextInput
           style={styles.searchInput}
           placeholder={t('map.searchPlaceholder')}
           placeholderTextColor="#999"
           value={search}
           onChangeText={setSearch}
+          autoCorrect={false}
+          autoCapitalize="none"
         />
+        {search.length > 0 && (
+          <TouchableOpacity onPress={() => setSearch('')} style={styles.clearButton}>
+            <Ionicons name="close-circle" size={20} color="#999" />
+          </TouchableOpacity>
+        )}
       </View>
+
+      {/* Badge compteur de résultats */}
+      {search.length > 0 && (
+        <View style={styles.resultsBadge}>
+          <Text style={styles.resultsBadgeText}>
+            {filteredSchools.length} école{filteredSchools.length > 1 ? 's' : ''} trouvée{filteredSchools.length > 1 ? 's' : ''}
+          </Text>
+        </View>
+      )}
 
       <MapView
         style={styles.map}
         provider={Platform.OS === 'android' ? PROVIDER_GOOGLE : undefined}
-        initialRegion={region}
+        region={region}
         showsUserLocation
         showsMyLocationButton
         mapType="standard"
@@ -182,6 +223,17 @@ const MapScreen = () => {
           />
         ))}
       </MapView>
+
+      {/* Message si aucun résultat */}
+      {search.length > 0 && filteredSchools.length === 0 && (
+        <View style={styles.noResultsContainer}>
+          <Ionicons name="search-outline" size={40} color="#999" />
+          <Text style={styles.noResultsText}>Aucune école trouvée pour "{search}"</Text>
+          <TouchableOpacity style={styles.clearSearchButton} onPress={() => setSearch('')}>
+            <Text style={styles.clearSearchText}>Effacer la recherche</Text>
+          </TouchableOpacity>
+        </View>
+      )}
     </View>
   );
 };
@@ -202,18 +254,84 @@ const styles = StyleSheet.create({
     top: 10,
     left: 10,
     right: 10,
-    zIndex: 1,
-  },
-  searchInput: {
-    backgroundColor: '#fff',
-    padding: 15,
+    zIndex: 2,
+    flexDirection: 'row',
+    alignItems: 'center',
+    backgroundColor: 'rgba(26, 26, 46, 0.95)',
     borderRadius: 25,
-    fontSize: 16,
-    shadowColor: '#000',
+    paddingHorizontal: 15,
+    borderWidth: 2,
+    borderColor: '#FFD700',
+    elevation: 10,
+    shadowColor: '#FFD700',
     shadowOffset: { width: 0, height: 4 },
     shadowOpacity: 0.3,
     shadowRadius: 8,
-    elevation: 8,
+  },
+  searchIcon: {
+    marginRight: 10,
+  },
+  searchInput: {
+    flex: 1,
+    color: '#fff',
+    padding: 15,
+    fontSize: 16,
+  },
+  clearButton: {
+    padding: 5,
+  },
+  resultsBadge: {
+    position: 'absolute',
+    top: 70,
+    left: '50%',
+    marginLeft: -100,
+    width: 200,
+    zIndex: 2,
+    backgroundColor: 'rgba(255, 215, 0, 0.95)',
+    paddingHorizontal: 20,
+    paddingVertical: 10,
+    borderRadius: 20,
+    elevation: 5,
+    shadowColor: '#FFD700',
+    shadowOffset: { width: 0, height: 2 },
+    shadowOpacity: 0.5,
+    shadowRadius: 4,
+  },
+  resultsBadgeText: {
+    color: '#000',
+    fontSize: 14,
+    fontWeight: 'bold',
+    textAlign: 'center',
+  },
+  noResultsContainer: {
+    position: 'absolute',
+    top: '40%',
+    left: 20,
+    right: 20,
+    backgroundColor: 'rgba(26, 26, 46, 0.95)',
+    padding: 30,
+    borderRadius: 20,
+    alignItems: 'center',
+    borderWidth: 2,
+    borderColor: '#FFD700',
+  },
+  noResultsText: {
+    color: '#fff',
+    fontSize: 16,
+    textAlign: 'center',
+    marginTop: 15,
+    marginBottom: 20,
+  },
+  clearSearchButton: {
+    backgroundColor: '#FFD700',
+    paddingHorizontal: 20,
+    paddingVertical: 10,
+    borderRadius: 20,
+  },
+  clearSearchText: {
+    color: '#000',
+    fontSize: 14,
+    fontWeight: 'bold',
   },
   map: {
     flex: 1,
