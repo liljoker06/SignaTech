@@ -1,49 +1,102 @@
 import React from 'react';
-import { View, Text, StyleSheet, TouchableOpacity, ScrollView } from 'react-native';
+import { View, Text, StyleSheet, TouchableOpacity, ScrollView, ActivityIndicator } from 'react-native';
 import { useLocalSearchParams, useRouter } from 'expo-router';
 import { LinearGradient } from 'expo-linear-gradient';
 import Ionicons from '@expo/vector-icons/Ionicons';
 import YouTubePlayer from '../../src/components/YouTubePlayer';
-import { coursesData } from '../../src/services/youtubeService';
+import { gql } from '@apollo/client';
+import { useQuery } from '@apollo/client/react';
+import { COLORS, SIZES } from '../../src/constants/theme';
+
+// Query GraphQL pour récupérer TOUTES les vidéos scrapées
+const GET_ALL_VIDEOS = gql`
+  query GetAllVideos {
+    videos {
+      id
+      titre
+      url
+    }
+  }
+`;
+
+// Fonction pour extraire l'ID YouTube depuis l'URL
+const extractYouTubeId = (url) => {
+  const regExp = /^.*((youtu.be\/)|(v\/)|(\/u\/\w\/)|(embed\/)|(watch\?))\??v?=?([^#&?]*).*/;
+  const match = url.match(regExp);
+  return (match && match[7].length === 11) ? match[7] : null;
+};
 
 export default function CourseDetailScreen() {
   const { id } = useLocalSearchParams();
   const router = useRouter();
-  const course = coursesData[id] || coursesData[1];
+
+  // Récupérer TOUTES les vidéos scrapées
+  const { loading, error, data } = useQuery(GET_ALL_VIDEOS);
+
+  // Trouver la vidéo correspondante à l'ID
+  const video = data?.videos?.find(v => v.id == id);
+
+  // Données mockées en cas d'erreur ou vidéo non trouvée
+  const mockCourse = {
+    id: id,
+    title: 'Cours LSF',
+    description: 'Apprenez la langue des signes française',
+    youtubeVideoId: 'pQO0oCFLeiA',
+    duration: '0:27',
+  };
+
+  const course = video ? {
+    id: video.id,
+    title: video.titre,
+    description: 'Cours de langue des signes française',
+    youtubeVideoId: extractYouTubeId(video.url),
+    duration: '5:00',
+  } : mockCourse;
+
+  if (loading) {
+    return (
+      <LinearGradient colors={COLORS.gradientDark} style={styles.container}>
+        <View style={styles.loadingContainer}>
+          <ActivityIndicator size="large" color={COLORS.primary} />
+          <Text style={styles.loadingText}>Chargement du cours...</Text>
+        </View>
+      </LinearGradient>
+    );
+  }
 
   return (
-    <LinearGradient colors={['#0f2027', '#203a43', '#2c5364']} style={styles.container}>
+    <LinearGradient colors={COLORS.gradientDark} style={styles.container}>
       <TouchableOpacity style={styles.backButton} onPress={() => router.back()}>
-        <Ionicons name="arrow-back" size={28} color="#fff" />
+        <Ionicons name="arrow-back" size={28} color={COLORS.text} />
       </TouchableOpacity>
 
       <ScrollView showsVerticalScrollIndicator={false}>
         <View style={styles.headerSection}>
           <Text style={styles.title}>{course.title}</Text>
           <Text style={styles.description}>{course.description}</Text>
+          {error && (
+            <Text style={styles.warningText}>⚠️ Mode hors ligne - Données de démonstration</Text>
+          )}
         </View>
 
-        {course.lessons.map((lesson) => (
-          <View key={lesson.id} style={styles.lessonCard}>
-            <Text style={styles.lessonTitle}>{lesson.title}</Text>
-            <Text style={styles.lessonDescription}>{lesson.description}</Text>
-            
-            <View style={styles.lessonMeta}>
-              <Ionicons name="time-outline" size={16} color="#FFD700" />
-              <Text style={styles.lessonDuration}>{lesson.duration}</Text>
-            </View>
-            
-            {/* Lecteur YouTube intégré */}
-            <View style={styles.videoContainer}>
-              <YouTubePlayer videoId={lesson.youtubeId} height={220} />
-            </View>
-
-            <View style={styles.playInfo}>
-              <Ionicons name="logo-youtube" size={20} color="#FF0000" />
-              <Text style={styles.playInfoText}>Vidéo YouTube</Text>
-            </View>
+        <View style={styles.lessonCard}>
+          <Text style={styles.lessonTitle}>{course.title}</Text>
+          <Text style={styles.lessonDescription}>{course.description}</Text>
+          
+          <View style={styles.lessonMeta}>
+            <Ionicons name="time-outline" size={SIZES.iconSM} color={COLORS.primary} />
+            <Text style={styles.lessonDuration}>{course.duration}</Text>
           </View>
-        ))}
+          
+          <View style={styles.videoContainer}>
+            <YouTubePlayer videoId={course.youtubeVideoId} height={220} />
+          </View>
+
+          <View style={styles.playInfo}>
+            <Ionicons name="logo-youtube" size={SIZES.iconMD} color="#FF0000" />
+            <Text style={styles.playInfoText}>Vidéo YouTube scrapée depuis le backend</Text>
+          </View>
+        </View>
       </ScrollView>
     </LinearGradient>
   );
@@ -52,66 +105,66 @@ export default function CourseDetailScreen() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    paddingTop: 60,
+    paddingTop: SIZES.headerHeight,
   },
   backButton: {
     width: 44,
     height: 44,
     borderRadius: 22,
-    backgroundColor: 'rgba(255, 255, 255, 0.1)',
+    backgroundColor: COLORS.overlayLight,
     justifyContent: 'center',
     alignItems: 'center',
-    margin: 20,
+    margin: SIZES.paddingLG,
   },
   headerSection: {
-    paddingHorizontal: 20,
-    marginBottom: 20,
+    paddingHorizontal: SIZES.paddingLG,
+    marginBottom: SIZES.paddingLG,
   },
   title: {
-    fontSize: 28,
+    fontSize: SIZES.font2XL,
     fontWeight: 'bold',
-    color: '#fff',
-    marginBottom: 10,
+    color: COLORS.text,
+    marginBottom: SIZES.paddingSM,
   },
   description: {
-    fontSize: 16,
-    color: '#b0b0b0',
+    fontSize: SIZES.fontMD,
+    color: COLORS.textSecondary,
     lineHeight: 22,
   },
   lessonCard: {
-    backgroundColor: 'rgba(255, 255, 255, 0.05)',
-    marginHorizontal: 20,
-    marginBottom: 20,
-    borderRadius: 15,
-    padding: 15,
+    backgroundColor: COLORS.overlayLight,
+    marginHorizontal: SIZES.paddingLG,
+    marginBottom: SIZES.paddingLG,
+    borderRadius: SIZES.radiusLG,
+    padding: SIZES.paddingMD,
     borderWidth: 1,
     borderColor: 'rgba(255, 215, 0, 0.2)',
   },
   lessonTitle: {
-    fontSize: 20,
+    fontSize: SIZES.fontLG,
     fontWeight: 'bold',
-    color: '#fff',
-    marginBottom: 8,
+    color: COLORS.text,
+    marginBottom: SIZES.paddingSM,
   },
   lessonDescription: {
-    fontSize: 14,
-    color: '#b0b0b0',
-    marginBottom: 10,
+    fontSize: SIZES.fontSM,
+    color: COLORS.textSecondary,
+    marginBottom: SIZES.paddingSM,
   },
   lessonMeta: {
     flexDirection: 'row',
     alignItems: 'center',
-    marginBottom: 15,
+    marginBottom: SIZES.paddingMD,
   },
   lessonDuration: {
-    fontSize: 14,
-    color: '#FFD700',
-    marginLeft: 6,
+    fontSize: SIZES.fontSM,
+    color: COLORS.primary,
+    marginLeft: SIZES.paddingSM / 2,
     fontWeight: '600',
   },
   videoContainer: {
-    marginBottom: 15,
-    borderRadius: 10,
+    marginBottom: SIZES.paddingMD,
+    borderRadius: SIZES.radiusSM,
     overflow: 'hidden',
     borderWidth: 2,
     borderColor: 'rgba(255, 215, 0, 0.3)',
@@ -120,11 +173,27 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     alignItems: 'center',
     justifyContent: 'center',
-    paddingVertical: 8,
+    paddingVertical: SIZES.paddingSM,
   },
   playInfoText: {
-    color: '#999',
-    marginLeft: 8,
-    fontSize: 14,
+    color: COLORS.textMuted,
+    marginLeft: SIZES.paddingSM,
+    fontSize: SIZES.fontSM,
+  },
+  loadingContainer: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+  loadingText: {
+    color: COLORS.primary,
+    fontSize: SIZES.fontMD,
+    marginTop: SIZES.paddingMD,
+  },
+  warningText: {
+    color: COLORS.primary,
+    fontSize: SIZES.fontSM,
+    marginTop: SIZES.paddingSM,
+    textAlign: 'center',
   },
 });

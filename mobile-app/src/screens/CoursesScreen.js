@@ -12,26 +12,10 @@ import { LinearGradient } from 'expo-linear-gradient';
 import { useTranslation } from 'react-i18next';
 import Ionicons from '@expo/vector-icons/Ionicons';
 import { useRouter } from 'expo-router';
-import { gql } from '@apollo/client';
-import { useQuery } from '@apollo/client/react';
-
-// Query GraphQL pour récupérer les vidéos scrapées depuis le backend
-const GET_VIDEOS = gql`
-  query GetVideos {
-    videos {
-      id
-      titre
-      url
-    }
-  }
-`;
-
-// Fonction pour extraire l'ID YouTube depuis l'URL
-const extractYouTubeId = (url) => {
-  const regExp = /^.*((youtu.be\/)|(v\/)|(\/u\/\w\/)|(embed\/)|(watch\?))\??v?=?([^#&?]*).*/;
-  const match = url.match(regExp);
-  return (match && match[7].length === 11) ? match[7] : null;
-};
+import { COLORS, SIZES, SHADOWS } from '../constants/theme';
+import { COURSE_LEVEL_COLORS, COURSE_LEVEL_LABELS } from '../constants';
+import { useCoursesData } from '../hooks/useCoursesData';
+import Card from '../components/Card';
 
 export default function CoursesScreen() {
   const { t } = useTranslation();
@@ -39,8 +23,7 @@ export default function CoursesScreen() {
   const [selectedCategory, setSelectedCategory] = useState('all');
   const router = useRouter();
 
-  // Récupérer les vidéos scrapées depuis le backend GraphQL
-  const { loading, error, data } = useQuery(GET_VIDEOS);
+  const { courses, loading, error } = useCoursesData();
 
   const categories = [
     { id: 'all', name: 'Tous', icon: 'apps' },
@@ -49,40 +32,6 @@ export default function CoursesScreen() {
     { id: 'advanced', name: 'Avancé', icon: 'trophy' },
   ];
 
-  // ✅ UNIQUEMENT LES VIDÉOS DU BACKEND - PAS DE FALLBACK
-  const courses = React.useMemo(() => {
-    if (data?.videos && data.videos.length > 0) {
-      console.log(`✅ ${data.videos.length} vidéos scrapées récupérées du backend`);
-      
-      return data.videos
-        .map((video, index) => {
-          const youtubeId = extractYouTubeId(video.url);
-          
-          if (!youtubeId) {
-            console.warn(`⚠️ ID YouTube invalide pour: ${video.titre}`);
-            return null;
-          }
-
-          return {
-            id: video.id,
-            title: video.titre,
-            description: 'Cours de langue des signes française',
-            duration: '5:00',
-            level: index % 3 === 0 ? 'beginner' : index % 3 === 1 ? 'intermediate' : 'advanced',
-            youtubeVideoId: youtubeId,
-            category: 'lsf',
-          };
-        })
-        .filter(course => course !== null);
-    }
-
-    // ⚠️ AUCUN FALLBACK - RETOURNE UN TABLEAU VIDE
-    console.warn('⚠️ Aucune vidéo disponible depuis le backend');
-    return [];
-  }, [data, error]);
-
-  console.log(`📚 Nombre total de cours à afficher: ${courses.length}`);
-
   const filteredCourses = courses.filter(course => {
     const matchesCategory = selectedCategory === 'all' || course.level === selectedCategory;
     const matchesSearch = course.title.toLowerCase().includes(search.toLowerCase()) ||
@@ -90,29 +39,11 @@ export default function CoursesScreen() {
     return matchesCategory && matchesSearch;
   });
 
-  const getLevelColor = (level) => {
-    switch(level) {
-      case 'beginner': return '#4CAF50';
-      case 'intermediate': return '#FF9800';
-      case 'advanced': return '#F44336';
-      default: return '#999';
-    }
-  };
-
-  const getLevelText = (level) => {
-    switch(level) {
-      case 'beginner': return 'Débutant';
-      case 'intermediate': return 'Intermédiaire';
-      case 'advanced': return 'Avancé';
-      default: return '';
-    }
-  };
-
   if (loading) {
     return (
-      <LinearGradient colors={['#0f2027', '#203a43', '#2c5364']} style={styles.container}>
+      <LinearGradient colors={COLORS.gradientDark} style={styles.container}>
         <View style={styles.loadingContainer}>
-          <ActivityIndicator size="large" color="#FFD700" />
+          <ActivityIndicator size="large" color={COLORS.primary} />
           <Text style={styles.loadingText}>Chargement des cours...</Text>
         </View>
       </LinearGradient>
@@ -120,21 +51,19 @@ export default function CoursesScreen() {
   }
 
   return (
-    <LinearGradient colors={['#0f2027', '#203a43', '#2c5364']} style={styles.container}>
+    <LinearGradient colors={COLORS.gradientDark} style={styles.container}>
       <ScrollView showsVerticalScrollIndicator={false}>
         <View style={styles.header}>
           <Text style={styles.headerTitle}>{t('courses.title')}</Text>
-          <Text style={styles.headerSubtitle}>
-            {t('courses.subtitle')}
-          </Text>
+          <Text style={styles.headerSubtitle}>{t('courses.subtitle')}</Text>
         </View>
 
         <View style={styles.searchContainer}>
-          <Ionicons name="search" size={20} color="#999" style={styles.searchIcon} />
+          <Ionicons name="search" size={SIZES.iconMD} color={COLORS.textMuted} style={styles.searchIcon} />
           <TextInput
             style={styles.searchInput}
             placeholder={t('courses.searchPlaceholder')}
-            placeholderTextColor="#999"
+            placeholderTextColor={COLORS.textMuted}
             value={search}
             onChangeText={setSearch}
           />
@@ -157,8 +86,8 @@ export default function CoursesScreen() {
             >
               <Ionicons
                 name={category.icon}
-                size={20}
-                color={selectedCategory === category.id ? '#000' : '#FFD700'}
+                size={SIZES.iconMD}
+                color={selectedCategory === category.id ? '#000' : COLORS.primary}
               />
               <Text style={[
                 styles.categoryText,
@@ -172,15 +101,15 @@ export default function CoursesScreen() {
 
         <View style={styles.coursesContainer}>
           {courses.length === 0 && !loading && (
-            <View style={styles.emptyState}>
-              <Ionicons name="cloud-offline-outline" size={80} color="#666" />
+            <Card elevated style={styles.emptyState}>
+              <Ionicons name="cloud-offline-outline" size={80} color={COLORS.textMuted} />
               <Text style={styles.emptyStateTitle}>Aucune vidéo disponible</Text>
               <Text style={styles.emptyStateText}>
                 {error 
                   ? 'Impossible de se connecter au serveur. Vérifiez votre connexion.'
                   : 'Aucun cours disponible pour le moment.'}
               </Text>
-            </View>
+            </Card>
           )}
 
           {filteredCourses.map((course, index) => (
@@ -188,20 +117,17 @@ export default function CoursesScreen() {
               key={course.id}
               style={styles.courseCard}
               activeOpacity={0.8}
-              onPress={() => {
-                console.log(`🎬 Ouverture de la vidéo ${index + 1}/${filteredCourses.length}: ${course.title}`);
-                router.push(`/course/${course.id}`);
-              }}
+              onPress={() => router.push(`/course/${course.id}`)}
             >
               <View style={styles.thumbnailContainer}>
-                <View style={[styles.thumbnailPlaceholder, { backgroundColor: getLevelColor(course.level) }]}>
-                  <Ionicons name="videocam" size={60} color="#fff" />
+                <View style={[styles.thumbnailPlaceholder, { backgroundColor: COURSE_LEVEL_COLORS[course.level] }]}>
+                  <Ionicons name="videocam" size={SIZES.iconXL * 1.5} color={COLORS.text} />
                 </View>
                 <View style={styles.playButton}>
-                  <Ionicons name="play" size={30} color="#fff" />
+                  <Ionicons name="play" size={SIZES.iconLG} color={COLORS.text} />
                 </View>
-                <View style={[styles.levelBadge, { backgroundColor: getLevelColor(course.level) }]}>
-                  <Text style={styles.levelBadgeText}>{getLevelText(course.level)}</Text>
+                <View style={[styles.levelBadge, { backgroundColor: COURSE_LEVEL_COLORS[course.level] }]}>
+                  <Text style={styles.levelBadgeText}>{COURSE_LEVEL_LABELS[course.level]}</Text>
                 </View>
               </View>
 
@@ -211,11 +137,11 @@ export default function CoursesScreen() {
 
                 <View style={styles.courseFooter}>
                   <View style={styles.courseMetaItem}>
-                    <Ionicons name="time-outline" size={16} color="#FFD700" />
+                    <Ionicons name="time-outline" size={SIZES.iconSM} color={COLORS.primary} />
                     <Text style={styles.courseMetaText}>{course.duration}</Text>
                   </View>
                   <View style={styles.courseMetaItem}>
-                    <Ionicons name="logo-youtube" size={16} color="#FF0000" />
+                    <Ionicons name="logo-youtube" size={SIZES.iconSM} color="#FF0000" />
                     <Text style={styles.courseMetaText}>YouTube</Text>
                   </View>
                 </View>
@@ -224,12 +150,12 @@ export default function CoursesScreen() {
           ))}
 
           {courses.length > 0 && filteredCourses.length === 0 && (
-            <View style={styles.emptyState}>
-              <Ionicons name="search-outline" size={60} color="#666" />
+            <Card elevated style={styles.emptyState}>
+              <Ionicons name="search-outline" size={60} color={COLORS.textMuted} />
               <Text style={styles.emptyStateText}>
                 Aucun cours trouvé{search ? ` pour "${search}"` : ''}
               </Text>
-            </View>
+            </Card>
           )}
         </View>
       </ScrollView>
@@ -247,83 +173,83 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
   loadingText: {
-    color: '#FFD700',
-    fontSize: 16,
-    marginTop: 15,
+    color: COLORS.primary,
+    fontSize: SIZES.fontMD,
+    marginTop: SIZES.paddingMD,
   },
   header: {
-    paddingTop: 60,
-    paddingHorizontal: 20,
-    paddingBottom: 20,
+    paddingTop: SIZES.headerHeight,
+    paddingHorizontal: SIZES.paddingLG,
+    paddingBottom: SIZES.paddingLG,
   },
   headerTitle: {
-    fontSize: 32,
+    fontSize: SIZES.font2XL,
     fontWeight: 'bold',
-    color: '#fff',
-    marginBottom: 8,
+    color: COLORS.text,
+    marginBottom: SIZES.paddingSM,
   },
   headerSubtitle: {
-    fontSize: 16,
-    color: '#b0b0b0',
+    fontSize: SIZES.fontMD,
+    color: COLORS.textSecondary,
   },
   searchContainer: {
     flexDirection: 'row',
     alignItems: 'center',
-    backgroundColor: 'rgba(255, 255, 255, 0.1)',
-    marginHorizontal: 20,
-    marginBottom: 20,
-    paddingHorizontal: 15,
-    borderRadius: 12,
+    backgroundColor: COLORS.overlayLight,
+    marginHorizontal: SIZES.paddingLG,
+    marginBottom: SIZES.paddingLG,
+    paddingHorizontal: SIZES.paddingMD,
+    borderRadius: SIZES.radiusMD,
     borderWidth: 1,
     borderColor: 'rgba(255, 215, 0, 0.3)',
   },
   searchIcon: {
-    marginRight: 10,
+    marginRight: SIZES.paddingSM,
   },
   searchInput: {
     flex: 1,
-    color: '#fff',
-    paddingVertical: 15,
-    fontSize: 16,
+    color: COLORS.text,
+    paddingVertical: SIZES.paddingMD,
+    fontSize: SIZES.fontMD,
   },
   categoriesContainer: {
-    marginBottom: 20,
+    marginBottom: SIZES.paddingLG,
   },
   categoriesContent: {
-    paddingHorizontal: 20,
+    paddingHorizontal: SIZES.paddingLG,
   },
   categoryButton: {
     flexDirection: 'row',
     alignItems: 'center',
     backgroundColor: 'rgba(255, 215, 0, 0.1)',
-    paddingHorizontal: 16,
-    paddingVertical: 10,
-    borderRadius: 20,
-    marginRight: 10,
+    paddingHorizontal: SIZES.paddingMD,
+    paddingVertical: SIZES.paddingSM,
+    borderRadius: SIZES.radiusXL,
+    marginRight: SIZES.paddingSM,
     borderWidth: 1,
     borderColor: 'rgba(255, 215, 0, 0.3)',
   },
   categoryButtonActive: {
-    backgroundColor: '#FFD700',
-    borderColor: '#FFD700',
+    backgroundColor: COLORS.primary,
+    borderColor: COLORS.primary,
   },
   categoryText: {
-    color: '#FFD700',
-    fontSize: 14,
+    color: COLORS.primary,
+    fontSize: SIZES.fontSM,
     fontWeight: '600',
-    marginLeft: 8,
+    marginLeft: SIZES.paddingSM,
   },
   categoryTextActive: {
     color: '#000',
   },
   coursesContainer: {
-    paddingHorizontal: 20,
-    paddingBottom: 30,
+    paddingHorizontal: SIZES.paddingLG,
+    paddingBottom: SIZES.paddingXL,
   },
   courseCard: {
-    backgroundColor: 'rgba(255, 255, 255, 0.05)',
-    borderRadius: 15,
-    marginBottom: 20,
+    backgroundColor: COLORS.overlayLight,
+    borderRadius: SIZES.radiusLG,
+    marginBottom: SIZES.paddingLG,
     overflow: 'hidden',
     borderWidth: 1,
     borderColor: 'rgba(255, 215, 0, 0.2)',
@@ -353,34 +279,34 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
     borderWidth: 3,
-    borderColor: '#FFD700',
+    borderColor: COLORS.primary,
   },
   levelBadge: {
     position: 'absolute',
-    top: 10,
-    right: 10,
-    paddingHorizontal: 12,
-    paddingVertical: 6,
-    borderRadius: 15,
+    top: SIZES.paddingSM,
+    right: SIZES.paddingSM,
+    paddingHorizontal: SIZES.paddingMD,
+    paddingVertical: SIZES.paddingSM / 2,
+    borderRadius: SIZES.radiusLG,
   },
   levelBadgeText: {
-    color: '#fff',
-    fontSize: 12,
+    color: COLORS.text,
+    fontSize: SIZES.fontXS,
     fontWeight: 'bold',
   },
   courseInfo: {
-    padding: 15,
+    padding: SIZES.paddingMD,
   },
   courseTitle: {
-    fontSize: 20,
+    fontSize: SIZES.fontLG,
     fontWeight: 'bold',
-    color: '#fff',
-    marginBottom: 8,
+    color: COLORS.text,
+    marginBottom: SIZES.paddingSM,
   },
   courseDescription: {
-    fontSize: 14,
-    color: '#b0b0b0',
-    marginBottom: 12,
+    fontSize: SIZES.fontSM,
+    color: COLORS.textSecondary,
+    marginBottom: SIZES.paddingMD,
     lineHeight: 20,
   },
   courseFooter: {
@@ -392,27 +318,27 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
   courseMetaText: {
-    color: '#999',
-    fontSize: 13,
-    marginLeft: 6,
+    color: COLORS.textMuted,
+    fontSize: SIZES.fontSM - 1,
+    marginLeft: SIZES.paddingSM / 2,
   },
   emptyState: {
     alignItems: 'center',
-    paddingVertical: 60,
+    paddingVertical: SIZES.headerHeight,
   },
   emptyStateTitle: {
-    color: '#fff',
-    fontSize: 20,
+    color: COLORS.text,
+    fontSize: SIZES.fontLG,
     fontWeight: 'bold',
-    marginTop: 20,
-    marginBottom: 10,
+    marginTop: SIZES.paddingLG,
+    marginBottom: SIZES.paddingSM,
   },
   emptyStateText: {
-    color: '#666',
-    fontSize: 16,
-    marginTop: 15,
+    color: COLORS.textMuted,
+    fontSize: SIZES.fontMD,
+    marginTop: SIZES.paddingMD,
     textAlign: 'center',
-    paddingHorizontal: 40,
+    paddingHorizontal: SIZES.paddingXL * 1.3,
     lineHeight: 24,
   },
 });
