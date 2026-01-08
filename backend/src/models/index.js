@@ -5,6 +5,7 @@ const Class = require('./modelClass');
 const Prediction = require('./modelPrediction');
 const School = require('./modelSchool');
 const SchoolLevel = require('./modelSchoolLevel');
+const Video = require('./modalVideo');
 
 // Définir les associations
 const setupAssociations = () => {
@@ -57,6 +58,16 @@ const setupAssociations = () => {
     foreignKey: 'school_id', 
     as: 'school' 
   });
+
+  // Video - Class (1:N)
+  Video.hasMany(Class, { 
+    foreignKey: 'video_id', 
+    as: 'classes' 
+  });
+  Class.belongsTo(Video, { 
+    foreignKey: 'video_id', 
+    as: 'video' 
+  });
 };
 
 setupAssociations();
@@ -68,5 +79,6 @@ module.exports = {
   Class,
   Prediction,
   School,
-  SchoolLevel
+  SchoolLevel,
+  Video
 };
