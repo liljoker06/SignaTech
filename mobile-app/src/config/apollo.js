@@ -6,12 +6,15 @@ import { Platform } from 'react-native';
 console.log('📡 Configuration Apollo Client...');
 
 const getApiUrl = () => {
+  const LOCAL_IP = '192.168.1.18'; // A METTRE EN .ENV ET A CHANGER SELON TON RESEAU (sinon ça casse)
+  
   if (Platform.OS === 'android') {
-    return 'http://10.0.2.2:4000/graphql';
-  } else if (Platform.OS === 'ios') {
-    return 'http://192.168.1.161:4000/graphql';
+    return `http://${LOCAL_IP}:4000/graphql`; 
   }
-  return 'http://localhost:4000/graphql';
+  if (Platform.OS === 'ios') {
+    return `http://${LOCAL_IP}:4000/graphql`; 
+  }
+  return 'http://localhost:4000/graphql'; // Web
 };
 
 const httpLink = createHttpLink({
