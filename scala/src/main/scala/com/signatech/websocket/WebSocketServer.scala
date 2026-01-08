@@ -56,7 +56,7 @@ class WebSocketServer(implicit system: ActorSystem[_], ec: ExecutionContext)
         msg.`type` match {
           case "video_frame" => processVideoFrame(msg.payload)
           case "ping"        => """{"type":"pong","payload":""}"""
-          case other         =>
+            case other         =>
             logger.warn(s"[WebSocket] Type inconnu: $other")
             s"""{"type":"error","payload":"Type de message inconnu: $other"}"""
         }
