@@ -9,7 +9,7 @@ import {
   KeyboardAvoidingView,
   Platform,
   ScrollView,
-  Modal,
+  Modal
 } from 'react-native';
 import { LinearGradient } from 'expo-linear-gradient';
 import { useTranslation } from 'react-i18next';
@@ -24,10 +24,10 @@ const RegisterScreen = ({ navigation }) => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [confirmPassword, setConfirmPassword] = useState('');
+  const [birthDate, setBirthDate] = useState(new Date(2000, 0, 1));
   const [loading, setLoading] = useState(false);
   const [showPassword, setShowPassword] = useState(false);
 
-  const [birthDate, setBirthDate] = useState(new Date(2000, 0, 1));
   const [showDatePicker, setShowDatePicker] = useState(false);
 
   const handleDateChange = (event, selectedDate) => {
@@ -67,14 +67,22 @@ const RegisterScreen = ({ navigation }) => {
     setLoading(true);
     try {
       const formattedBirthDate = formatDateForAPI(birthDate);
-      await register({ 
-        username: name, 
+      await register({         
+        name, 
         email, 
         password,
         birthDate: formattedBirthDate
       });
+      
+      // Vérifier si c'est en mode dégradé (pas de token)
+      if (!result?.data?.token) {
+        Alert.alert(
+          '✅ Compte créé !',
+          'Votre compte a été créé en mode local. Les données sont stockées sur votre appareil.',
+          [{ text: 'OK' }]
+        );
+      }
     } catch (error) {
-      console.log(error);
       Alert.alert('Erreur', error.message || 'Inscription échouée');
     } finally {
       setLoading(false);
@@ -267,6 +275,33 @@ const styles = StyleSheet.create({
   formContainer: {
     width: '100%',
   },
+    modalContainer: {
+    flex: 1,
+    justifyContent: 'flex-end',
+    backgroundColor: 'rgba(0, 0, 0, 0.5)',
+  },
+  modalContent: {
+    backgroundColor: '#1C1C1E',
+    borderTopLeftRadius: 20,
+    borderTopRightRadius: 20,
+    paddingBottom: 40,
+  },
+  modalHeader: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    padding: 16,
+    borderBottomWidth: 1,
+    borderBottomColor: 'rgba(255, 255, 255, 0.1)',
+  },
+  modalDoneText: {
+    color: '#FFD700',
+    fontSize: 16,
+    fontWeight: '600',
+  },
+  modalDetailsText: {
+    color: '#999',
+    fontSize: 16,
+  },
   inputContainer: {
     flexDirection: 'row',
     alignItems: 'center',
@@ -314,33 +349,6 @@ const styles = StyleSheet.create({
   linkBold: {
     color: '#FFD700',
     fontWeight: 'bold',
-  },
-  modalContainer: {
-    flex: 1,
-    justifyContent: 'flex-end',
-    backgroundColor: 'rgba(0, 0, 0, 0.5)',
-  },
-  modalContent: {
-    backgroundColor: '#1C1C1E',
-    borderTopLeftRadius: 20,
-    borderTopRightRadius: 20,
-    paddingBottom: 40,
-  },
-  modalHeader: {
-    flexDirection: 'row',
-    justifyContent: 'space-between',
-    padding: 16,
-    borderBottomWidth: 1,
-    borderBottomColor: 'rgba(255, 255, 255, 0.1)',
-  },
-  modalDoneText: {
-    color: '#FFD700',
-    fontSize: 16,
-    fontWeight: '600',
-  },
-  modalDetailsText: {
-    color: '#999',
-    fontSize: 16,
   },
 });
 

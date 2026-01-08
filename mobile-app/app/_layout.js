@@ -1,9 +1,11 @@
 import { Slot, useRouter, useSegments, useRootNavigationState } from 'expo-router';
-import { AuthProvider, useAuth } from '../src/contexts/AuthContext';
 import { useEffect } from 'react';
-import '../src/i18n';
 import { ApolloProvider } from '@apollo/client/react';
-import { apolloClient } from '../lib/apollo';
+
+import { apolloClient } from '../src/config/apollo';
+import { AuthProvider, useAuth } from '../src/contexts/AuthContext';
+
+import '../src/i18n';
 
 function RootLayoutNav() {
   const { user, loading } = useAuth();
@@ -29,6 +31,11 @@ function RootLayoutNav() {
 }
 
 export default function Layout() {
+  // Vérifier que tous les modules sont chargés
+  if (!ApolloProvider || !apolloClient || !AuthProvider) {
+    throw new Error('Modules Apollo Client ou Auth non chargés. Exécutez: npm install @apollo/client graphql');
+  }
+
   return (
     <ApolloProvider client={apolloClient}>
       <AuthProvider>
