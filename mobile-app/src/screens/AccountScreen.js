@@ -1,24 +1,15 @@
-import React, { useEffect } from 'react';
-import { View, Text, TouchableOpacity, StyleSheet, Alert, ActivityIndicator } from 'react-native';
+import React from 'react';
+import { View, Text, TouchableOpacity, StyleSheet, Alert } from 'react-native';
 import { LinearGradient } from 'expo-linear-gradient';
 import { useTranslation } from 'react-i18next';
 import { useRouter } from 'expo-router';
 import { useAuth } from '../contexts/AuthContext';
 import Ionicons from '@expo/vector-icons/Ionicons';
-import { useQuery } from '@apollo/client/react';
-import { ME_QUERY } from '../services/graphql/userQueries';
 
 const AccountScreen = () => {
   const { t } = useTranslation();
-  const { user: contextUser, logout } = useAuth();
+  const { user, logout } = useAuth();
   const router = useRouter();
-  
-  const { data, loading, error, refetch } = useQuery(ME_QUERY);
-  const user = data?.me || contextUser;
-
-  useEffect(() => {
-    refetch();
-  }, [data]);
 
   const handleLogout = () => {
     Alert.alert(
@@ -30,24 +21,6 @@ const AccountScreen = () => {
       ]
     );
   };
-
-  const formatDate = (dateString) => {
-    if (!dateString) return t('notSpecified') || 'Non spécifié';
-    const date = new Date(dateString);
-    return date.toLocaleDateString('fr-FR', { 
-      year: 'numeric', 
-      month: 'long', 
-      day: 'numeric' 
-    });
-  };
-
-  if (loading && !contextUser) {
-    return (
-      <LinearGradient colors={['#0f2027', '#203a43', '#2c5364']} style={styles.container}>
-        <ActivityIndicator size="large" color="#FFD700" />
-      </LinearGradient>
-    );
-  }
 
   return (
     <LinearGradient colors={['#0f2027', '#203a43', '#2c5364']} style={styles.container}>
@@ -62,6 +35,9 @@ const AccountScreen = () => {
         </View>
         <Text style={styles.name}>{user?.username || 'Utilisateur'}</Text>
         <Text style={styles.email}>{user?.email}</Text>
+        {user?.birthDate && (
+          <Text style={styles.birthDate}>Né(e) le {new Date(user.birthDate).toLocaleDateString('fr-FR')}</Text>
+        )}
       </View>
 
       <View style={styles.infoSection}>
@@ -76,18 +52,22 @@ const AccountScreen = () => {
         <View style={styles.infoCard}>
           <Ionicons name="person-outline" size={24} color="#FFD700" />
           <View style={styles.infoTextContainer}>
-            <Text style={styles.infoLabel}>Nom</Text>
+            <Text style={styles.infoLabel}>Nom d'utilisateur</Text>
             <Text style={styles.infoValue}>{user?.username}</Text>
           </View>
         </View>
 
-        <View style={styles.infoCard}>
-          <Ionicons name="calendar-outline" size={24} color="#FFD700" />
-          <View style={styles.infoTextContainer}>
-            <Text style={styles.infoLabel}>Date de naissance</Text>
-            <Text style={styles.infoValue}>{formatDate(user?.birthDate)}</Text>
+        {user?.birthDate && (
+          <View style={styles.infoCard}>
+            <Ionicons name="calendar-outline" size={24} color="#FFD700" />
+            <View style={styles.infoTextContainer}>
+              <Text style={styles.infoLabel}>Date de naissance</Text>
+              <Text style={styles.infoValue}>
+                {new Date(user.birthDate).toLocaleDateString('fr-FR')}
+              </Text>
+            </View>
           </View>
-        </View>
+        )}
       </View>
 
       <TouchableOpacity style={styles.logoutButton} onPress={handleLogout}>
@@ -136,6 +116,11 @@ const styles = StyleSheet.create({
   email: {
     fontSize: 16,
     color: '#b0b0b0',
+  },
+  birthDate: {
+    fontSize: 14,
+    color: '#999',
+    marginTop: 4,
   },
   infoSection: {
     marginTop: 30,
