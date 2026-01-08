@@ -1,26 +1,22 @@
 const { Video } = require("../models");
 
 class VideoController {
-  /**
-   * Récupérer toutes les vidéos
-   */
+
   async getAllVideo() {
     return await Video.findAll();
   }
 
-  /**
-   * Récupérer une vidéo par ID
-   */
   async getVideoById(id) {
-    const video = await Video.findByPk(id);
-    return video;
+    return await Video.findByPk(id);
   }
 
-  /**
-   * Créer une vidéo
-   */
   async createVideo({ url, titre }) {
-    return await Video.create({ url, titre });
+    const [video] = await Video.findOrCreate({
+      where: { titre },
+      defaults: { url }
+    });
+
+    return video;
   }
 }
 
