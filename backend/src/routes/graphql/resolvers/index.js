@@ -5,6 +5,7 @@ const imageResolvers = require('./imageResolvers');
 const modelResolvers = require('./modelResolvers');
 const classResolvers = require('./classResolvers');
 const predictionResolvers = require('./predictionResolvers');
+const videoResolvers = require('./videoResolvers');
 
 const resolvers = {
   Query: {
@@ -15,6 +16,7 @@ const resolvers = {
     ...modelResolvers.Query,
     ...classResolvers.Query,
     ...predictionResolvers.Query,
+    ...videoResolvers.Query,
   },
   Mutation: {
     ...userResolvers.Mutation,
@@ -24,6 +26,7 @@ const resolvers = {
     ...modelResolvers.Mutation,
     ...classResolvers.Mutation,
     ...predictionResolvers.Mutation,
+    ...videoResolvers.Mutation,
   }
 };
 
