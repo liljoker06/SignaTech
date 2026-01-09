@@ -6578,3 +6578,805 @@ INFOS: Unsupported notification method: $/setTrace
 2026.01.09 00:42:54 WARN  no build target for: D:\Cours\scala\SignaTech\scala\src\main\scala\com\signatech\ai\model\Prediction.scala
 2026.01.09 00:42:54 INFO  no build target found for D:\Cours\scala\SignaTech\scala\src\main\scala\com\signatech\ai\model\Prediction.scala. Using presentation compiler with project's scala-library version: 3.3.6
 2026.01.09 00:42:56 INFO  no build target found for d:\Cours\scala\SignaTech\scala\src\main\scala\com\signatech\ai\model\Prediction.scala. Using presentation compiler with project's scala-library version: 3.3.6
+janv. 09, 2026 12:52:12 AM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+INFOS: Unsupported notification method: $/setTrace
+janv. 09, 2026 12:52:12 AM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+INFOS: Unsupported notification method: $/setTrace
+janv. 09, 2026 12:52:12 AM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+INFOS: Unsupported notification method: $/setTrace
+janv. 09, 2026 12:52:12 AM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+INFOS: Unsupported notification method: $/setTrace
+2026.01.09 00:53:37 INFO  no build target found for D:\Cours\scala\SignaTech\scala\src\main\scala\com\signatech\db\Database.scala. Using presentation compiler with project's scala-library version: 3.3.6
+2026.01.09 00:53:37 WARN  no build target for: D:\Cours\scala\SignaTech\scala\src\main\scala\com\signatech\db\Database.scala
+2026.01.09 00:53:37 INFO  no build target found for D:\Cours\scala\SignaTech\scala\src\main\scala\com\signatech\db\Database.scala. Using presentation compiler with project's scala-library version: 3.3.6
+2026.01.09 00:53:37 INFO  no build target found for D:\Cours\scala\SignaTech\scala\src\main\scala\com\signatech\db\Database.scala. Using presentation compiler with project's scala-library version: 3.3.6
+2026.01.09 00:53:37 INFO  no build target found for D:\Cours\scala\SignaTech\scala\src\main\scala\com\signatech\db\Database.scala. Using presentation compiler with project's scala-library version: 3.3.6
+2026.01.09 00:53:38 INFO  no build target found for D:\Cours\scala\SignaTech\scala\src\main\scala\com\signatech\db\Database.scala. Using presentation compiler with project's scala-library version: 3.3.6
+2026.01.09 00:54:13 INFO  no build target found for D:\Cours\scala\SignaTech\scala\src\main\scala\com\signatech\websocket\model\PredictionPayload.scala. Using presentation compiler with project's scala-library version: 3.3.6
+2026.01.09 00:54:13 WARN  no build target for: D:\Cours\scala\SignaTech\scala\src\main\scala\com\signatech\websocket\model\PredictionPayload.scala
+2026.01.09 00:54:13 INFO  no build target found for D:\Cours\scala\SignaTech\scala\src\main\scala\com\signatech\websocket\model\PredictionPayload.scala. Using presentation compiler with project's scala-library version: 3.3.6
+2026.01.09 00:54:14 INFO  no build target found for D:\Cours\scala\SignaTech\scala\src\main\scala\com\signatech\websocket\model\PredictionPayload.scala. Using presentation compiler with project's scala-library version: 3.3.6
+2026.01.09 00:54:14 INFO  no build target found for D:\Cours\scala\SignaTech\scala\src\main\scala\com\signatech\websocket\model\PredictionPayload.scala. Using presentation compiler with project's scala-library version: 3.3.6
+2026.01.09 00:56:34 INFO  no build target found for D:\Cours\scala\SignaTech\scala\src\main\scala\com\signatech\service\SignTranslationService.scala. Using presentation compiler with project's scala-library version: 3.3.6
+2026.01.09 00:56:34 WARN  no build target for: D:\Cours\scala\SignaTech\scala\src\main\scala\com\signatech\service\SignTranslationService.scala
+2026.01.09 00:56:34 INFO  no build target found for D:\Cours\scala\SignaTech\scala\src\main\scala\com\signatech\service\SignTranslationService.scala. Using presentation compiler with project's scala-library version: 3.3.6
+2026.01.09 00:56:34 WARN  Could not find semantic tokens for: file:///D:/Cours/scala/SignaTech/scala/src/main/scala/com/signatech/service/SignTranslationService.scala
+2026.01.09 00:56:34 INFO  no build target found for D:\Cours\scala\SignaTech\scala\src\main\scala\com\signatech\service\SignTranslationService.scala. Using presentation compiler with project's scala-library version: 3.3.6
+2026.01.09 00:56:34 WARN  Could not find semantic tokens for: file:///D:/Cours/scala/SignaTech/scala/src/main/scala/com/signatech/service/SignTranslationService.scala
+2026.01.09 00:56:35 WARN  no build target for: D:\Cours\scala\SignaTech\scala\src\main\scala\com\signatech\websocket\model\PredictionPayload.scala
+2026.01.09 00:56:35 INFO  no build target found for D:\Cours\scala\SignaTech\scala\src\main\scala\com\signatech\websocket\model\PredictionPayload.scala. Using presentation compiler with project's scala-library version: 3.3.6
+2026.01.09 00:56:35 INFO  no build target found for D:\Cours\scala\SignaTech\scala\src\main\scala\com\signatech\websocket\model\PredictionPayload.scala. Using presentation compiler with project's scala-library version: 3.3.6
+2026.01.09 00:56:36 WARN  no build target for: D:\Cours\scala\SignaTech\scala\src\main\scala\com\signatech\websocket\WebSocketServer.scala
+2026.01.09 00:56:37 INFO  no build target found for D:\Cours\scala\SignaTech\scala\src\main\scala\com\signatech\websocket\WebSocketServer.scala. Using presentation compiler with project's scala-library version: 3.3.6
+2026.01.09 00:56:37 INFO  no build target found for D:\Cours\scala\SignaTech\scala\src\main\scala\com\signatech\websocket\WebSocketServer.scala. Using presentation compiler with project's scala-library version: 3.3.6
+2026.01.09 00:56:37 INFO  no build target found for D:\Cours\scala\SignaTech\scala\src\main\scala\com\signatech\websocket\WebSocketServer.scala. Using presentation compiler with project's scala-library version: 3.3.6
+2026.01.09 00:56:44 INFO  no build target found for D:\Cours\scala\SignaTech\scala\src\main\scala\com\signatech\websocket\WebSocketServer.scala. Using presentation compiler with project's scala-library version: 3.3.6
+janv. 09, 2026 1:16:16 AM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+INFOS: Unsupported notification method: $/setTrace
+janv. 09, 2026 1:16:16 AM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+INFOS: Unsupported notification method: $/setTrace
+janv. 09, 2026 1:16:16 AM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+INFOS: Unsupported notification method: $/setTrace
+janv. 09, 2026 1:16:16 AM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+INFOS: Unsupported notification method: $/setTrace
+janv. 09, 2026 1:17:15 AM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+INFOS: Unsupported notification method: $/setTrace
+janv. 09, 2026 1:17:15 AM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+INFOS: Unsupported notification method: $/setTrace
+janv. 09, 2026 1:17:15 AM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+INFOS: Unsupported notification method: $/setTrace
+janv. 09, 2026 1:17:15 AM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+INFOS: Unsupported notification method: $/setTrace
+janv. 09, 2026 1:18:39 AM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+INFOS: Unsupported notification method: $/setTrace
+janv. 09, 2026 1:18:39 AM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+INFOS: Unsupported notification method: $/setTrace
+janv. 09, 2026 1:18:39 AM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+INFOS: Unsupported notification method: $/setTrace
+janv. 09, 2026 1:18:39 AM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+INFOS: Unsupported notification method: $/setTrace
+janv. 09, 2026 1:24:05 AM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+INFOS: Unsupported notification method: $/setTrace
+janv. 09, 2026 1:24:05 AM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+INFOS: Unsupported notification method: $/setTrace
+janv. 09, 2026 1:24:06 AM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+INFOS: Unsupported notification method: $/setTrace
+janv. 09, 2026 1:24:06 AM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+INFOS: Unsupported notification method: $/setTrace
+janv. 09, 2026 1:41:34 AM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+INFOS: Unsupported notification method: $/setTrace
+janv. 09, 2026 1:41:34 AM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+INFOS: Unsupported notification method: $/setTrace
+janv. 09, 2026 1:41:35 AM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+INFOS: Unsupported notification method: $/setTrace
+janv. 09, 2026 1:41:35 AM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+INFOS: Unsupported notification method: $/setTrace
+janv. 09, 2026 1:46:26 AM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+INFOS: Unsupported notification method: $/setTrace
+janv. 09, 2026 1:46:26 AM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+INFOS: Unsupported notification method: $/setTrace
+janv. 09, 2026 1:46:26 AM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+INFOS: Unsupported notification method: $/setTrace
+janv. 09, 2026 1:46:26 AM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+INFOS: Unsupported notification method: $/setTrace
+janv. 09, 2026 1:47:04 AM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+INFOS: Unsupported notification method: $/setTrace
+janv. 09, 2026 1:47:04 AM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+INFOS: Unsupported notification method: $/setTrace
+janv. 09, 2026 1:47:05 AM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+INFOS: Unsupported notification method: $/setTrace
+janv. 09, 2026 1:47:05 AM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+INFOS: Unsupported notification method: $/setTrace
+janv. 09, 2026 1:47:05 AM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+INFOS: Unsupported notification method: $/setTrace
+janv. 09, 2026 1:47:05 AM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+INFOS: Unsupported notification method: $/setTrace
+janv. 09, 2026 1:47:05 AM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+INFOS: Unsupported notification method: $/setTrace
+janv. 09, 2026 1:47:05 AM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+INFOS: Unsupported notification method: $/setTrace
+janv. 09, 2026 1:47:05 AM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+INFOS: Unsupported notification method: $/setTrace
+janv. 09, 2026 1:47:05 AM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+INFOS: Unsupported notification method: $/setTrace
+janv. 09, 2026 1:47:05 AM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+INFOS: Unsupported notification method: $/setTrace
+janv. 09, 2026 1:47:05 AM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+INFOS: Unsupported notification method: $/setTrace
+janv. 09, 2026 1:47:05 AM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+INFOS: Unsupported notification method: $/setTrace
+janv. 09, 2026 1:47:05 AM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+INFOS: Unsupported notification method: $/setTrace
+janv. 09, 2026 1:47:05 AM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+INFOS: Unsupported notification method: $/setTrace
+janv. 09, 2026 1:47:05 AM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+INFOS: Unsupported notification method: $/setTrace
+janv. 09, 2026 1:49:22 AM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+INFOS: Unsupported notification method: $/setTrace
+janv. 09, 2026 1:49:22 AM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+INFOS: Unsupported notification method: $/setTrace
+janv. 09, 2026 1:49:22 AM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+INFOS: Unsupported notification method: $/setTrace
+janv. 09, 2026 1:49:22 AM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+INFOS: Unsupported notification method: $/setTrace
+janv. 09, 2026 1:49:35 AM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+INFOS: Unsupported notification method: $/setTrace
+janv. 09, 2026 1:49:35 AM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+INFOS: Unsupported notification method: $/setTrace
+janv. 09, 2026 1:49:35 AM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+INFOS: Unsupported notification method: $/setTrace
+janv. 09, 2026 1:49:35 AM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+INFOS: Unsupported notification method: $/setTrace
+janv. 09, 2026 1:59:39 AM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+INFOS: Unsupported notification method: $/setTrace
+janv. 09, 2026 2:08:43 AM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+INFOS: Unsupported notification method: $/setTrace
+janv. 09, 2026 2:13:46 AM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+INFOS: Unsupported notification method: $/setTrace
+janv. 09, 2026 2:13:46 AM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+INFOS: Unsupported notification method: $/setTrace
+janv. 09, 2026 2:13:46 AM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+INFOS: Unsupported notification method: $/setTrace
+janv. 09, 2026 2:13:46 AM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+INFOS: Unsupported notification method: $/setTrace
+janv. 09, 2026 2:14:47 AM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+INFOS: Unsupported notification method: $/setTrace
+janv. 09, 2026 2:14:47 AM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+INFOS: Unsupported notification method: $/setTrace
+janv. 09, 2026 2:14:47 AM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+INFOS: Unsupported notification method: $/setTrace
+janv. 09, 2026 2:14:47 AM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+INFOS: Unsupported notification method: $/setTrace
+janv. 09, 2026 2:15:12 AM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+INFOS: Unsupported notification method: $/setTrace
+janv. 09, 2026 2:15:12 AM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+INFOS: Unsupported notification method: $/setTrace
+janv. 09, 2026 2:15:12 AM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+INFOS: Unsupported notification method: $/setTrace
+janv. 09, 2026 2:15:12 AM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+INFOS: Unsupported notification method: $/setTrace
+2026.01.09 02:28:04 INFO  no build target found for D:\Cours\scala\SignaTech\scala\src\main\scala\com\signatech\websocket\model\PredictionPayload.scala. Using presentation compiler with project's scala-library version: 3.3.6
+janv. 09, 2026 2:30:44 AM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+INFOS: Unsupported notification method: $/setTrace
+janv. 09, 2026 2:30:44 AM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+INFOS: Unsupported notification method: $/setTrace
+janv. 09, 2026 2:30:44 AM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+INFOS: Unsupported notification method: $/setTrace
+janv. 09, 2026 2:30:44 AM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+INFOS: Unsupported notification method: $/setTrace
+janv. 09, 2026 2:31:53 AM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+INFOS: Unsupported notification method: $/setTrace
+janv. 09, 2026 2:31:53 AM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+INFOS: Unsupported notification method: $/setTrace
+janv. 09, 2026 2:31:53 AM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+INFOS: Unsupported notification method: $/setTrace
+janv. 09, 2026 2:31:53 AM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+INFOS: Unsupported notification method: $/setTrace
+janv. 09, 2026 2:32:57 AM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+INFOS: Unsupported notification method: $/setTrace
+janv. 09, 2026 2:32:57 AM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+INFOS: Unsupported notification method: $/setTrace
+janv. 09, 2026 2:32:57 AM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+INFOS: Unsupported notification method: $/setTrace
+janv. 09, 2026 2:32:57 AM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+INFOS: Unsupported notification method: $/setTrace
+janv. 09, 2026 2:36:43 AM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+INFOS: Unsupported notification method: $/setTrace
+janv. 09, 2026 2:36:43 AM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+INFOS: Unsupported notification method: $/setTrace
+janv. 09, 2026 2:36:43 AM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+INFOS: Unsupported notification method: $/setTrace
+janv. 09, 2026 2:36:43 AM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+INFOS: Unsupported notification method: $/setTrace
+janv. 09, 2026 2:37:18 AM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+INFOS: Unsupported notification method: $/setTrace
+janv. 09, 2026 2:37:18 AM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+INFOS: Unsupported notification method: $/setTrace
+janv. 09, 2026 2:37:18 AM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+INFOS: Unsupported notification method: $/setTrace
+janv. 09, 2026 2:37:18 AM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+INFOS: Unsupported notification method: $/setTrace
+janv. 09, 2026 2:39:41 AM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+INFOS: Unsupported notification method: $/setTrace
+janv. 09, 2026 2:39:41 AM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+INFOS: Unsupported notification method: $/setTrace
+janv. 09, 2026 2:39:41 AM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+INFOS: Unsupported notification method: $/setTrace
+janv. 09, 2026 2:39:41 AM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+INFOS: Unsupported notification method: $/setTrace
+janv. 09, 2026 2:41:30 AM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+INFOS: Unsupported notification method: $/setTrace
+janv. 09, 2026 2:41:30 AM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+INFOS: Unsupported notification method: $/setTrace
+janv. 09, 2026 2:41:30 AM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+INFOS: Unsupported notification method: $/setTrace
+janv. 09, 2026 2:41:30 AM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+INFOS: Unsupported notification method: $/setTrace
+janv. 09, 2026 2:44:31 AM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+INFOS: Unsupported notification method: $/setTrace
+janv. 09, 2026 2:44:31 AM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+INFOS: Unsupported notification method: $/setTrace
+janv. 09, 2026 2:44:31 AM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+INFOS: Unsupported notification method: $/setTrace
+janv. 09, 2026 2:44:31 AM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+INFOS: Unsupported notification method: $/setTrace
+janv. 09, 2026 2:45:20 AM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+INFOS: Unsupported notification method: $/setTrace
+janv. 09, 2026 2:45:20 AM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+INFOS: Unsupported notification method: $/setTrace
+janv. 09, 2026 2:45:20 AM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+INFOS: Unsupported notification method: $/setTrace
+janv. 09, 2026 2:45:20 AM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+INFOS: Unsupported notification method: $/setTrace
+janv. 09, 2026 2:55:03 AM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+INFOS: Unsupported notification method: $/setTrace
+janv. 09, 2026 2:55:03 AM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+INFOS: Unsupported notification method: $/setTrace
+janv. 09, 2026 2:55:03 AM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+INFOS: Unsupported notification method: $/setTrace
+janv. 09, 2026 2:55:04 AM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+INFOS: Unsupported notification method: $/setTrace
+janv. 09, 2026 2:56:33 AM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+INFOS: Unsupported notification method: $/setTrace
+janv. 09, 2026 2:56:33 AM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+INFOS: Unsupported notification method: $/setTrace
+janv. 09, 2026 2:56:33 AM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+INFOS: Unsupported notification method: $/setTrace
+janv. 09, 2026 2:56:33 AM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+INFOS: Unsupported notification method: $/setTrace
+janv. 09, 2026 2:59:55 AM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+INFOS: Unsupported notification method: $/setTrace
+janv. 09, 2026 2:59:55 AM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+INFOS: Unsupported notification method: $/setTrace
+janv. 09, 2026 2:59:56 AM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+INFOS: Unsupported notification method: $/setTrace
+janv. 09, 2026 2:59:56 AM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+INFOS: Unsupported notification method: $/setTrace
+janv. 09, 2026 3:00:22 AM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+INFOS: Unsupported notification method: $/setTrace
+janv. 09, 2026 3:00:22 AM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+INFOS: Unsupported notification method: $/setTrace
+janv. 09, 2026 3:00:22 AM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+INFOS: Unsupported notification method: $/setTrace
+janv. 09, 2026 3:00:22 AM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+INFOS: Unsupported notification method: $/setTrace
+janv. 09, 2026 3:00:22 AM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+INFOS: Unsupported notification method: $/setTrace
+janv. 09, 2026 3:00:22 AM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+INFOS: Unsupported notification method: $/setTrace
+janv. 09, 2026 3:00:22 AM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+INFOS: Unsupported notification method: $/setTrace
+janv. 09, 2026 3:00:22 AM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+INFOS: Unsupported notification method: $/setTrace
+janv. 09, 2026 3:00:22 AM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+INFOS: Unsupported notification method: $/setTrace
+janv. 09, 2026 3:00:22 AM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+INFOS: Unsupported notification method: $/setTrace
+janv. 09, 2026 3:00:22 AM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+INFOS: Unsupported notification method: $/setTrace
+janv. 09, 2026 3:00:22 AM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+INFOS: Unsupported notification method: $/setTrace
+janv. 09, 2026 3:00:22 AM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+INFOS: Unsupported notification method: $/setTrace
+janv. 09, 2026 3:00:22 AM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+INFOS: Unsupported notification method: $/setTrace
+janv. 09, 2026 3:00:22 AM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+INFOS: Unsupported notification method: $/setTrace
+janv. 09, 2026 3:00:22 AM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+INFOS: Unsupported notification method: $/setTrace
+janv. 09, 2026 3:00:22 AM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+INFOS: Unsupported notification method: $/setTrace
+janv. 09, 2026 3:00:22 AM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+INFOS: Unsupported notification method: $/setTrace
+janv. 09, 2026 3:00:22 AM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+INFOS: Unsupported notification method: $/setTrace
+janv. 09, 2026 3:00:22 AM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+INFOS: Unsupported notification method: $/setTrace
+janv. 09, 2026 3:00:22 AM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+INFOS: Unsupported notification method: $/setTrace
+janv. 09, 2026 3:00:22 AM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+INFOS: Unsupported notification method: $/setTrace
+janv. 09, 2026 3:00:22 AM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+INFOS: Unsupported notification method: $/setTrace
+janv. 09, 2026 3:00:22 AM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+INFOS: Unsupported notification method: $/setTrace
+janv. 09, 2026 3:00:22 AM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+INFOS: Unsupported notification method: $/setTrace
+janv. 09, 2026 3:00:22 AM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+INFOS: Unsupported notification method: $/setTrace
+janv. 09, 2026 3:00:22 AM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+INFOS: Unsupported notification method: $/setTrace
+janv. 09, 2026 3:00:22 AM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+INFOS: Unsupported notification method: $/setTrace
+janv. 09, 2026 3:00:22 AM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+INFOS: Unsupported notification method: $/setTrace
+janv. 09, 2026 3:00:22 AM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+INFOS: Unsupported notification method: $/setTrace
+janv. 09, 2026 3:00:22 AM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+INFOS: Unsupported notification method: $/setTrace
+janv. 09, 2026 3:00:22 AM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+INFOS: Unsupported notification method: $/setTrace
+janv. 09, 2026 3:00:22 AM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+INFOS: Unsupported notification method: $/setTrace
+janv. 09, 2026 3:00:22 AM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+INFOS: Unsupported notification method: $/setTrace
+janv. 09, 2026 3:00:22 AM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+INFOS: Unsupported notification method: $/setTrace
+janv. 09, 2026 3:00:22 AM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+INFOS: Unsupported notification method: $/setTrace
+janv. 09, 2026 3:00:22 AM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+INFOS: Unsupported notification method: $/setTrace
+janv. 09, 2026 3:00:22 AM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+INFOS: Unsupported notification method: $/setTrace
+janv. 09, 2026 3:00:22 AM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+INFOS: Unsupported notification method: $/setTrace
+janv. 09, 2026 3:00:22 AM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+INFOS: Unsupported notification method: $/setTrace
+janv. 09, 2026 3:00:22 AM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+INFOS: Unsupported notification method: $/setTrace
+janv. 09, 2026 3:00:22 AM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+INFOS: Unsupported notification method: $/setTrace
+janv. 09, 2026 3:00:22 AM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+INFOS: Unsupported notification method: $/setTrace
+janv. 09, 2026 3:00:22 AM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+INFOS: Unsupported notification method: $/setTrace
+janv. 09, 2026 3:00:22 AM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+INFOS: Unsupported notification method: $/setTrace
+janv. 09, 2026 3:00:23 AM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+INFOS: Unsupported notification method: $/setTrace
+janv. 09, 2026 3:00:23 AM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+INFOS: Unsupported notification method: $/setTrace
+janv. 09, 2026 3:00:23 AM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+INFOS: Unsupported notification method: $/setTrace
+janv. 09, 2026 3:00:23 AM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+INFOS: Unsupported notification method: $/setTrace
+janv. 09, 2026 3:00:23 AM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+INFOS: Unsupported notification method: $/setTrace
+janv. 09, 2026 3:00:23 AM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+INFOS: Unsupported notification method: $/setTrace
+janv. 09, 2026 3:00:23 AM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+INFOS: Unsupported notification method: $/setTrace
+janv. 09, 2026 3:00:23 AM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+INFOS: Unsupported notification method: $/setTrace
+janv. 09, 2026 3:00:23 AM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+INFOS: Unsupported notification method: $/setTrace
+janv. 09, 2026 3:00:23 AM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+INFOS: Unsupported notification method: $/setTrace
+janv. 09, 2026 3:00:23 AM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+INFOS: Unsupported notification method: $/setTrace
+janv. 09, 2026 3:00:23 AM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+INFOS: Unsupported notification method: $/setTrace
+janv. 09, 2026 3:00:23 AM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+INFOS: Unsupported notification method: $/setTrace
+janv. 09, 2026 3:00:23 AM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+INFOS: Unsupported notification method: $/setTrace
+janv. 09, 2026 3:00:23 AM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+INFOS: Unsupported notification method: $/setTrace
+janv. 09, 2026 3:00:23 AM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+INFOS: Unsupported notification method: $/setTrace
+janv. 09, 2026 3:00:23 AM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+INFOS: Unsupported notification method: $/setTrace
+janv. 09, 2026 3:00:23 AM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+INFOS: Unsupported notification method: $/setTrace
+janv. 09, 2026 3:00:23 AM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+INFOS: Unsupported notification method: $/setTrace
+janv. 09, 2026 3:00:23 AM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+INFOS: Unsupported notification method: $/setTrace
+janv. 09, 2026 3:00:23 AM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+INFOS: Unsupported notification method: $/setTrace
+janv. 09, 2026 3:00:23 AM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+INFOS: Unsupported notification method: $/setTrace
+janv. 09, 2026 3:00:23 AM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+INFOS: Unsupported notification method: $/setTrace
+janv. 09, 2026 3:00:23 AM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+INFOS: Unsupported notification method: $/setTrace
+janv. 09, 2026 3:00:23 AM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+INFOS: Unsupported notification method: $/setTrace
+janv. 09, 2026 3:00:23 AM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+INFOS: Unsupported notification method: $/setTrace
+janv. 09, 2026 3:00:23 AM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+INFOS: Unsupported notification method: $/setTrace
+janv. 09, 2026 3:00:23 AM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+INFOS: Unsupported notification method: $/setTrace
+janv. 09, 2026 3:00:23 AM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+INFOS: Unsupported notification method: $/setTrace
+janv. 09, 2026 3:00:23 AM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+INFOS: Unsupported notification method: $/setTrace
+janv. 09, 2026 3:00:23 AM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+INFOS: Unsupported notification method: $/setTrace
+janv. 09, 2026 3:00:43 AM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+INFOS: Unsupported notification method: $/setTrace
+janv. 09, 2026 3:00:43 AM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+INFOS: Unsupported notification method: $/setTrace
+janv. 09, 2026 3:00:43 AM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+INFOS: Unsupported notification method: $/setTrace
+janv. 09, 2026 3:00:43 AM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+INFOS: Unsupported notification method: $/setTrace
+janv. 09, 2026 3:03:19 AM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+INFOS: Unsupported notification method: $/setTrace
+janv. 09, 2026 3:03:19 AM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+INFOS: Unsupported notification method: $/setTrace
+janv. 09, 2026 3:03:19 AM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+INFOS: Unsupported notification method: $/setTrace
+janv. 09, 2026 3:03:19 AM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+INFOS: Unsupported notification method: $/setTrace
+janv. 09, 2026 3:06:31 AM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+INFOS: Unsupported notification method: $/setTrace
+janv. 09, 2026 3:06:31 AM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+INFOS: Unsupported notification method: $/setTrace
+janv. 09, 2026 3:06:31 AM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+INFOS: Unsupported notification method: $/setTrace
+janv. 09, 2026 3:06:31 AM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+INFOS: Unsupported notification method: $/setTrace
+janv. 09, 2026 3:09:16 AM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+INFOS: Unsupported notification method: $/setTrace
+janv. 09, 2026 3:09:16 AM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+INFOS: Unsupported notification method: $/setTrace
+janv. 09, 2026 3:09:16 AM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+INFOS: Unsupported notification method: $/setTrace
+janv. 09, 2026 3:09:16 AM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+INFOS: Unsupported notification method: $/setTrace
+janv. 09, 2026 3:10:19 AM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+INFOS: Unsupported notification method: $/setTrace
+janv. 09, 2026 3:10:19 AM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+INFOS: Unsupported notification method: $/setTrace
+janv. 09, 2026 3:10:19 AM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+INFOS: Unsupported notification method: $/setTrace
+janv. 09, 2026 3:10:19 AM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+INFOS: Unsupported notification method: $/setTrace
+janv. 09, 2026 3:23:49 AM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+INFOS: Unsupported notification method: $/setTrace
+janv. 09, 2026 3:23:49 AM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+INFOS: Unsupported notification method: $/setTrace
+janv. 09, 2026 3:23:49 AM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+INFOS: Unsupported notification method: $/setTrace
+janv. 09, 2026 3:23:49 AM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+INFOS: Unsupported notification method: $/setTrace
+janv. 09, 2026 3:23:49 AM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+INFOS: Unsupported notification method: $/setTrace
+janv. 09, 2026 3:23:49 AM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+INFOS: Unsupported notification method: $/setTrace
+janv. 09, 2026 3:23:49 AM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+INFOS: Unsupported notification method: $/setTrace
+janv. 09, 2026 3:23:50 AM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+INFOS: Unsupported notification method: $/setTrace
+janv. 09, 2026 3:23:50 AM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+INFOS: Unsupported notification method: $/setTrace
+janv. 09, 2026 3:23:50 AM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+INFOS: Unsupported notification method: $/setTrace
+janv. 09, 2026 3:23:50 AM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+INFOS: Unsupported notification method: $/setTrace
+janv. 09, 2026 3:23:50 AM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+INFOS: Unsupported notification method: $/setTrace
+janv. 09, 2026 3:23:50 AM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+INFOS: Unsupported notification method: $/setTrace
+janv. 09, 2026 3:23:50 AM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+INFOS: Unsupported notification method: $/setTrace
+janv. 09, 2026 3:23:50 AM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+INFOS: Unsupported notification method: $/setTrace
+janv. 09, 2026 3:23:50 AM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+INFOS: Unsupported notification method: $/setTrace
+janv. 09, 2026 3:23:50 AM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+INFOS: Unsupported notification method: $/setTrace
+janv. 09, 2026 3:23:50 AM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+INFOS: Unsupported notification method: $/setTrace
+janv. 09, 2026 3:23:50 AM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+INFOS: Unsupported notification method: $/setTrace
+janv. 09, 2026 3:23:50 AM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+INFOS: Unsupported notification method: $/setTrace
+2026.01.09 03:23:50 INFO  Shutting down server
+2026.01.09 03:23:50 INFO  shutting down Metals
+2026.01.09 03:23:50 INFO  Exiting server
+2026.01.09 03:29:39 INFO  Started: Metals version 1.6.4 in folders 'D:\Cours\scala\SignaTech' for client Visual Studio Code 1.107.1.
+2026.01.09 03:29:40 WARN  Using H2 2.4.240 which is newer than the version Flyway has been verified with. The latest verified version of H2 is 2.3.232.
+2026.01.09 03:29:40 INFO  skipping build import with status 'Dismissed'
+janv. 09, 2026 3:30:17 AM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+INFOS: Unsupported notification method: $/setTrace
+janv. 09, 2026 3:30:17 AM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+INFOS: Unsupported notification method: $/setTrace
+janv. 09, 2026 3:30:17 AM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+INFOS: Unsupported notification method: $/setTrace
+janv. 09, 2026 3:30:17 AM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+INFOS: Unsupported notification method: $/setTrace
+janv. 09, 2026 3:30:31 AM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+INFOS: Unsupported notification method: $/setTrace
+janv. 09, 2026 3:30:31 AM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+INFOS: Unsupported notification method: $/setTrace
+janv. 09, 2026 3:30:31 AM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+INFOS: Unsupported notification method: $/setTrace
+janv. 09, 2026 3:30:31 AM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+INFOS: Unsupported notification method: $/setTrace
+janv. 09, 2026 3:42:26 AM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+INFOS: Unsupported notification method: $/setTrace
+janv. 09, 2026 3:53:31 AM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+INFOS: Unsupported notification method: $/setTrace
+janv. 09, 2026 3:53:31 AM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+INFOS: Unsupported notification method: $/setTrace
+janv. 09, 2026 3:53:31 AM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+INFOS: Unsupported notification method: $/setTrace
+janv. 09, 2026 3:53:31 AM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+INFOS: Unsupported notification method: $/setTrace
+janv. 09, 2026 3:55:47 AM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+INFOS: Unsupported notification method: $/setTrace
+janv. 09, 2026 3:55:47 AM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+INFOS: Unsupported notification method: $/setTrace
+janv. 09, 2026 3:55:47 AM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+INFOS: Unsupported notification method: $/setTrace
+janv. 09, 2026 3:55:47 AM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+INFOS: Unsupported notification method: $/setTrace
+janv. 09, 2026 3:59:19 AM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+INFOS: Unsupported notification method: $/setTrace
+janv. 09, 2026 3:59:19 AM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+INFOS: Unsupported notification method: $/setTrace
+janv. 09, 2026 3:59:19 AM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+INFOS: Unsupported notification method: $/setTrace
+janv. 09, 2026 3:59:19 AM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+INFOS: Unsupported notification method: $/setTrace
+janv. 09, 2026 4:01:08 AM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+INFOS: Unsupported notification method: $/setTrace
+janv. 09, 2026 4:01:08 AM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+INFOS: Unsupported notification method: $/setTrace
+janv. 09, 2026 4:01:08 AM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+INFOS: Unsupported notification method: $/setTrace
+janv. 09, 2026 4:01:08 AM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+INFOS: Unsupported notification method: $/setTrace
+janv. 09, 2026 4:01:08 AM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+INFOS: Unsupported notification method: $/setTrace
+janv. 09, 2026 4:01:08 AM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+INFOS: Unsupported notification method: $/setTrace
+janv. 09, 2026 4:01:08 AM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+INFOS: Unsupported notification method: $/setTrace
+janv. 09, 2026 4:01:08 AM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+INFOS: Unsupported notification method: $/setTrace
+janv. 09, 2026 4:01:08 AM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+INFOS: Unsupported notification method: $/setTrace
+janv. 09, 2026 4:01:08 AM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+INFOS: Unsupported notification method: $/setTrace
+janv. 09, 2026 4:01:08 AM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+INFOS: Unsupported notification method: $/setTrace
+janv. 09, 2026 4:01:08 AM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+INFOS: Unsupported notification method: $/setTrace
+janv. 09, 2026 4:01:08 AM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+INFOS: Unsupported notification method: $/setTrace
+janv. 09, 2026 4:01:08 AM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+INFOS: Unsupported notification method: $/setTrace
+janv. 09, 2026 4:01:08 AM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+INFOS: Unsupported notification method: $/setTrace
+janv. 09, 2026 4:01:08 AM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+INFOS: Unsupported notification method: $/setTrace
+janv. 09, 2026 4:01:08 AM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+INFOS: Unsupported notification method: $/setTrace
+janv. 09, 2026 4:01:08 AM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+INFOS: Unsupported notification method: $/setTrace
+janv. 09, 2026 4:01:08 AM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+INFOS: Unsupported notification method: $/setTrace
+janv. 09, 2026 4:01:08 AM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+INFOS: Unsupported notification method: $/setTrace
+janv. 09, 2026 4:01:36 AM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+INFOS: Unsupported notification method: $/setTrace
+janv. 09, 2026 4:01:37 AM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+INFOS: Unsupported notification method: $/setTrace
+janv. 09, 2026 4:01:37 AM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+INFOS: Unsupported notification method: $/setTrace
+janv. 09, 2026 4:01:37 AM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+INFOS: Unsupported notification method: $/setTrace
+janv. 09, 2026 4:04:30 AM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+INFOS: Unsupported notification method: $/setTrace
+janv. 09, 2026 4:04:30 AM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+INFOS: Unsupported notification method: $/setTrace
+janv. 09, 2026 4:04:30 AM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+INFOS: Unsupported notification method: $/setTrace
+janv. 09, 2026 4:04:30 AM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+INFOS: Unsupported notification method: $/setTrace
+janv. 09, 2026 4:09:36 AM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+INFOS: Unsupported notification method: $/setTrace
+janv. 09, 2026 4:09:36 AM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+INFOS: Unsupported notification method: $/setTrace
+janv. 09, 2026 4:09:36 AM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+INFOS: Unsupported notification method: $/setTrace
+janv. 09, 2026 4:09:36 AM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+INFOS: Unsupported notification method: $/setTrace
+janv. 09, 2026 4:10:39 AM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+INFOS: Unsupported notification method: $/setTrace
+janv. 09, 2026 4:10:39 AM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+INFOS: Unsupported notification method: $/setTrace
+janv. 09, 2026 4:10:39 AM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+INFOS: Unsupported notification method: $/setTrace
+janv. 09, 2026 4:10:39 AM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+INFOS: Unsupported notification method: $/setTrace
+janv. 09, 2026 4:13:34 AM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+INFOS: Unsupported notification method: $/setTrace
+janv. 09, 2026 4:13:34 AM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+INFOS: Unsupported notification method: $/setTrace
+janv. 09, 2026 4:13:34 AM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+INFOS: Unsupported notification method: $/setTrace
+janv. 09, 2026 4:13:34 AM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+INFOS: Unsupported notification method: $/setTrace
+janv. 09, 2026 4:15:35 AM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+INFOS: Unsupported notification method: $/setTrace
+janv. 09, 2026 4:15:35 AM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+INFOS: Unsupported notification method: $/setTrace
+janv. 09, 2026 4:15:35 AM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+INFOS: Unsupported notification method: $/setTrace
+janv. 09, 2026 4:15:35 AM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+INFOS: Unsupported notification method: $/setTrace
+janv. 09, 2026 4:15:35 AM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+INFOS: Unsupported notification method: $/setTrace
+janv. 09, 2026 4:15:35 AM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+INFOS: Unsupported notification method: $/setTrace
+janv. 09, 2026 4:15:35 AM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+INFOS: Unsupported notification method: $/setTrace
+janv. 09, 2026 4:15:35 AM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+INFOS: Unsupported notification method: $/setTrace
+janv. 09, 2026 4:15:35 AM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+INFOS: Unsupported notification method: $/setTrace
+janv. 09, 2026 4:15:35 AM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+INFOS: Unsupported notification method: $/setTrace
+janv. 09, 2026 4:15:35 AM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+INFOS: Unsupported notification method: $/setTrace
+janv. 09, 2026 4:15:35 AM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+INFOS: Unsupported notification method: $/setTrace
+janv. 09, 2026 4:15:35 AM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+INFOS: Unsupported notification method: $/setTrace
+janv. 09, 2026 4:15:35 AM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+INFOS: Unsupported notification method: $/setTrace
+janv. 09, 2026 4:15:35 AM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+INFOS: Unsupported notification method: $/setTrace
+janv. 09, 2026 4:15:35 AM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+INFOS: Unsupported notification method: $/setTrace
+janv. 09, 2026 4:15:35 AM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+INFOS: Unsupported notification method: $/setTrace
+janv. 09, 2026 4:15:35 AM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+INFOS: Unsupported notification method: $/setTrace
+janv. 09, 2026 4:15:35 AM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+INFOS: Unsupported notification method: $/setTrace
+janv. 09, 2026 4:15:35 AM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+INFOS: Unsupported notification method: $/setTrace
+janv. 09, 2026 4:15:42 AM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+INFOS: Unsupported notification method: $/setTrace
+janv. 09, 2026 4:15:42 AM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+INFOS: Unsupported notification method: $/setTrace
+janv. 09, 2026 4:15:42 AM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+INFOS: Unsupported notification method: $/setTrace
+janv. 09, 2026 4:15:42 AM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+INFOS: Unsupported notification method: $/setTrace
+janv. 09, 2026 4:16:00 AM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+INFOS: Unsupported notification method: $/setTrace
+janv. 09, 2026 4:16:00 AM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+INFOS: Unsupported notification method: $/setTrace
+janv. 09, 2026 4:16:00 AM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+INFOS: Unsupported notification method: $/setTrace
+janv. 09, 2026 4:16:00 AM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+INFOS: Unsupported notification method: $/setTrace
+janv. 09, 2026 4:16:53 AM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+INFOS: Unsupported notification method: $/setTrace
+janv. 09, 2026 4:16:53 AM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+INFOS: Unsupported notification method: $/setTrace
+janv. 09, 2026 4:16:53 AM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+INFOS: Unsupported notification method: $/setTrace
+janv. 09, 2026 4:16:53 AM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+INFOS: Unsupported notification method: $/setTrace
+janv. 09, 2026 4:16:53 AM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+INFOS: Unsupported notification method: $/setTrace
+janv. 09, 2026 4:16:53 AM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+INFOS: Unsupported notification method: $/setTrace
+janv. 09, 2026 4:16:53 AM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+INFOS: Unsupported notification method: $/setTrace
+janv. 09, 2026 4:16:53 AM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+INFOS: Unsupported notification method: $/setTrace
+janv. 09, 2026 4:17:50 AM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+INFOS: Unsupported notification method: $/setTrace
+janv. 09, 2026 4:17:50 AM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+INFOS: Unsupported notification method: $/setTrace
+janv. 09, 2026 4:17:50 AM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+INFOS: Unsupported notification method: $/setTrace
+janv. 09, 2026 4:17:50 AM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+INFOS: Unsupported notification method: $/setTrace
+janv. 09, 2026 4:24:33 AM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+INFOS: Unsupported notification method: $/setTrace
+janv. 09, 2026 4:24:33 AM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+INFOS: Unsupported notification method: $/setTrace
+janv. 09, 2026 4:24:33 AM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+INFOS: Unsupported notification method: $/setTrace
+janv. 09, 2026 4:24:33 AM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+INFOS: Unsupported notification method: $/setTrace
+janv. 09, 2026 4:24:48 AM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+INFOS: Unsupported notification method: $/setTrace
+janv. 09, 2026 4:24:48 AM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+INFOS: Unsupported notification method: $/setTrace
+janv. 09, 2026 4:24:48 AM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+INFOS: Unsupported notification method: $/setTrace
+janv. 09, 2026 4:24:48 AM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+INFOS: Unsupported notification method: $/setTrace
+janv. 09, 2026 4:25:04 AM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+INFOS: Unsupported notification method: $/setTrace
+janv. 09, 2026 4:25:04 AM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+INFOS: Unsupported notification method: $/setTrace
+janv. 09, 2026 4:25:04 AM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+INFOS: Unsupported notification method: $/setTrace
+janv. 09, 2026 4:25:04 AM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+INFOS: Unsupported notification method: $/setTrace
+janv. 09, 2026 4:29:55 AM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+INFOS: Unsupported notification method: $/setTrace
+janv. 09, 2026 4:29:55 AM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+INFOS: Unsupported notification method: $/setTrace
+janv. 09, 2026 4:29:56 AM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+INFOS: Unsupported notification method: $/setTrace
+janv. 09, 2026 4:29:56 AM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+INFOS: Unsupported notification method: $/setTrace
+janv. 09, 2026 4:36:19 AM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+INFOS: Unsupported notification method: $/setTrace
+janv. 09, 2026 4:36:19 AM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+INFOS: Unsupported notification method: $/setTrace
+janv. 09, 2026 4:36:19 AM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+INFOS: Unsupported notification method: $/setTrace
+janv. 09, 2026 4:36:19 AM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+INFOS: Unsupported notification method: $/setTrace
+janv. 09, 2026 4:46:45 AM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+INFOS: Unsupported notification method: $/setTrace
+janv. 09, 2026 4:46:45 AM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+INFOS: Unsupported notification method: $/setTrace
+janv. 09, 2026 4:46:45 AM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+INFOS: Unsupported notification method: $/setTrace
+janv. 09, 2026 4:46:45 AM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+INFOS: Unsupported notification method: $/setTrace
+janv. 09, 2026 4:49:25 AM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+INFOS: Unsupported notification method: $/setTrace
+janv. 09, 2026 4:49:25 AM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+INFOS: Unsupported notification method: $/setTrace
+janv. 09, 2026 4:49:25 AM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+INFOS: Unsupported notification method: $/setTrace
+janv. 09, 2026 4:49:25 AM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+INFOS: Unsupported notification method: $/setTrace
+janv. 09, 2026 4:57:47 AM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+INFOS: Unsupported notification method: $/setTrace
+janv. 09, 2026 4:57:47 AM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+INFOS: Unsupported notification method: $/setTrace
+janv. 09, 2026 4:57:47 AM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+INFOS: Unsupported notification method: $/setTrace
+janv. 09, 2026 4:57:47 AM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+INFOS: Unsupported notification method: $/setTrace
+janv. 09, 2026 4:59:17 AM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+INFOS: Unsupported notification method: $/setTrace
+janv. 09, 2026 4:59:17 AM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+INFOS: Unsupported notification method: $/setTrace
+janv. 09, 2026 4:59:17 AM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+INFOS: Unsupported notification method: $/setTrace
+janv. 09, 2026 4:59:17 AM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+INFOS: Unsupported notification method: $/setTrace
+janv. 09, 2026 5:10:54 AM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+INFOS: Unsupported notification method: $/setTrace
+janv. 09, 2026 5:10:54 AM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+INFOS: Unsupported notification method: $/setTrace
+janv. 09, 2026 5:10:54 AM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+INFOS: Unsupported notification method: $/setTrace
+janv. 09, 2026 5:10:54 AM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+INFOS: Unsupported notification method: $/setTrace
+2026.01.09 05:12:53 INFO  no build target found for D:\Cours\scala\SignaTech\scala\src\main\scala\com\signatech\ai\model\SignPrediction.scala. Using presentation compiler with project's scala-library version: 3.3.6
+2026.01.09 05:12:53 WARN  no build target for: D:\Cours\scala\SignaTech\scala\src\main\scala\com\signatech\ai\model\SignPrediction.scala
+2026.01.09 05:12:53 INFO  no build target found for D:\Cours\scala\SignaTech\scala\src\main\scala\com\signatech\ai\model\SignPrediction.scala. Using presentation compiler with project's scala-library version: 3.3.6
+2026.01.09 05:12:54 INFO  no build target found for D:\Cours\scala\SignaTech\scala\src\main\scala\com\signatech\ai\model\SignPrediction.scala. Using presentation compiler with project's scala-library version: 3.3.6
+janv. 09, 2026 5:12:54 AM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+AVERTISSEMENT: Unmatched cancel notification for request id 142
+2026.01.09 05:12:53 INFO  no build target found for D:\Cours\scala\SignaTech\scala\src\main\scala\com\signatech\ai\model\SignPrediction.scala. Using presentation compiler with project's scala-library version: 3.3.6
+2026.01.09 05:12:54 INFO  no build target found for D:\Cours\scala\SignaTech\scala\src\main\scala\com\signatech\ai\model\SignPrediction.scala. Using presentation compiler with project's scala-library version: 3.3.6
+2026.01.09 05:12:53 WARN  no build target for: D:\Cours\scala\SignaTech\scala\src\main\scala\com\signatech\ai\inference\ModelRegistry.scala
+2026.01.09 05:12:53 INFO  no build target found for D:\Cours\scala\SignaTech\scala\src\main\scala\com\signatech\ai\inference\ModelRegistry.scala. Using presentation compiler with project's scala-library version: 3.3.6
+2026.01.09 05:12:54 INFO  no build target found for D:\Cours\scala\SignaTech\scala\src\main\scala\com\signatech\ai\inference\ModelRegistry.scala. Using presentation compiler with project's scala-library version: 3.3.6
+2026.01.09 05:12:55 INFO  no build target found for D:\Cours\scala\SignaTech\scala\src\main\scala\com\signatech\ai\inference\ModelRegistry.scala. Using presentation compiler with project's scala-library version: 3.3.6
+2026.01.09 05:12:55 WARN  no build target for: D:\Cours\scala\SignaTech\scala\src\main\scala\com\signatech\ai\inference\OnnxRuntimeProvider.scala
+2026.01.09 05:12:55 INFO  no build target found for D:\Cours\scala\SignaTech\scala\src\main\scala\com\signatech\ai\inference\OnnxRuntimeProvider.scala. Using presentation compiler with project's scala-library version: 3.3.6
+2026.01.09 05:12:55 INFO  no build target found for D:\Cours\scala\SignaTech\scala\src\main\scala\com\signatech\ai\inference\OnnxRuntimeProvider.scala. Using presentation compiler with project's scala-library version: 3.3.6
+2026.01.09 05:12:55 INFO  no build target found for D:\Cours\scala\SignaTech\scala\src\main\scala\com\signatech\ai\inference\OnnxRuntimeProvider.scala. Using presentation compiler with project's scala-library version: 3.3.6
+janv. 09, 2026 5:12:55 AM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+AVERTISSEMENT: Unmatched cancel notification for request id 164
+2026.01.09 05:12:55 WARN  no build target for: D:\Cours\scala\SignaTech\scala\src\main\scala\com\signatech\ai\inference\SignRecognitionModel.scala
+2026.01.09 05:12:55 INFO  no build target found for D:\Cours\scala\SignaTech\scala\src\main\scala\com\signatech\ai\inference\SignRecognitionModel.scala. Using presentation compiler with project's scala-library version: 3.3.6
+2026.01.09 05:12:56 INFO  no build target found for D:\Cours\scala\SignaTech\scala\src\main\scala\com\signatech\ai\inference\SignRecognitionModel.scala. Using presentation compiler with project's scala-library version: 3.3.6
+2026.01.09 05:12:56 INFO  no build target found for D:\Cours\scala\SignaTech\scala\src\main\scala\com\signatech\ai\inference\SignRecognitionModel.scala. Using presentation compiler with project's scala-library version: 3.3.6
+2026.01.09 05:12:56 INFO  no build target found for D:\Cours\scala\SignaTech\scala\src\main\scala\com\signatech\ai\inference\SignRecognitionModel.scala. Using presentation compiler with project's scala-library version: 3.3.6
+2026.01.09 05:12:56 INFO  time: code lens generation in 1.98s
+2026.01.09 05:12:56 INFO  no build target found for D:\Cours\scala\SignaTech\scala\src\main\scala\com\signatech\ai\inference\OnnxRuntimeProvider.scala. Using presentation compiler with project's scala-library version: 3.3.6
+2026.01.09 05:12:55 INFO  no build target found for D:\Cours\scala\SignaTech\scala\src\main\scala\com\signatech\ai\inference\SignRecognitionModel.scala. Using presentation compiler with project's scala-library version: 3.3.6
+2026.01.09 05:12:56 INFO  no build target found for D:\Cours\scala\SignaTech\scala\src\main\scala\com\signatech\ai\inference\ModelRegistry.scala. Using presentation compiler with project's scala-library version: 3.3.6
+2026.01.09 05:12:56 INFO  time: code lens generation in 1.82s
