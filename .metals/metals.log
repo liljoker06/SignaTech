@@ -7857,3 +7857,23 @@ INFOS: Unsupported notification method: $/setTrace
 2026.01.09 06:46:33 INFO  no build target found for D:\Cours\scala\SignaTech\scala\src\main\scala\com\signatech\websocket\FilterWebSocketServer.scala. Using presentation compiler with project's scala-library version: 3.3.6
 2026.01.09 06:46:33 WARN  no build target for: D:\Cours\scala\SignaTech\scala\src\main\scala\com\signatech\websocket\FilterWebSocketServer.scala
 2026.01.09 06:46:33 INFO  no build target found for D:\Cours\scala\SignaTech\scala\src\main\scala\com\signatech\websocket\FilterWebSocketServer.scala. Using presentation compiler with project's scala-library version: 3.3.6
+2026.01.09 06:50:57 WARN  no build target for: D:\Cours\scala\SignaTech\scala\src\main\scala\com\signatech\Main.scala
+2026.01.09 06:50:57 WARN  no build target for: D:\Cours\scala\SignaTech\scala\src\main\scala\com\signatech\websocket\FilterWebSocketServer.scala
+2026.01.09 06:52:31 INFO  no build target found for D:\Cours\scala\SignaTech\scala\src\main\scala\com\signatech\websocket\FilterWebSocketServer.scala. Using presentation compiler with project's scala-library version: 3.3.6
+2026.01.09 06:52:31 INFO  no build target found for D:\Cours\scala\SignaTech\scala\src\main\scala\com\signatech\websocket\FilterWebSocketServer.scala. Using presentation compiler with project's scala-library version: 3.3.6
+2026.01.09 06:52:31 WARN  no build target for: D:\Cours\scala\SignaTech\scala\src\main\scala\com\signatech\websocket\FilterWebSocketServer.scala
+2026.01.09 06:52:31 INFO  no build target found for D:\Cours\scala\SignaTech\scala\src\main\scala\com\signatech\websocket\FilterWebSocketServer.scala. Using presentation compiler with project's scala-library version: 3.3.6
+2026.01.09 06:52:31 WARN  no build target for: D:\Cours\scala\SignaTech\scala\src\main\scala\com\signatech\websocket\FilterWebSocketServer.scala
+2026.01.09 06:52:31 INFO  no build target found for D:\Cours\scala\SignaTech\scala\src\main\scala\com\signatech\websocket\FilterWebSocketServer.scala. Using presentation compiler with project's scala-library version: 3.3.6
+2026.01.09 06:52:31 INFO  no build target found for D:\Cours\scala\SignaTech\scala\src\main\scala\com\signatech\websocket\FilterWebSocketServer.scala. Using presentation compiler with project's scala-library version: 3.3.6
+2026.01.09 06:52:31 WARN  no build target for: D:\Cours\scala\SignaTech\scala\src\main\scala\com\signatech\websocket\FilterWebSocketServer.scala
+2026.01.09 06:52:31 INFO  no build target found for D:\Cours\scala\SignaTech\scala\src\main\scala\com\signatech\websocket\FilterWebSocketServer.scala. Using presentation compiler with project's scala-library version: 3.3.6
+2026.01.09 06:54:07 INFO  no build target found for D:\Cours\scala\SignaTech\scala\src\main\scala\com\signatech\websocket\FilterWebSocketServer.scala. Using presentation compiler with project's scala-library version: 3.3.6
+2026.01.09 06:54:07 INFO  no build target found for D:\Cours\scala\SignaTech\scala\src\main\scala\com\signatech\websocket\FilterWebSocketServer.scala. Using presentation compiler with project's scala-library version: 3.3.6
+2026.01.09 06:54:07 WARN  no build target for: D:\Cours\scala\SignaTech\scala\src\main\scala\com\signatech\websocket\FilterWebSocketServer.scala
+2026.01.09 06:55:14 INFO  no build target found for d:\Cours\scala\SignaTech\scala\src\main\scala\com\signatech\websocket\FilterWebSocketServer.scala. Using presentation compiler with project's scala-library version: 3.3.6
+2026.01.09 06:55:28 INFO  no build target found for D:\Cours\scala\SignaTech\scala\src\main\scala\com\signatech\websocket\FilterWebSocketServer.scala. Using presentation compiler with project's scala-library version: 3.3.6
+2026.01.09 06:55:28 WARN  no build target for: D:\Cours\scala\SignaTech\scala\src\main\scala\com\signatech\websocket\FilterWebSocketServer.scala
+2026.01.09 06:55:29 INFO  no build target found for D:\Cours\scala\SignaTech\scala\src\main\scala\com\signatech\websocket\FilterWebSocketServer.scala. Using presentation compiler with project's scala-library version: 3.3.6
+2026.01.09 06:55:29 INFO  no build target found for D:\Cours\scala\SignaTech\scala\src\main\scala\com\signatech\websocket\FilterWebSocketServer.scala. Using presentation compiler with project's scala-library version: 3.3.6
+2026.01.09 06:55:29 WARN  no build target for: D:\Cours\scala\SignaTech\scala\src\main\scala\com\signatech\websocket\FilterWebSocketServer.scala

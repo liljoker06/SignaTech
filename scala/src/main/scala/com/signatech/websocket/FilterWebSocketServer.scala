@@ -2,11 +2,11 @@ package com.signatech.websocket
 
 import akka.actor.typed.ActorSystem
 import akka.http.scaladsl.Http
-import akka.http.scaladsl.model.ws.{Message, TextMessage, WebSocketRequest}
+import akka.http.scaladsl.model.ws.{Message, TextMessage}
 import akka.http.scaladsl.server.Directives._
 import akka.http.scaladsl.server.Route
-import akka.stream.scaladsl.{Flow, Keep, Sink, Source}
-import akka.stream.{Materializer, OverflowStrategy}
+import akka.stream.scaladsl.Flow
+import akka.stream.Materializer
 import com.typesafe.scalalogging.StrictLogging
 import io.circe.parser._
 import io.circe.generic.auto._
@@ -14,80 +14,21 @@ import io.circe.syntax._
 
 import scala.collection.mutable
 import scala.concurrent.{ExecutionContext, Future}
-import scala.concurrent.duration._
 import scala.util.{Failure, Success}
 
 case class LetterPrediction(`type`: String, value: String, confidence: Double)
 case class FilteredResult(`type`: String, value: String, confidence: Double, filtered: Boolean)
 
-class FilterWebSocketServer(implicit system: ActorSystem[_], ec: ExecutionContext, mat: Materializer)
-    extends StrictLogging {
-
-  private val host = "0.0.0.0"
-  private val port = 8080
-
-  // Buffer de filtrage
+// État de filtrage par connexion
+class ConnectionFilterState {
   private val letterBuffer = mutable.Queue[LetterPrediction]()
-  private val WINDOW_SIZE = 3  // Réduit de 5 à 3 pour plus de réactivité
+  private val WINDOW_SIZE = 3
   private val MIN_OCCURRENCES = 2
-  private val CONFIDENCE_THRESHOLD = 0.75  // Augmenté pour filtrer les faux positifs
+  private val CONFIDENCE_THRESHOLD = 0.75
   private var lastSent: Option[String] = None
   private var lastSentTime: Long = 0
 
-  def routes: Route =
-    pathPrefix("ws") {
-      path("filter") {
-        get {
-          logger.info("[Scala Filter] Nouvelle connexion Node.js")
-          handleWebSocketMessages(filterFlow)
-        }
-      } ~
-      path("translate") {
-        get {
-          logger.info("[Scala] Connexion client (legacy)")
-          handleWebSocketMessages(legacyFlow)
-        }
-      }
-    } ~
-    path("health") {
-      get {
-        complete("OK - SignaTech Scala Filter Server")
-      }
-    }
-
-  /**
-   * Flow de filtrage : reçoit les prédictions Python et filtre les répétitions
-   */
-  private def filterFlow: Flow[Message, Message, Any] =
-    Flow[Message]
-      .collect { case TextMessage.Strict(text) => text }
-      .mapConcat { text =>
-        decode[LetterPrediction](text) match {
-          case Right(prediction) =>
-            logger.info(s"[Scala Filter] Reçu: ${prediction.value} (${prediction.confidence})")
-            
-            val filtered = filterPrediction(prediction)
-            
-            filtered match {
-              case Some(letter) =>
-                logger.info(s"[Scala Filter] ✓ Envoi: $letter")
-                List(FilteredResult("letter", letter, prediction.confidence, filtered = true).asJson.noSpaces)
-              case None =>
-                logger.debug(s"[Scala Filter] ✗ Filtré: ${prediction.value}")
-                Nil
-            }
-            
-          case Left(error) =>
-            logger.error(s"[Scala Filter] Erreur parsing: $error")
-            Nil
-        }
-      }
-      .map(TextMessage(_))
-
-  /**
-   * Filtre les prédictions pour éviter les répétitions
-   */
-  private def filterPrediction(prediction: LetterPrediction): Option[String] = {
+  def filterPrediction(prediction: LetterPrediction): Option[String] = {
     val now = System.currentTimeMillis()
     
     // Réinitialiser lastSent après 2 secondes d'inactivité
@@ -130,6 +71,68 @@ class FilterWebSocketServer(implicit system: ActorSystem[_], ec: ExecutionContex
       case _ =>
         None
     }
+  }
+}
+
+class FilterWebSocketServer(implicit system: ActorSystem[_], ec: ExecutionContext, mat: Materializer)
+    extends StrictLogging {
+
+  private val host = "0.0.0.0"
+  private val port = 8080
+
+  def routes: Route =
+    pathPrefix("ws") {
+      path("filter") {
+        get {
+          logger.info("[Scala Filter] Nouvelle connexion Node.js")
+          handleWebSocketMessages(filterFlow)
+        }
+      } ~
+      path("translate") {
+        get {
+          logger.info("[Scala] Connexion client (legacy)")
+          handleWebSocketMessages(legacyFlow)
+        }
+      }
+    } ~
+    path("health") {
+      get {
+        complete("OK - SignaTech Scala Filter Server")
+      }
+    }
+
+  /**
+   * Flow de filtrage : reçoit les prédictions Python et filtre les répétitions
+   */
+  private def filterFlow: Flow[Message, Message, Any] = {
+    // Créer un nouvel état pour chaque connexion
+    val filterState = new ConnectionFilterState()
+    logger.info("[Scala Filter] Nouvel état de filtrage créé pour cette connexion")
+    
+    Flow[Message]
+      .collect { case TextMessage.Strict(text) => text }
+      .mapConcat { text =>
+        decode[LetterPrediction](text) match {
+          case Right(prediction) =>
+            logger.info(s"[Scala Filter] Reçu: ${prediction.value} (${prediction.confidence})")
+            
+            val filtered = filterState.filterPrediction(prediction)
+            
+            filtered match {
+              case Some(letter) =>
+                logger.info(s"[Scala Filter] ✓ Envoi: $letter")
+                List(FilteredResult("letter", letter, prediction.confidence, filtered = true).asJson.noSpaces)
+              case None =>
+                logger.debug(s"[Scala Filter] ✗ Filtré: ${prediction.value}")
+                Nil
+            }
+            
+          case Left(error) =>
+            logger.error(s"[Scala Filter] Erreur parsing: $error")
+            Nil
+        }
+      }
+      .map(TextMessage(_))
   }
 
   /**
