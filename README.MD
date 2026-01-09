@@ -484,7 +484,10 @@ Ce projet est sous licence MIT. Voir le fichier `LICENSE` pour plus de détails.
 
 ## 👥 Auteurs
 
-- **[@liljoker06](https://github.com/liljoker06)** - Développement initial
+- **[@liljoker06](https://github.com/liljoker06)** - développement IA, architecture du projet et DevOps
+- **[@Batyeste](https://github.com/Batyeste)** - Backend Node.js, GraphQL et développement frontend
+- **[@ayaej](https://github.com/ayaej)** - Développement frontend mobile React Native
+- **[@ahamie71](https://github.com/ahamie71)** - Scrapping en Scala
 
 ---
 
