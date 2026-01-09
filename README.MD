@@ -4,7 +4,7 @@
 
 ![SignaTech Logo](https://img.shields.io/badge/SignaTech-Traduction_Langue_des_Signes-FFE658?style=for-the-badge&logo=hand&logoColor=black)
 
-**Traduction en temps réel de la langue des signes américaine (ASL) via IA**
+**Traduction en temps réel de l'alphabet ASL (fingerspelling) via IA**
 
 [![React Native](https://img.shields.io/badge/React_Native-0.81-61DAFB?style=flat-square&logo=react)](https://reactnative.dev/)
 [![Node.js](https://img.shields.io/badge/Node.js-20+-339933?style=flat-square&logo=node.js)](https://nodejs.org/)
@@ -35,15 +35,15 @@
 
 ## 🎯 À propos
 
-**SignaTech** est une application innovante qui traduit en temps réel la langue des signes américaine (ASL) en texte. Utilisant la puissance de l'intelligence artificielle et de la vision par ordinateur, l'application capture les mouvements des mains via la caméra du téléphone et les traduit instantanément.
+**SignaTech** est une application innovante qui traduit en temps réel **l'alphabet de la langue des signes américaine (ASL fingerspelling)** en texte. Utilisant la puissance de l'intelligence artificielle et de la vision par ordinateur, l'application capture les positions statiques des mains via la caméra du téléphone et reconnaît les lettres de A à Z.
 
 ### ✨ Fonctionnalités principales
 
 - 📸 **Capture vidéo en temps réel** via la caméra du téléphone
-- 🧠 **Détection des keypoints** avec MediaPipe (55 points par main)
-- 🤖 **Prédiction IA** via un réseau de neurones MLP entraîné sur l'alphabet ASL
+- 🧠 **Détection des keypoints** avec MediaPipe (21 landmarks par main)
+- 🤖 **Reconnaissance de lettres A-Z** via un réseau de neurones MLP entraîné sur l'alphabet ASL
 - 🔄 **Filtrage intelligent** des répétitions avec Scala
-- 💬 **Affichage dynamique** du texte traduit avec timeout d'inactivité
+- 💬 **Formation de mots** par épellation (fingerspelling)
 - 🌐 **Architecture microservices** scalable et modulaire
 
 ---
@@ -276,10 +276,11 @@ keypoints_flat = keypoints.flatten()[:165]
 
 #### 3. Prédiction IA (PyTorch MLP)
 ```python
-# Modèle : 165 → 256 → 128 → 26 (lettres A-Z)
+# Modèle : 165 → 256 → 128 → 26 classes (lettres A-Z)
+# Reconnaît les positions statiques de la main
 output = model(tensor)
 probs = torch.softmax(output, dim=1)
-confidence, predicted = torch.max(probs, 1)
+confidence, predicted = torch.max(probs, 1)  # Lettre prédite
 ```
 
 #### 4. Filtrage Scala
@@ -435,10 +436,10 @@ SignaTech/
 │   ├── main.py              # ⭐ API FastAPI + WebSocket
 │   ├── mediapipe_extractor.py  # ⭐ Extraction keypoints
 │   ├── model/
-│   │   ├── asl_alphabet_mlp.py  # Architecture réseau
-│   │   └── asl_alphabet.pth     # Modèle entraîné
+│   │   ├── asl_alphabet_mlp.py  # Architecture réseau MLP
+│   │   └── asl_alphabet.pth     # Modèle entraîné (26 lettres)
 │   ├── datasets/
-│   │   └── asl_images/      # Dataset ASL (A-Z)
+│   │   └── asl_images/      # Dataset alphabet ASL (A-Z)
 │   ├── vision/
 │   │   └── webcam_loop.py   # Test webcam
 │   └── requirements.txt
