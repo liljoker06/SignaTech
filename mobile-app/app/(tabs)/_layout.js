@@ -38,13 +38,14 @@ export default function TabsLayout() {
           animationEnabled: true,
         }}
       >
+        {/* Ordre des onglets : Traduire - Cours - Explorer */}
         <Tabs.Screen
-          name="index"
+          name="translate"
           options={{
-            title: t('nav.home'),
+            title: t('nav.translate'),
             headerShown: false,
             tabBarIcon: ({ color, size }) => (
-              <Ionicons name="home" size={size} color={color} />
+              <Ionicons name="videocam" size={size} color={color} />
             ),
           }}
         />
@@ -54,16 +55,6 @@ export default function TabsLayout() {
             title: t('nav.courses'),
             tabBarIcon: ({ color, size }) => (
               <Ionicons name="school" size={size} color={color} />
-            ),
-          }}
-        />
-        <Tabs.Screen
-          name="translate"
-          options={{
-            title: t('nav.translate'),
-            headerShown: false,
-            tabBarIcon: ({ color, size }) => (
-              <Ionicons name="videocam" size={size} color={color} />
             ),
           }}
         />

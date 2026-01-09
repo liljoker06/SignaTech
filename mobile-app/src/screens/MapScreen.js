@@ -46,6 +46,8 @@ const MapScreen = () => {
     longitudeDelta: 5,
   });
   const [showSchoolsList, setShowSchoolsList] = useState(false);
+  const [selectedSchool, setSelectedSchool] = useState(null);
+  const [showSchoolDetail, setShowSchoolDetail] = useState(false);
 
   const { loading, error, data } = useQuery(GET_SCHOOLS);
 
@@ -144,6 +146,16 @@ const MapScreen = () => {
     } catch (error) {
       Alert.alert('Erreur', 'Impossible d\'ouvrir l\'application email');
     }
+  };
+
+  const handleSchoolPress = (school) => {
+    setSelectedSchool(school);
+    setShowSchoolDetail(true);
+  };
+
+  const handleCloseSchoolDetail = () => {
+    setShowSchoolDetail(false);
+    setTimeout(() => setSelectedSchool(null), 300);
   };
 
   if (loading) {
@@ -271,6 +283,7 @@ const MapScreen = () => {
             title={school.name}
             description={`${school.city || ''}, ${school.country || ''}`}
             pinColor="#FFD700"
+            onPress={() => handleSchoolPress(school)}
           />
         ))}
       </MapView>
@@ -314,7 +327,14 @@ const MapScreen = () => {
               showsVerticalScrollIndicator={false}
             >
               {filteredSchools.map((school, index) => (
-                <View key={school.id} style={styles.schoolCard}>
+                <TouchableOpacity
+                  key={school.id}
+                  style={styles.schoolCard}
+                  onPress={() => {
+                    setShowSchoolsList(false);
+                    setTimeout(() => handleSchoolPress(school), 300);
+                  }}
+                >
                   {/* Numéro et nom */}
                   <View style={styles.schoolHeader}>
                     <View style={styles.schoolNumber}>
@@ -347,27 +367,17 @@ const MapScreen = () => {
 
                     {/* Boutons d'action */}
                     <View style={styles.schoolActions}>
-                      {/* Bouton Site Web */}
-                      {school.website && (
-                        <TouchableOpacity 
-                          style={styles.actionButton}
-                          onPress={() => handleSchoolWebsite(school.website)}
-                        >
-                          <Ionicons name="globe-outline" size={20} color="#FFD700" />
-                          <Text style={styles.actionButtonText}>Site web</Text>
-                        </TouchableOpacity>
-                      )}
-
-                      {/* Bouton Email */}
-                      {school.contact_email && (
-                        <TouchableOpacity 
-                          style={styles.actionButton}
-                          onPress={() => handleEmailContact(school.contact_email)}
-                        >
-                          <Ionicons name="mail-outline" size={20} color="#FFD700" />
-                          <Text style={styles.actionButtonText}>Contact</Text>
-                        </TouchableOpacity>
-                      )}
+                      {/* Bouton Voir détails */}
+                      <TouchableOpacity 
+                        style={[styles.actionButton, styles.actionButtonPrimary]}
+                        onPress={() => {
+                          setShowSchoolsList(false);
+                          setTimeout(() => handleSchoolPress(school), 300);
+                        }}
+                      >
+                        <Ionicons name="information-circle-outline" size={20} color="#000" />
+                        <Text style={styles.actionButtonTextPrimary}>Voir détails</Text>
+                      </TouchableOpacity>
 
                       {/* Bouton Localiser sur la carte */}
                       <TouchableOpacity 
@@ -387,8 +397,145 @@ const MapScreen = () => {
                       </TouchableOpacity>
                     </View>
                   </View>
-                </View>
+                </TouchableOpacity>
               ))}
+            </ScrollView>
+          </View>
+        </View>
+      </Modal>
+
+      {/* Modal détail d'une école */}
+      <Modal
+        visible={showSchoolDetail}
+        transparent
+        animationType="slide"
+        onRequestClose={handleCloseSchoolDetail}
+      >
+        <View style={styles.modalOverlay}>
+          <View style={styles.detailModalContainer}>
+            {/* Header avec image de fond */}
+            <View style={styles.detailHeader}>
+              <View style={styles.detailHeaderGradient}>
+                <TouchableOpacity 
+                  onPress={handleCloseSchoolDetail}
+                  style={styles.detailCloseButton}
+                >
+                  <Ionicons name="close" size={28} color="#fff" />
+                </TouchableOpacity>
+                
+                <View style={styles.detailHeaderContent}>
+                  <View style={styles.schoolIconContainer}>
+                    <Ionicons name="school" size={50} color="#FFD700" />
+                  </View>
+                  <Text style={styles.detailSchoolName}>{selectedSchool?.name}</Text>
+                  {(selectedSchool?.city || selectedSchool?.country) && (
+                    <View style={styles.detailLocation}>
+                      <Ionicons name="location" size={18} color="#fff" />
+                      <Text style={styles.detailLocationText}>
+                        {selectedSchool?.city}{selectedSchool?.city && selectedSchool?.country ? ', ' : ''}{selectedSchool?.country}
+                      </Text>
+                    </View>
+                  )}
+                </View>
+              </View>
+            </View>
+
+            {/* Corps du modal avec détails */}
+            <ScrollView 
+              style={styles.detailBody}
+              showsVerticalScrollIndicator={false}
+            >
+              {/* Description */}
+              {selectedSchool?.description && (
+                <View style={styles.detailSection}>
+                  <View style={styles.detailSectionHeader}>
+                    <Ionicons name="document-text" size={24} color="#FFD700" />
+                    <Text style={styles.detailSectionTitle}>Description</Text>
+                  </View>
+                  <Text style={styles.detailDescription}>{selectedSchool.description}</Text>
+                </View>
+              )}
+
+              {/* Informations de contact */}
+              <View style={styles.detailSection}>
+                <View style={styles.detailSectionHeader}>
+                  <Ionicons name="call" size={24} color="#FFD700" />
+                  <Text style={styles.detailSectionTitle}>Contact</Text>
+                </View>
+
+                {selectedSchool?.website && (
+                  <TouchableOpacity 
+                    style={styles.detailInfoCard}
+                    onPress={() => handleSchoolWebsite(selectedSchool.website)}
+                  >
+                    <Ionicons name="globe" size={22} color="#4A90E2" />
+                    <View style={styles.detailInfoContent}>
+                      <Text style={styles.detailInfoLabel}>Site web</Text>
+                      <Text style={styles.detailInfoValue} numberOfLines={1}>
+                        {selectedSchool.website}
+                      </Text>
+                    </View>
+                    <Ionicons name="open-outline" size={20} color="#FFD700" />
+                  </TouchableOpacity>
+                )}
+
+                {selectedSchool?.contact_email && (
+                  <TouchableOpacity 
+                    style={styles.detailInfoCard}
+                    onPress={() => handleEmailContact(selectedSchool.contact_email)}
+                  >
+                    <Ionicons name="mail" size={22} color="#4CAF50" />
+                    <View style={styles.detailInfoContent}>
+                      <Text style={styles.detailInfoLabel}>Email</Text>
+                      <Text style={styles.detailInfoValue} numberOfLines={1}>
+                        {selectedSchool.contact_email}
+                      </Text>
+                    </View>
+                    <Ionicons name="send-outline" size={20} color="#FFD700" />
+                  </TouchableOpacity>
+                )}
+
+                {(!selectedSchool?.website && !selectedSchool?.contact_email) && (
+                  <Text style={styles.detailNoInfo}>
+                    Aucune information de contact disponible
+                  </Text>
+                )}
+              </View>
+
+              {/* Actions principales */}
+              <View style={styles.detailActionsSection}>
+                <TouchableOpacity 
+                  style={styles.detailActionButton}
+                  onPress={() => {
+                    handleCloseSchoolDetail();
+                    setTimeout(() => {
+                      setRegion({
+                        latitude: parseFloat(selectedSchool.latitude),
+                        longitude: parseFloat(selectedSchool.longitude),
+                        latitudeDelta: 0.01,
+                        longitudeDelta: 0.01,
+                      });
+                    }, 300);
+                  }}
+                >
+                  <View style={styles.detailActionIconContainer}>
+                    <Ionicons name="navigate" size={28} color="#FFD700" />
+                  </View>
+                  <Text style={styles.detailActionText}>Voir sur la carte</Text>
+                </TouchableOpacity>
+
+                {selectedSchool?.website && (
+                  <TouchableOpacity 
+                    style={styles.detailActionButton}
+                    onPress={() => handleSchoolWebsite(selectedSchool.website)}
+                  >
+                    <View style={styles.detailActionIconContainer}>
+                      <Ionicons name="globe" size={28} color="#FFD700" />
+                    </View>
+                    <Text style={styles.detailActionText}>Visiter le site</Text>
+                  </TouchableOpacity>
+                )}
+              </View>
             </ScrollView>
           </View>
         </View>
@@ -601,6 +748,156 @@ const styles = StyleSheet.create({
   },
   actionButtonText: {
     color: '#FFD700',
+    fontSize: 13,
+    fontWeight: '600',
+  },
+  detailModalContainer: {
+    backgroundColor: '#1a1a2e',
+    borderTopLeftRadius: 25,
+    borderTopRightRadius: 25,
+    maxHeight: '90%',
+    overflow: 'hidden',
+  },
+  detailHeader: {
+    height: 200,
+    backgroundColor: '#2c3e50',
+    overflow: 'hidden',
+  },
+  detailHeaderGradient: {
+    flex: 1,
+    backgroundColor: 'rgba(255, 215, 0, 0.2)',
+    padding: 20,
+  },
+  detailCloseButton: {
+    width: 44,
+    height: 44,
+    borderRadius: 22,
+    backgroundColor: 'rgba(0, 0, 0, 0.5)',
+    justifyContent: 'center',
+    alignItems: 'center',
+    alignSelf: 'flex-end',
+  },
+  detailHeaderContent: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+  schoolIconContainer: {
+    width: 80,
+    height: 80,
+    borderRadius: 40,
+    backgroundColor: 'rgba(26, 26, 46, 0.9)',
+    justifyContent: 'center',
+    alignItems: 'center',
+    marginBottom: 15,
+    borderWidth: 3,
+    borderColor: '#FFD700',
+  },
+  detailSchoolName: {
+    fontSize: 24,
+    fontWeight: 'bold',
+    color: '#fff',
+    textAlign: 'center',
+    marginBottom: 8,
+  },
+  detailLocation: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    gap: 5,
+  },
+  detailLocationText: {
+    fontSize: 16,
+    color: '#fff',
+  },
+  detailBody: {
+    padding: 20,
+  },
+  detailSection: {
+    marginBottom: 25,
+  },
+  detailSectionHeader: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    marginBottom: 15,
+    gap: 10,
+  },
+  detailSectionTitle: {
+    fontSize: 20,
+    fontWeight: 'bold',
+    color: '#fff',
+  },
+  detailDescription: {
+    fontSize: 16,
+    color: '#b0b0b0',
+    lineHeight: 24,
+  },
+  detailInfoCard: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    backgroundColor: 'rgba(255, 255, 255, 0.05)',
+    padding: 15,
+    borderRadius: 12,
+    marginBottom: 12,
+    gap: 15,
+    borderWidth: 1,
+    borderColor: 'rgba(255, 215, 0, 0.2)',
+  },
+  detailInfoContent: {
+    flex: 1,
+  },
+  detailInfoLabel: {
+    fontSize: 12,
+    color: '#999',
+    marginBottom: 4,
+  },
+  detailInfoValue: {
+    fontSize: 15,
+    color: '#fff',
+    fontWeight: '600',
+  },
+  detailNoInfo: {
+    fontSize: 14,
+    color: '#666',
+    fontStyle: 'italic',
+    textAlign: 'center',
+    paddingVertical: 15,
+  },
+  detailActionsSection: {
+    flexDirection: 'row',
+    gap: 15,
+    marginTop: 10,
+    marginBottom: 20,
+  },
+  detailActionButton: {
+    flex: 1,
+    backgroundColor: 'rgba(255, 215, 0, 0.15)',
+    padding: 20,
+    borderRadius: 15,
+    alignItems: 'center',
+    borderWidth: 2,
+    borderColor: '#FFD700',
+  },
+  detailActionIconContainer: {
+    width: 60,
+    height: 60,
+    borderRadius: 30,
+    backgroundColor: 'rgba(255, 215, 0, 0.2)',
+    justifyContent: 'center',
+    alignItems: 'center',
+    marginBottom: 10,
+  },
+  detailActionText: {
+    color: '#FFD700',
+    fontSize: 14,
+    fontWeight: '600',
+    textAlign: 'center',
+  },
+  actionButtonPrimary: {
+    backgroundColor: '#FFD700',
+    borderColor: '#FFD700',
+  },
+  actionButtonTextPrimary: {
+    color: '#000',
     fontSize: 13,
     fontWeight: '600',
   },
