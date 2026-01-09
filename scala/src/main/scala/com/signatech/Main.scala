@@ -2,8 +2,7 @@ package com.signatech
 
 import akka.actor.typed.ActorSystem
 import akka.actor.typed.scaladsl.Behaviors
-import com.signatech.websocket.WebSocketServer
-import com.signatech.websocket.client.PythonAIClient
+import com.signatech.websocket.FilterWebSocketServer
 import com.typesafe.scalalogging.StrictLogging
 import com.signatech.bootstrap.AutoImport
 
@@ -35,22 +34,15 @@ object Main extends StrictLogging {
     logger.info("SignaTech - Démarrage")
 
     // =====================
-    // DÉMARRAGE WS SCALA (FRONT / NODE)
+    // DÉMARRAGE WS SCALA (FILTRAGE)
     // =====================
-    val wsServer = new WebSocketServer()
-    wsServer.start()
-
-    // =====================
-    // 🔥 CONNEXION AU PYTHON AI
-    // =====================
-    val pythonWsUrl = "ws://localhost:8000/ws/alphabet"
-    val pythonClient = new PythonAIClient(pythonWsUrl)
-    pythonClient.connect()
+    val filterServer = new FilterWebSocketServer()
+    filterServer.start()
 
     println("=" * 60)
-    println("✓ Scala SignaTech backend started")
-    println("✓ WebSocket server: ws://localhost:8080/ws/translate")
-    println("✓ Connected to Python AI WebSocket")
+    println("✓ Scala SignaTech Filter Server started")
+    println("✓ WebSocket filter: ws://localhost:8080/ws/filter")
+    println("✓ Filtre les répétitions de lettres prédites par Python")
     println("=" * 60)
     println("Press ENTER to stop...")
 
