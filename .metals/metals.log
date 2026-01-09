@@ -7380,3 +7380,440 @@ AVERTISSEMENT: Unmatched cancel notification for request id 164
 2026.01.09 05:12:55 INFO  no build target found for D:\Cours\scala\SignaTech\scala\src\main\scala\com\signatech\ai\inference\SignRecognitionModel.scala. Using presentation compiler with project's scala-library version: 3.3.6
 2026.01.09 05:12:56 INFO  no build target found for D:\Cours\scala\SignaTech\scala\src\main\scala\com\signatech\ai\inference\ModelRegistry.scala. Using presentation compiler with project's scala-library version: 3.3.6
 2026.01.09 05:12:56 INFO  time: code lens generation in 1.82s
+2026.01.09 05:15:14 INFO  no build target found for D:\Cours\scala\SignaTech\scala\src\main\scala\com\signatech\Main.scala. Using presentation compiler with project's scala-library version: 3.3.6
+2026.01.09 05:15:14 WARN  no build target for: D:\Cours\scala\SignaTech\scala\src\main\scala\com\signatech\Main.scala
+2026.01.09 05:15:14 INFO  no build target found for d:\Cours\scala\SignaTech\scala\src\main\scala\com\signatech\ai\inference\SignRecognitionModel.scala. Using presentation compiler with project's scala-library version: 3.3.6
+2026.01.09 05:15:14 WARN  no build target for: D:\Cours\scala\SignaTech\scala\src\main\scala\com\signatech\websocket\WebSocketServer.scala
+2026.01.09 05:15:14 WARN  no build target for: D:\Cours\scala\SignaTech\scala\src\main\scala\com\signatech\websocket\model\PredictionPayload.scala
+2026.01.09 05:15:14 INFO  no build target found for D:\Cours\scala\SignaTech\scala\src\main\scala\com\signatech\websocket\model\PredictionPayload.scala. Using presentation compiler with project's scala-library version: 3.3.6
+2026.01.09 05:15:15 INFO  no build target found for d:\Cours\scala\SignaTech\scala\src\main\scala\com\signatech\ai\inference\SignRecognitionModel.scala. Using presentation compiler with project's scala-library version: 3.3.6
+2026.01.09 05:15:15 INFO  no build target found for D:\Cours\scala\SignaTech\scala\src\main\scala\com\signatech\websocket\WebSocketServer.scala. Using presentation compiler with project's scala-library version: 3.3.6
+2026.01.09 05:15:24 INFO  no build target found for D:\Cours\scala\SignaTech\scala\src\main\scala\com\signatech\Main.scala. Using presentation compiler with project's scala-library version: 3.3.6
+2026.01.09 05:15:24 WARN  no build target for: D:\Cours\scala\SignaTech\scala\src\main\scala\com\signatech\Main.scala
+2026.01.09 05:15:24 INFO  no build target found for D:\Cours\scala\SignaTech\scala\src\main\scala\com\signatech\Main.scala. Using presentation compiler with project's scala-library version: 3.3.6
+2026.01.09 05:15:24 INFO  no build target found for d:\Cours\scala\SignaTech\scala\src\main\scala\com\signatech\ai\inference\SignRecognitionModel.scala. Using presentation compiler with project's scala-library version: 3.3.6
+2026.01.09 05:15:37 INFO  no build target found for D:\Cours\scala\SignaTech\scala\src\main\scala\com\signatech\websocket\WebSocketServer.scala. Using presentation compiler with project's scala-library version: 3.3.6
+2026.01.09 05:15:37 WARN  no build target for: D:\Cours\scala\SignaTech\scala\src\main\scala\com\signatech\websocket\WebSocketServer.scala
+2026.01.09 05:15:37 INFO  no build target found for D:\Cours\scala\SignaTech\scala\src\main\scala\com\signatech\websocket\WebSocketServer.scala. Using presentation compiler with project's scala-library version: 3.3.6
+2026.01.09 05:15:37 INFO  no build target found for d:\Cours\scala\SignaTech\scala\src\main\scala\com\signatech\ai\inference\SignRecognitionModel.scala. Using presentation compiler with project's scala-library version: 3.3.6
+2026.01.09 05:15:42 INFO  no build target found for D:\Cours\scala\SignaTech\scala\src\main\scala\com\signatech\websocket\model\PredictionPayload.scala. Using presentation compiler with project's scala-library version: 3.3.6
+2026.01.09 05:15:42 WARN  no build target for: D:\Cours\scala\SignaTech\scala\src\main\scala\com\signatech\websocket\model\PredictionPayload.scala
+2026.01.09 05:15:42 INFO  no build target found for D:\Cours\scala\SignaTech\scala\src\main\scala\com\signatech\websocket\model\PredictionPayload.scala. Using presentation compiler with project's scala-library version: 3.3.6
+2026.01.09 05:15:42 INFO  no build target found for d:\Cours\scala\SignaTech\scala\src\main\scala\com\signatech\ai\inference\SignRecognitionModel.scala. Using presentation compiler with project's scala-library version: 3.3.6
+2026.01.09 05:15:45 INFO  no build target found for D:\Cours\scala\SignaTech\scala\build.sbt. Using presentation compiler with project's scala-library version: 3.3.6
+2026.01.09 05:15:45 WARN  no build target for: D:\Cours\scala\SignaTech\scala\build.sbt
+2026.01.09 05:15:45 INFO  no build target found for d:\Cours\scala\SignaTech\scala\src\main\scala\com\signatech\ai\inference\SignRecognitionModel.scala. Using presentation compiler with project's scala-library version: 3.3.6
+2026.01.09 05:15:56 INFO  no build target found for D:\Cours\scala\SignaTech\scala\build.sbt. Using presentation compiler with project's scala-library version: 3.3.6
+2026.01.09 05:15:56 WARN  no build target for: D:\Cours\scala\SignaTech\scala\build.sbt
+2026.01.09 05:15:56 INFO  no build target found for D:\Cours\scala\SignaTech\scala\build.sbt. Using presentation compiler with project's scala-library version: 3.3.6
+2026.01.09 05:15:56 INFO  skipping build import with status 'Dismissed'
+2026.01.09 05:15:56 INFO  no build target found for d:\Cours\scala\SignaTech\scala\src\main\scala\com\signatech\ai\inference\SignRecognitionModel.scala. Using presentation compiler with project's scala-library version: 3.3.6
+2026.01.09 05:16:03 WARN  no build target for: D:\Cours\scala\SignaTech\scala\src\main\scala\com\signatech\Main.scala
+2026.01.09 05:16:03 INFO  no build target found for D:\Cours\scala\SignaTech\scala\src\main\scala\com\signatech\Main.scala. Using presentation compiler with project's scala-library version: 3.3.6
+2026.01.09 05:16:03 INFO  no build target found for D:\Cours\scala\SignaTech\scala\src\main\scala\com\signatech\Main.scala. Using presentation compiler with project's scala-library version: 3.3.6
+2026.01.09 05:16:03 INFO  no build target found for D:\Cours\scala\SignaTech\scala\src\main\scala\com\signatech\Main.scala. Using presentation compiler with project's scala-library version: 3.3.6
+2026.01.09 05:16:03 INFO  no build target found for D:\Cours\scala\SignaTech\scala\src\main\scala\com\signatech\Main.scala. Using presentation compiler with project's scala-library version: 3.3.6
+2026.01.09 05:17:34 WARN  no build target for: D:\Cours\scala\SignaTech\scala\src\main\scala\com\signatech\Main.scala
+2026.01.09 05:17:34 WARN  no build target for: D:\Cours\scala\SignaTech\scala\src\main\scala\com\signatech\websocket\WebSocketServer.scala
+2026.01.09 05:17:34 WARN  no build target for: D:\Cours\scala\SignaTech\scala\src\main\scala\com\signatech\websocket\model\PredictionPayload.scala
+2026.01.09 05:17:34 INFO  no build target found for D:\Cours\scala\SignaTech\scala\build.sbt. Using presentation compiler with project's scala-library version: 3.3.6
+2026.01.09 05:17:34 WARN  no build target for: D:\Cours\scala\SignaTech\scala\build.sbt
+2026.01.09 05:17:34 INFO  skipping build import with status 'Dismissed'
+2026.01.09 05:17:34 INFO  no build target found for D:\Cours\scala\SignaTech\scala\src\main\scala\com\signatech\Main.scala. Using presentation compiler with project's scala-library version: 3.3.6
+2026.01.09 05:19:55 WARN  no build target for: D:\Cours\scala\SignaTech\scala\src\main\scala\com\signatech\Main.scala
+2026.01.09 05:19:55 INFO  no build target found for D:\Cours\scala\SignaTech\scala\src\main\scala\com\signatech\Main.scala. Using presentation compiler with project's scala-library version: 3.3.6
+2026.01.09 05:19:55 INFO  no build target found for D:\Cours\scala\SignaTech\scala\src\main\scala\com\signatech\Main.scala. Using presentation compiler with project's scala-library version: 3.3.6
+2026.01.09 05:19:55 INFO  no build target found for D:\Cours\scala\SignaTech\scala\src\main\scala\com\signatech\Main.scala. Using presentation compiler with project's scala-library version: 3.3.6
+2026.01.09 05:20:25 WARN  no build target for: D:\Cours\scala\SignaTech\scala\src\main\scala\com\signatech\model\ASLLetter.scala
+2026.01.09 05:20:25 INFO  no build target found for D:\Cours\scala\SignaTech\scala\src\main\scala\com\signatech\model\ASLLetter.scala. Using presentation compiler with project's scala-library version: 3.3.6
+2026.01.09 05:20:25 INFO  no build target found for D:\Cours\scala\SignaTech\scala\src\main\scala\com\signatech\model\ASLLetter.scala. Using presentation compiler with project's scala-library version: 3.3.6
+2026.01.09 05:20:25 INFO  no build target found for D:\Cours\scala\SignaTech\scala\src\main\scala\com\signatech\Main.scala. Using presentation compiler with project's scala-library version: 3.3.6
+2026.01.09 05:20:26 INFO  no build target found for D:\Cours\scala\SignaTech\scala\src\main\scala\com\signatech\model\ASLLetter.scala. Using presentation compiler with project's scala-library version: 3.3.6
+2026.01.09 05:20:26 WARN  no build target for: D:\Cours\scala\SignaTech\scala\src\main\scala\com\signatech\model\ASLLetter.scala
+2026.01.09 05:20:26 INFO  no build target found for D:\Cours\scala\SignaTech\scala\src\main\scala\com\signatech\model\ASLLetter.scala. Using presentation compiler with project's scala-library version: 3.3.6
+2026.01.09 05:20:26 INFO  no build target found for D:\Cours\scala\SignaTech\scala\src\main\scala\com\signatech\Main.scala. Using presentation compiler with project's scala-library version: 3.3.6
+2026.01.09 05:20:30 WARN  no build target for: D:\Cours\scala\SignaTech\scala\src\main\scala\com\signatech\model\ASLLetter.scala
+2026.01.09 05:20:30 INFO  no build target found for D:\Cours\scala\SignaTech\scala\src\main\scala\com\signatech\model\ASLLetter.scala. Using presentation compiler with project's scala-library version: 3.3.6
+2026.01.09 05:20:30 INFO  no build target found for D:\Cours\scala\SignaTech\scala\src\main\scala\com\signatech\model\ASLLetter.scala. Using presentation compiler with project's scala-library version: 3.3.6
+2026.01.09 05:20:44 INFO  no build target found for D:\Cours\scala\SignaTech\scala\src\main\scala\com\signatech\model\ASLLetter.scala. Using presentation compiler with project's scala-library version: 3.3.6
+2026.01.09 05:20:44 WARN  no build target for: D:\Cours\scala\SignaTech\scala\src\main\scala\com\signatech\service\PythonAIClient.scala
+2026.01.09 05:20:44 INFO  no build target found for D:\Cours\scala\SignaTech\scala\src\main\scala\com\signatech\service\PythonAIClient.scala. Using presentation compiler with project's scala-library version: 3.3.6
+2026.01.09 05:20:44 INFO  no build target found for D:\Cours\scala\SignaTech\scala\src\main\scala\com\signatech\service\PythonAIClient.scala. Using presentation compiler with project's scala-library version: 3.3.6
+2026.01.09 05:20:44 INFO  no build target found for D:\Cours\scala\SignaTech\scala\src\main\scala\com\signatech\model\ASLLetter.scala. Using presentation compiler with project's scala-library version: 3.3.6
+2026.01.09 05:20:45 INFO  no build target found for D:\Cours\scala\SignaTech\scala\src\main\scala\com\signatech\service\PythonAIClient.scala. Using presentation compiler with project's scala-library version: 3.3.6
+2026.01.09 05:20:45 WARN  no build target for: D:\Cours\scala\SignaTech\scala\src\main\scala\com\signatech\service\PythonAIClient.scala
+2026.01.09 05:20:45 INFO  no build target found for D:\Cours\scala\SignaTech\scala\src\main\scala\com\signatech\service\PythonAIClient.scala. Using presentation compiler with project's scala-library version: 3.3.6
+2026.01.09 05:20:45 INFO  no build target found for D:\Cours\scala\SignaTech\scala\src\main\scala\com\signatech\model\ASLLetter.scala. Using presentation compiler with project's scala-library version: 3.3.6
+2026.01.09 05:21:02 WARN  no build target for: D:\Cours\scala\SignaTech\scala\src\main\scala\com\signatech\service\LetterStabilizer.scala
+2026.01.09 05:21:02 INFO  no build target found for D:\Cours\scala\SignaTech\scala\src\main\scala\com\signatech\service\LetterStabilizer.scala. Using presentation compiler with project's scala-library version: 3.3.6
+2026.01.09 05:21:02 INFO  no build target found for D:\Cours\scala\SignaTech\scala\src\main\scala\com\signatech\service\LetterStabilizer.scala. Using presentation compiler with project's scala-library version: 3.3.6
+2026.01.09 05:21:02 INFO  no build target found for D:\Cours\scala\SignaTech\scala\src\main\scala\com\signatech\model\ASLLetter.scala. Using presentation compiler with project's scala-library version: 3.3.6
+2026.01.09 05:21:03 INFO  no build target found for D:\Cours\scala\SignaTech\scala\src\main\scala\com\signatech\service\LetterStabilizer.scala. Using presentation compiler with project's scala-library version: 3.3.6
+2026.01.09 05:21:03 INFO  no build target found for D:\Cours\scala\SignaTech\scala\src\main\scala\com\signatech\service\LetterStabilizer.scala. Using presentation compiler with project's scala-library version: 3.3.6
+2026.01.09 05:21:03 WARN  no build target for: D:\Cours\scala\SignaTech\scala\src\main\scala\com\signatech\service\LetterStabilizer.scala
+2026.01.09 05:21:03 INFO  no build target found for D:\Cours\scala\SignaTech\scala\src\main\scala\com\signatech\model\ASLLetter.scala. Using presentation compiler with project's scala-library version: 3.3.6
+2026.01.09 05:21:23 WARN  no build target for: D:\Cours\scala\SignaTech\scala\src\main\scala\com\signatech\service\WordBuilder.scala
+2026.01.09 05:21:23 INFO  no build target found for D:\Cours\scala\SignaTech\scala\src\main\scala\com\signatech\service\WordBuilder.scala. Using presentation compiler with project's scala-library version: 3.3.6
+2026.01.09 05:21:23 INFO  no build target found for D:\Cours\scala\SignaTech\scala\src\main\scala\com\signatech\service\WordBuilder.scala. Using presentation compiler with project's scala-library version: 3.3.6
+2026.01.09 05:21:23 INFO  no build target found for D:\Cours\scala\SignaTech\scala\src\main\scala\com\signatech\model\ASLLetter.scala. Using presentation compiler with project's scala-library version: 3.3.6
+2026.01.09 05:21:24 INFO  no build target found for D:\Cours\scala\SignaTech\scala\src\main\scala\com\signatech\service\WordBuilder.scala. Using presentation compiler with project's scala-library version: 3.3.6
+2026.01.09 05:21:24 WARN  no build target for: D:\Cours\scala\SignaTech\scala\src\main\scala\com\signatech\service\WordBuilder.scala
+2026.01.09 05:21:24 INFO  no build target found for D:\Cours\scala\SignaTech\scala\src\main\scala\com\signatech\service\WordBuilder.scala. Using presentation compiler with project's scala-library version: 3.3.6
+2026.01.09 05:21:24 INFO  no build target found for D:\Cours\scala\SignaTech\scala\src\main\scala\com\signatech\model\ASLLetter.scala. Using presentation compiler with project's scala-library version: 3.3.6
+2026.01.09 05:21:42 INFO  no build target found for D:\Cours\scala\SignaTech\scala\src\main\scala\com\signatech\service\NodeJSRelay.scala. Using presentation compiler with project's scala-library version: 3.3.6
+2026.01.09 05:21:42 WARN  no build target for: D:\Cours\scala\SignaTech\scala\src\main\scala\com\signatech\service\NodeJSRelay.scala
+2026.01.09 05:21:42 INFO  no build target found for D:\Cours\scala\SignaTech\scala\src\main\scala\com\signatech\service\NodeJSRelay.scala. Using presentation compiler with project's scala-library version: 3.3.6
+2026.01.09 05:21:42 INFO  no build target found for D:\Cours\scala\SignaTech\scala\src\main\scala\com\signatech\model\ASLLetter.scala. Using presentation compiler with project's scala-library version: 3.3.6
+2026.01.09 05:21:43 INFO  no build target found for D:\Cours\scala\SignaTech\scala\src\main\scala\com\signatech\service\NodeJSRelay.scala. Using presentation compiler with project's scala-library version: 3.3.6
+2026.01.09 05:21:43 WARN  no build target for: D:\Cours\scala\SignaTech\scala\src\main\scala\com\signatech\service\NodeJSRelay.scala
+2026.01.09 05:21:43 INFO  no build target found for D:\Cours\scala\SignaTech\scala\src\main\scala\com\signatech\service\NodeJSRelay.scala. Using presentation compiler with project's scala-library version: 3.3.6
+2026.01.09 05:21:43 INFO  no build target found for D:\Cours\scala\SignaTech\scala\src\main\scala\com\signatech\model\ASLLetter.scala. Using presentation compiler with project's scala-library version: 3.3.6
+2026.01.09 05:22:00 WARN  no build target for: D:\Cours\scala\SignaTech\scala\src\main\scala\com\signatech\service\ASLPipeline.scala
+2026.01.09 05:22:00 INFO  no build target found for D:\Cours\scala\SignaTech\scala\src\main\scala\com\signatech\service\ASLPipeline.scala. Using presentation compiler with project's scala-library version: 3.3.6
+2026.01.09 05:22:00 INFO  no build target found for D:\Cours\scala\SignaTech\scala\src\main\scala\com\signatech\service\ASLPipeline.scala. Using presentation compiler with project's scala-library version: 3.3.6
+2026.01.09 05:22:00 INFO  no build target found for D:\Cours\scala\SignaTech\scala\src\main\scala\com\signatech\model\ASLLetter.scala. Using presentation compiler with project's scala-library version: 3.3.6
+2026.01.09 05:22:01 INFO  no build target found for D:\Cours\scala\SignaTech\scala\src\main\scala\com\signatech\service\ASLPipeline.scala. Using presentation compiler with project's scala-library version: 3.3.6
+2026.01.09 05:22:01 WARN  no build target for: D:\Cours\scala\SignaTech\scala\src\main\scala\com\signatech\service\ASLPipeline.scala
+2026.01.09 05:22:01 INFO  no build target found for D:\Cours\scala\SignaTech\scala\src\main\scala\com\signatech\service\ASLPipeline.scala. Using presentation compiler with project's scala-library version: 3.3.6
+2026.01.09 05:22:01 INFO  no build target found for D:\Cours\scala\SignaTech\scala\src\main\scala\com\signatech\model\ASLLetter.scala. Using presentation compiler with project's scala-library version: 3.3.6
+2026.01.09 05:22:08 INFO  no build target found for D:\Cours\scala\SignaTech\scala\src\main\scala\com\signatech\Main.scala. Using presentation compiler with project's scala-library version: 3.3.6
+2026.01.09 05:22:08 WARN  no build target for: D:\Cours\scala\SignaTech\scala\src\main\scala\com\signatech\Main.scala
+2026.01.09 05:22:08 INFO  no build target found for D:\Cours\scala\SignaTech\scala\src\main\scala\com\signatech\Main.scala. Using presentation compiler with project's scala-library version: 3.3.6
+2026.01.09 05:22:08 INFO  no build target found for D:\Cours\scala\SignaTech\scala\src\main\scala\com\signatech\model\ASLLetter.scala. Using presentation compiler with project's scala-library version: 3.3.6
+2026.01.09 05:22:15 INFO  no build target found for D:\Cours\scala\SignaTech\scala\src\main\scala\com\signatech\Main.scala. Using presentation compiler with project's scala-library version: 3.3.6
+2026.01.09 05:22:15 WARN  no build target for: D:\Cours\scala\SignaTech\scala\src\main\scala\com\signatech\Main.scala
+2026.01.09 05:22:15 INFO  no build target found for D:\Cours\scala\SignaTech\scala\src\main\scala\com\signatech\Main.scala. Using presentation compiler with project's scala-library version: 3.3.6
+2026.01.09 05:22:15 INFO  no build target found for D:\Cours\scala\SignaTech\scala\src\main\scala\com\signatech\model\ASLLetter.scala. Using presentation compiler with project's scala-library version: 3.3.6
+2026.01.09 05:22:59 INFO  no build target found for D:\Cours\scala\SignaTech\scala\src\main\scala\com\signatech\model\ASLLetter.scala. Using presentation compiler with project's scala-library version: 3.3.6
+2026.01.09 05:22:59 INFO  no build target found for D:\Cours\scala\SignaTech\scala\src\main\scala\com\signatech\model\ASLLetter.scala. Using presentation compiler with project's scala-library version: 3.3.6
+2026.01.09 05:24:14 INFO  no build target found for D:\Cours\scala\SignaTech\scala\src\main\scala\com\signatech\model\ASLLetter.scala. Using presentation compiler with project's scala-library version: 3.3.6
+2026.01.09 05:24:14 INFO  no build target found for D:\Cours\scala\SignaTech\scala\src\main\scala\com\signatech\model\ASLLetter.scala. Using presentation compiler with project's scala-library version: 3.3.6
+2026.01.09 05:24:15 WARN  no build target for: D:\Cours\scala\SignaTech\scala\src\main\scala\com\signatech\model\ASLLetter.scala
+2026.01.09 05:24:55 INFO  no build target found for D:\Cours\scala\SignaTech\scala\src\main\scala\com\signatech\Main.scala. Using presentation compiler with project's scala-library version: 3.3.6
+2026.01.09 05:24:55 INFO  no build target found for D:\Cours\scala\SignaTech\scala\src\main\scala\com\signatech\model\ASLLetter.scala. Using presentation compiler with project's scala-library version: 3.3.6
+2026.01.09 05:24:55 INFO  no build target found for d:\Cours\scala\SignaTech\scala\src\main\scala\com\signatech\service\NodeJSRelay.scala. Using presentation compiler with project's scala-library version: 3.3.6
+2026.01.09 05:24:55 INFO  no build target found for d:\Cours\scala\SignaTech\scala\src\main\scala\com\signatech\service\PythonAIClient.scala. Using presentation compiler with project's scala-library version: 3.3.6
+2026.01.09 05:24:55 INFO  no build target found for d:\Cours\scala\SignaTech\scala\src\main\scala\com\signatech\service\LetterStabilizer.scala. Using presentation compiler with project's scala-library version: 3.3.6
+2026.01.09 05:24:55 INFO  no build target found for d:\Cours\scala\SignaTech\scala\src\main\scala\com\signatech\service\WordBuilder.scala. Using presentation compiler with project's scala-library version: 3.3.6
+2026.01.09 05:24:55 WARN  no build target for: D:\Cours\scala\SignaTech\scala\src\main\scala\com\signatech\Main.scala
+2026.01.09 05:24:55 INFO  no build target found for D:\Cours\scala\SignaTech\scala\src\main\scala\com\signatech\Main.scala. Using presentation compiler with project's scala-library version: 3.3.6
+2026.01.09 05:24:55 WARN  no build target for: D:\Cours\scala\SignaTech\scala\src\main\scala\com\signatech\model\ASLLetter.scala
+2026.01.09 05:24:55 INFO  no build target found for D:\Cours\scala\SignaTech\scala\src\main\scala\com\signatech\model\ASLLetter.scala. Using presentation compiler with project's scala-library version: 3.3.6
+2026.01.09 05:24:55 INFO  no build target found for D:\Cours\scala\SignaTech\scala\src\main\scala\com\signatech\model\ASLLetter.scala. Using presentation compiler with project's scala-library version: 3.3.6
+2026.01.09 05:25:00 INFO  no build target found for d:\Cours\scala\SignaTech\scala\src\main\scala\com\signatech\service\ASLPipeline.scala. Using presentation compiler with project's scala-library version: 3.3.6
+2026.01.09 05:26:48 WARN  no build target for: D:\Cours\scala\SignaTech\scala\src\main\scala\com\signatech\websocket\WebSocketServer.scala
+2026.01.09 05:26:48 INFO  no build target found for D:\Cours\scala\SignaTech\scala\src\main\scala\com\signatech\websocket\WebSocketServer.scala. Using presentation compiler with project's scala-library version: 3.3.6
+2026.01.09 05:26:49 INFO  no build target found for D:\Cours\scala\SignaTech\scala\src\main\scala\com\signatech\websocket\WebSocketServer.scala. Using presentation compiler with project's scala-library version: 3.3.6
+2026.01.09 05:26:48 INFO  no build target found for D:\Cours\scala\SignaTech\scala\src\main\scala\com\signatech\websocket\WebSocketServer.scala. Using presentation compiler with project's scala-library version: 3.3.6
+2026.01.09 05:26:50 WARN  no build target for: D:\Cours\scala\SignaTech\scala\src\main\scala\com\signatech\websocket\model\PredictionPayload.scala
+2026.01.09 05:26:50 INFO  no build target found for D:\Cours\scala\SignaTech\scala\src\main\scala\com\signatech\websocket\model\PredictionPayload.scala. Using presentation compiler with project's scala-library version: 3.3.6
+2026.01.09 05:26:50 INFO  no build target found for D:\Cours\scala\SignaTech\scala\src\main\scala\com\signatech\websocket\model\PredictionPayload.scala. Using presentation compiler with project's scala-library version: 3.3.6
+2026.01.09 05:26:52 WARN  no build target for: D:\Cours\scala\SignaTech\scala\src\main\scala\com\signatech\websocket\WebSocketServer.scala
+2026.01.09 05:26:52 INFO  no build target found for D:\Cours\scala\SignaTech\scala\src\main\scala\com\signatech\websocket\WebSocketServer.scala. Using presentation compiler with project's scala-library version: 3.3.6
+2026.01.09 05:26:52 INFO  no build target found for D:\Cours\scala\SignaTech\scala\src\main\scala\com\signatech\websocket\WebSocketServer.scala. Using presentation compiler with project's scala-library version: 3.3.6
+2026.01.09 05:26:52 INFO  no build target found for D:\Cours\scala\SignaTech\scala\src\main\scala\com\signatech\websocket\WebSocketServer.scala. Using presentation compiler with project's scala-library version: 3.3.6
+2026.01.09 05:26:53 INFO  no build target found for D:\Cours\scala\SignaTech\scala\src\main\scala\com\signatech\websocket\WebSocketServer.scala. Using presentation compiler with project's scala-library version: 3.3.6
+2026.01.09 05:26:54 INFO  no build target found for D:\Cours\scala\SignaTech\scala\src\main\scala\com\signatech\websocket\WebSocketServer.scala. Using presentation compiler with project's scala-library version: 3.3.6
+2026.01.09 05:26:54 INFO  no build target found for D:\Cours\scala\SignaTech\scala\src\main\scala\com\signatech\websocket\WebSocketServer.scala. Using presentation compiler with project's scala-library version: 3.3.6
+2026.01.09 05:26:54 INFO  no build target found for D:\Cours\scala\SignaTech\scala\src\main\scala\com\signatech\websocket\WebSocketServer.scala. Using presentation compiler with project's scala-library version: 3.3.6
+2026.01.09 05:26:54 INFO  Created report: Optional[file:///D:/Cours/scala/SignaTech/scala/src/main/scala/com/signatech/websocket/WebSocketServer.scala]
+2026.01.09 05:26:54 INFO  empty definition using pc, found symbol in pc: scaladsl. (full report at: "D:\Cours\scala\SignaTech\.metals\.reports\metals-full\2026-01-09\r_empty-definition_05-26-54-399.md")
+2026.01.09 05:26:54 INFO  no build target found for D:\Cours\scala\SignaTech\scala\src\main\scala\com\signatech\websocket\WebSocketServer.scala. Using presentation compiler with project's scala-library version: 3.3.6
+2026.01.09 05:26:54 INFO  no build target found for D:\Cours\scala\SignaTech\scala\src\main\scala\com\signatech\websocket\WebSocketServer.scala. Using presentation compiler with project's scala-library version: 3.3.6
+2026.01.09 05:26:54 INFO  no build target found for D:\Cours\scala\SignaTech\scala\src\main\scala\com\signatech\websocket\WebSocketServer.scala. Using presentation compiler with project's scala-library version: 3.3.6
+2026.01.09 05:26:54 INFO  no build target found for D:\Cours\scala\SignaTech\scala\src\main\scala\com\signatech\websocket\WebSocketServer.scala. Using presentation compiler with project's scala-library version: 3.3.6
+2026.01.09 05:26:54 INFO  no build target found for D:\Cours\scala\SignaTech\scala\src\main\scala\com\signatech\websocket\WebSocketServer.scala. Using presentation compiler with project's scala-library version: 3.3.6
+Exception in thread "pool-75-thread-1" java.lang.InterruptedException
+	at scala.meta.internal.metals.FutureCancelToken.checkCanceled(FutureCancelToken.scala:29)
+	at scala.meta.internal.pc.CompilerAccess.onCompilerJobQueue$$anonfun$1(CompilerAccess.scala:244)
+	at scala.meta.internal.pc.CompilerJobQueue$Job.run(CompilerJobQueue.scala:153)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:840)
+2026.01.09 05:26:54 INFO  no build target found for D:\Cours\scala\SignaTech\scala\src\main\scala\com\signatech\websocket\WebSocketServer.scala. Using presentation compiler with project's scala-library version: 3.3.6
+2026.01.09 05:27:02 INFO  no build target found for D:\Cours\scala\SignaTech\scala\src\main\scala\com\signatech\model\ASLLetter.scala. Using presentation compiler with project's scala-library version: 3.3.6
+2026.01.09 05:27:02 WARN  no build target for: D:\Cours\scala\SignaTech\scala\src\main\scala\com\signatech\model\ASLLetter.scala
+2026.01.09 05:27:02 INFO  no build target found for D:\Cours\scala\SignaTech\scala\src\main\scala\com\signatech\model\ASLLetter.scala. Using presentation compiler with project's scala-library version: 3.3.6
+2026.01.09 05:27:02 WARN  Could not find semantic tokens for: file:///D:/Cours/scala/SignaTech/scala/src/main/scala/com/signatech/model/ASLLetter.scala
+2026.01.09 05:27:02 INFO  no build target found for D:\Cours\scala\SignaTech\scala\src\main\scala\com\signatech\model\ASLLetter.scala. Using presentation compiler with project's scala-library version: 3.3.6
+2026.01.09 05:27:02 WARN  Could not find semantic tokens for: file:///D:/Cours/scala/SignaTech/scala/src/main/scala/com/signatech/model/ASLLetter.scala
+2026.01.09 05:27:04 INFO  no build target found for d:\Cours\scala\SignaTech\scala\src\main\scala\com\signatech\model\ASLLetter.scala. Using presentation compiler with project's scala-library version: 3.3.6
+2026.01.09 05:27:04 WARN  no build target for: D:\Cours\scala\SignaTech\scala\src\main\scala\com\signatech\websocket\WebSocketServer.scala
+2026.01.09 05:27:04 INFO  no build target found for D:\Cours\scala\SignaTech\scala\src\main\scala\com\signatech\websocket\WebSocketServer.scala. Using presentation compiler with project's scala-library version: 3.3.6
+2026.01.09 05:27:04 INFO  no build target found for D:\Cours\scala\SignaTech\scala\src\main\scala\com\signatech\websocket\WebSocketServer.scala. Using presentation compiler with project's scala-library version: 3.3.6
+2026.01.09 05:27:04 INFO  no build target found for D:\Cours\scala\SignaTech\scala\src\main\scala\com\signatech\websocket\WebSocketServer.scala. Using presentation compiler with project's scala-library version: 3.3.6
+2026.01.09 05:27:04 INFO  no build target found for D:\Cours\scala\SignaTech\scala\src\main\scala\com\signatech\websocket\WebSocketServer.scala. Using presentation compiler with project's scala-library version: 3.3.6
+2026.01.09 05:31:01 INFO  no build target found for D:\Cours\scala\SignaTech\scala\src\main\scala\com\signatech\model\VideoFrame.scala. Using presentation compiler with project's scala-library version: 3.3.6
+2026.01.09 05:31:01 WARN  no build target for: D:\Cours\scala\SignaTech\scala\src\main\scala\com\signatech\model\VideoFrame.scala
+2026.01.09 05:31:01 INFO  no build target found for D:\Cours\scala\SignaTech\scala\src\main\scala\com\signatech\model\VideoFrame.scala. Using presentation compiler with project's scala-library version: 3.3.6
+2026.01.09 05:31:01 INFO  no build target found for D:\Cours\scala\SignaTech\scala\src\main\scala\com\signatech\model\VideoFrame.scala. Using presentation compiler with project's scala-library version: 3.3.6
+2026.01.09 05:31:01 INFO  no build target found for D:\Cours\scala\SignaTech\scala\src\main\scala\com\signatech\model\VideoFrame.scala. Using presentation compiler with project's scala-library version: 3.3.6
+2026.01.09 05:31:01 INFO  no build target found for D:\Cours\scala\SignaTech\scala\src\main\scala\com\signatech\model\VideoFrame.scala. Using presentation compiler with project's scala-library version: 3.3.6
+2026.01.09 05:31:01 INFO  no build target found for D:\Cours\scala\SignaTech\scala\src\main\scala\com\signatech\model\VideoFrame.scala. Using presentation compiler with project's scala-library version: 3.3.6
+2026.01.09 05:31:05 WARN  no build target for: D:\Cours\scala\SignaTech\scala\src\main\scala\com\signatech\websocket\WebSocketServer.scala
+2026.01.09 05:31:05 INFO  no build target found for D:\Cours\scala\SignaTech\scala\src\main\scala\com\signatech\websocket\WebSocketServer.scala. Using presentation compiler with project's scala-library version: 3.3.6
+2026.01.09 05:31:05 INFO  no build target found for D:\Cours\scala\SignaTech\scala\src\main\scala\com\signatech\websocket\WebSocketServer.scala. Using presentation compiler with project's scala-library version: 3.3.6
+2026.01.09 05:31:05 INFO  no build target found for D:\Cours\scala\SignaTech\scala\src\main\scala\com\signatech\websocket\WebSocketServer.scala. Using presentation compiler with project's scala-library version: 3.3.6
+2026.01.09 05:37:04 WARN  no build target for: D:\Cours\scala\SignaTech\scala\src\main\scala\com\signatech\websocket\model\PredictionPayload.scala
+2026.01.09 05:37:04 INFO  no build target found for D:\Cours\scala\SignaTech\scala\src\main\scala\com\signatech\websocket\model\PredictionPayload.scala. Using presentation compiler with project's scala-library version: 3.3.6
+2026.01.09 05:37:04 INFO  no build target found for D:\Cours\scala\SignaTech\scala\src\main\scala\com\signatech\websocket\model\PredictionPayload.scala. Using presentation compiler with project's scala-library version: 3.3.6
+2026.01.09 05:37:09 WARN  no build target for: D:\Cours\scala\SignaTech\scala\src\main\scala\com\signatech\websocket\WebSocketServer.scala
+2026.01.09 05:37:09 INFO  no build target found for D:\Cours\scala\SignaTech\scala\src\main\scala\com\signatech\websocket\WebSocketServer.scala. Using presentation compiler with project's scala-library version: 3.3.6
+2026.01.09 05:37:09 INFO  no build target found for D:\Cours\scala\SignaTech\scala\src\main\scala\com\signatech\websocket\WebSocketServer.scala. Using presentation compiler with project's scala-library version: 3.3.6
+2026.01.09 05:37:09 INFO  no build target found for D:\Cours\scala\SignaTech\scala\src\main\scala\com\signatech\websocket\WebSocketServer.scala. Using presentation compiler with project's scala-library version: 3.3.6
+2026.01.09 05:37:10 INFO  no build target found for D:\Cours\scala\SignaTech\scala\src\main\scala\com\signatech\websocket\WebSocketServer.scala. Using presentation compiler with project's scala-library version: 3.3.6
+2026.01.09 05:37:22 WARN  no build target for: D:\Cours\scala\SignaTech\scala\src\main\scala\com\signatech\websocket\model\PythonPrediction.scala
+2026.01.09 05:37:22 INFO  no build target found for D:\Cours\scala\SignaTech\scala\src\main\scala\com\signatech\websocket\model\PythonPrediction.scala. Using presentation compiler with project's scala-library version: 3.3.6
+2026.01.09 05:37:22 INFO  no build target found for D:\Cours\scala\SignaTech\scala\src\main\scala\com\signatech\websocket\model\PythonPrediction.scala. Using presentation compiler with project's scala-library version: 3.3.6
+2026.01.09 05:37:22 WARN  Could not find semantic tokens for: file:///D:/Cours/scala/SignaTech/scala/src/main/scala/com/signatech/websocket/model/PythonPrediction.scala
+2026.01.09 05:37:22 INFO  no build target found for D:\Cours\scala\SignaTech\scala\src\main\scala\com\signatech\websocket\model\PythonPrediction.scala. Using presentation compiler with project's scala-library version: 3.3.6
+2026.01.09 05:37:22 WARN  Could not find semantic tokens for: file:///D:/Cours/scala/SignaTech/scala/src/main/scala/com/signatech/websocket/model/PythonPrediction.scala
+2026.01.09 05:37:26 INFO  no build target found for D:\Cours\scala\SignaTech\scala\src\main\scala\com\signatech\websocket\model\PythonPrediction.scala. Using presentation compiler with project's scala-library version: 3.3.6
+2026.01.09 05:37:26 INFO  no build target found for D:\Cours\scala\SignaTech\scala\src\main\scala\com\signatech\websocket\model\PythonPrediction.scala. Using presentation compiler with project's scala-library version: 3.3.6
+2026.01.09 05:37:26 INFO  no build target found for D:\Cours\scala\SignaTech\scala\src\main\scala\com\signatech\websocket\model\PythonPrediction.scala. Using presentation compiler with project's scala-library version: 3.3.6
+2026.01.09 05:37:26 WARN  no build target for: D:\Cours\scala\SignaTech\scala\src\main\scala\com\signatech\websocket\model\PythonPrediction.scala
+2026.01.09 05:37:27 INFO  no build target found for D:\Cours\scala\SignaTech\scala\src\main\scala\com\signatech\websocket\model\PythonPrediction.scala. Using presentation compiler with project's scala-library version: 3.3.6
+2026.01.09 05:37:52 INFO  no build target found for D:\Cours\scala\SignaTech\scala\src\main\scala\com\signatech\websocket\client\PythonAIClient.scala. Using presentation compiler with project's scala-library version: 3.3.6
+2026.01.09 05:37:52 WARN  no build target for: D:\Cours\scala\SignaTech\scala\src\main\scala\com\signatech\websocket\client\PythonAIClient.scala
+2026.01.09 05:37:52 INFO  no build target found for D:\Cours\scala\SignaTech\scala\src\main\scala\com\signatech\websocket\client\PythonAIClient.scala. Using presentation compiler with project's scala-library version: 3.3.6
+2026.01.09 05:37:52 WARN  Could not find semantic tokens for: file:///D:/Cours/scala/SignaTech/scala/src/main/scala/com/signatech/websocket/client/PythonAIClient.scala
+2026.01.09 05:37:53 INFO  no build target found for D:\Cours\scala\SignaTech\scala\src\main\scala\com\signatech\websocket\client\PythonAIClient.scala. Using presentation compiler with project's scala-library version: 3.3.6
+2026.01.09 05:37:53 WARN  Could not find semantic tokens for: file:///D:/Cours/scala/SignaTech/scala/src/main/scala/com/signatech/websocket/client/PythonAIClient.scala
+2026.01.09 05:37:58 INFO  no build target found for D:\Cours\scala\SignaTech\scala\src\main\scala\com\signatech\websocket\client\PythonAIClient.scala. Using presentation compiler with project's scala-library version: 3.3.6
+2026.01.09 05:37:58 INFO  no build target found for D:\Cours\scala\SignaTech\scala\src\main\scala\com\signatech\websocket\client\PythonAIClient.scala. Using presentation compiler with project's scala-library version: 3.3.6
+2026.01.09 05:37:58 INFO  no build target found for D:\Cours\scala\SignaTech\scala\src\main\scala\com\signatech\websocket\client\PythonAIClient.scala. Using presentation compiler with project's scala-library version: 3.3.6
+2026.01.09 05:37:58 WARN  no build target for: D:\Cours\scala\SignaTech\scala\src\main\scala\com\signatech\websocket\client\PythonAIClient.scala
+2026.01.09 05:37:58 INFO  no build target found for D:\Cours\scala\SignaTech\scala\src\main\scala\com\signatech\websocket\client\PythonAIClient.scala. Using presentation compiler with project's scala-library version: 3.3.6
+2026.01.09 05:38:04 WARN  no build target for: D:\Cours\scala\SignaTech\scala\src\main\scala\com\signatech\Main.scala
+2026.01.09 05:38:04 INFO  no build target found for D:\Cours\scala\SignaTech\scala\src\main\scala\com\signatech\Main.scala. Using presentation compiler with project's scala-library version: 3.3.6
+2026.01.09 05:38:04 INFO  no build target found for D:\Cours\scala\SignaTech\scala\src\main\scala\com\signatech\Main.scala. Using presentation compiler with project's scala-library version: 3.3.6
+2026.01.09 05:38:04 INFO  no build target found for D:\Cours\scala\SignaTech\scala\src\main\scala\com\signatech\Main.scala. Using presentation compiler with project's scala-library version: 3.3.6
+2026.01.09 05:38:11 INFO  no build target found for D:\Cours\scala\SignaTech\scala\src\main\scala\com\signatech\Main.scala. Using presentation compiler with project's scala-library version: 3.3.6
+2026.01.09 05:38:12 INFO  no build target found for D:\Cours\scala\SignaTech\scala\src\main\scala\com\signatech\Main.scala. Using presentation compiler with project's scala-library version: 3.3.6
+2026.01.09 05:38:20 INFO  no build target found for D:\Cours\scala\SignaTech\scala\src\main\scala\com\signatech\Main.scala. Using presentation compiler with project's scala-library version: 3.3.6
+2026.01.09 05:38:20 INFO  no build target found for D:\Cours\scala\SignaTech\scala\src\main\scala\com\signatech\Main.scala. Using presentation compiler with project's scala-library version: 3.3.6
+2026.01.09 05:38:22 INFO  no build target found for D:\Cours\scala\SignaTech\scala\src\main\scala\com\signatech\Main.scala. Using presentation compiler with project's scala-library version: 3.3.6
+2026.01.09 05:38:22 INFO  no build target found for D:\Cours\scala\SignaTech\scala\src\main\scala\com\signatech\Main.scala. Using presentation compiler with project's scala-library version: 3.3.6
+2026.01.09 05:38:22 INFO  no build target found for D:\Cours\scala\SignaTech\scala\src\main\scala\com\signatech\Main.scala. Using presentation compiler with project's scala-library version: 3.3.6
+2026.01.09 05:38:22 INFO  empty definition using pc, found symbol in pc: `<none>`. (full report at: "D:\Cours\scala\SignaTech\.metals\.reports\metals-full\2026-01-08\r_empty-definition_15-13-17-357.md")
+2026.01.09 05:38:53 INFO  no build target found for D:\Cours\scala\SignaTech\scala\src\main\scala\com\signatech\Main.scala. Using presentation compiler with project's scala-library version: 3.3.6
+2026.01.09 05:38:54 INFO  no build target found for D:\Cours\scala\SignaTech\scala\src\main\scala\com\signatech\Main.scala. Using presentation compiler with project's scala-library version: 3.3.6
+2026.01.09 05:38:54 INFO  no build target found for D:\Cours\scala\SignaTech\scala\src\main\scala\com\signatech\Main.scala. Using presentation compiler with project's scala-library version: 3.3.6
+2026.01.09 05:38:56 INFO  no build target found for D:\Cours\scala\SignaTech\scala\src\main\scala\com\signatech\Main.scala. Using presentation compiler with project's scala-library version: 3.3.6
+2026.01.09 05:38:56 INFO  no build target found for D:\Cours\scala\SignaTech\scala\src\main\scala\com\signatech\Main.scala. Using presentation compiler with project's scala-library version: 3.3.6
+2026.01.09 05:38:56 INFO  no build target found for D:\Cours\scala\SignaTech\scala\src\main\scala\com\signatech\Main.scala. Using presentation compiler with project's scala-library version: 3.3.6
+2026.01.09 05:38:59 INFO  no build target found for D:\Cours\scala\SignaTech\scala\src\main\scala\com\signatech\Main.scala. Using presentation compiler with project's scala-library version: 3.3.6
+2026.01.09 05:38:59 INFO  no build target found for D:\Cours\scala\SignaTech\scala\src\main\scala\com\signatech\Main.scala. Using presentation compiler with project's scala-library version: 3.3.6
+2026.01.09 05:38:59 INFO  no build target found for D:\Cours\scala\SignaTech\scala\src\main\scala\com\signatech\Main.scala. Using presentation compiler with project's scala-library version: 3.3.6
+2026.01.09 05:38:59 INFO  no build target found for D:\Cours\scala\SignaTech\scala\src\main\scala\com\signatech\Main.scala. Using presentation compiler with project's scala-library version: 3.3.6
+2026.01.09 05:39:01 INFO  no build target found for D:\Cours\scala\SignaTech\scala\src\main\scala\com\signatech\Main.scala. Using presentation compiler with project's scala-library version: 3.3.6
+2026.01.09 05:39:01 INFO  no build target found for D:\Cours\scala\SignaTech\scala\src\main\scala\com\signatech\Main.scala. Using presentation compiler with project's scala-library version: 3.3.6
+2026.01.09 05:39:01 INFO  no build target found for D:\Cours\scala\SignaTech\scala\src\main\scala\com\signatech\Main.scala. Using presentation compiler with project's scala-library version: 3.3.6
+2026.01.09 05:39:04 INFO  no build target found for D:\Cours\scala\SignaTech\scala\src\main\scala\com\signatech\Main.scala. Using presentation compiler with project's scala-library version: 3.3.6
+2026.01.09 05:39:05 INFO  no build target found for D:\Cours\scala\SignaTech\scala\src\main\scala\com\signatech\Main.scala. Using presentation compiler with project's scala-library version: 3.3.6
+2026.01.09 05:39:05 INFO  no build target found for D:\Cours\scala\SignaTech\scala\src\main\scala\com\signatech\Main.scala. Using presentation compiler with project's scala-library version: 3.3.6
+2026.01.09 05:39:07 INFO  no build target found for D:\Cours\scala\SignaTech\scala\src\main\scala\com\signatech\Main.scala. Using presentation compiler with project's scala-library version: 3.3.6
+2026.01.09 05:39:07 INFO  no build target found for D:\Cours\scala\SignaTech\scala\src\main\scala\com\signatech\Main.scala. Using presentation compiler with project's scala-library version: 3.3.6
+Exception in thread "pool-118-thread-1" java.lang.InterruptedException
+	at scala.meta.internal.metals.FutureCancelToken.checkCanceled(FutureCancelToken.scala:29)
+	at scala.meta.internal.pc.CompilerAccess.onCompilerJobQueue$$anonfun$1(CompilerAccess.scala:244)
+	at scala.meta.internal.pc.CompilerJobQueue$Job.run(CompilerJobQueue.scala:153)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:840)
+2026.01.09 05:39:07 INFO  no build target found for D:\Cours\scala\SignaTech\scala\src\main\scala\com\signatech\Main.scala. Using presentation compiler with project's scala-library version: 3.3.6
+2026.01.09 05:39:15 INFO  no build target found for D:\Cours\scala\SignaTech\scala\src\main\scala\com\signatech\Main.scala. Using presentation compiler with project's scala-library version: 3.3.6
+2026.01.09 05:39:15 INFO  no build target found for D:\Cours\scala\SignaTech\scala\src\main\scala\com\signatech\Main.scala. Using presentation compiler with project's scala-library version: 3.3.6
+2026.01.09 05:39:16 INFO  no build target found for D:\Cours\scala\SignaTech\scala\src\main\scala\com\signatech\Main.scala. Using presentation compiler with project's scala-library version: 3.3.6
+2026.01.09 05:39:16 INFO  no build target found for D:\Cours\scala\SignaTech\scala\src\main\scala\com\signatech\Main.scala. Using presentation compiler with project's scala-library version: 3.3.6
+2026.01.09 05:39:16 INFO  no build target found for D:\Cours\scala\SignaTech\scala\src\main\scala\com\signatech\Main.scala. Using presentation compiler with project's scala-library version: 3.3.6
+2026.01.09 05:39:16 INFO  no build target found for D:\Cours\scala\SignaTech\scala\src\main\scala\com\signatech\Main.scala. Using presentation compiler with project's scala-library version: 3.3.6
+2026.01.09 05:39:16 INFO  no build target found for D:\Cours\scala\SignaTech\scala\src\main\scala\com\signatech\Main.scala. Using presentation compiler with project's scala-library version: 3.3.6
+2026.01.09 05:39:17 INFO  no build target found for D:\Cours\scala\SignaTech\scala\src\main\scala\com\signatech\Main.scala. Using presentation compiler with project's scala-library version: 3.3.6
+2026.01.09 05:39:19 INFO  no build target found for D:\Cours\scala\SignaTech\scala\src\main\scala\com\signatech\Main.scala. Using presentation compiler with project's scala-library version: 3.3.6
+2026.01.09 05:40:31 INFO  no build target found for D:\Cours\scala\SignaTech\scala\src\main\scala\com\signatech\Main.scala. Using presentation compiler with project's scala-library version: 3.3.6
+2026.01.09 05:40:31 INFO  no build target found for D:\Cours\scala\SignaTech\scala\src\main\scala\com\signatech\Main.scala. Using presentation compiler with project's scala-library version: 3.3.6
+2026.01.09 05:40:31 INFO  no build target found for D:\Cours\scala\SignaTech\scala\src\main\scala\com\signatech\Main.scala. Using presentation compiler with project's scala-library version: 3.3.6
+2026.01.09 05:40:31 INFO  no build target found for D:\Cours\scala\SignaTech\scala\src\main\scala\com\signatech\Main.scala. Using presentation compiler with project's scala-library version: 3.3.6
+2026.01.09 05:40:31 WARN  no build target for: D:\Cours\scala\SignaTech\scala\src\main\scala\com\signatech\Main.scala
+2026.01.09 05:40:31 INFO  no build target found for D:\Cours\scala\SignaTech\scala\src\main\scala\com\signatech\Main.scala. Using presentation compiler with project's scala-library version: 3.3.6
+2026.01.09 05:40:37 INFO  no build target found for D:\Cours\scala\SignaTech\scala\src\main\scala\com\signatech\Main.scala. Using presentation compiler with project's scala-library version: 3.3.6
+janv. 09, 2026 5:52:39 AM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+INFOS: Unsupported notification method: $/setTrace
+janv. 09, 2026 5:52:39 AM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+INFOS: Unsupported notification method: $/setTrace
+janv. 09, 2026 5:52:39 AM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+INFOS: Unsupported notification method: $/setTrace
+janv. 09, 2026 5:52:39 AM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+INFOS: Unsupported notification method: $/setTrace
+janv. 09, 2026 5:52:39 AM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+INFOS: Unsupported notification method: $/setTrace
+janv. 09, 2026 5:52:39 AM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+INFOS: Unsupported notification method: $/setTrace
+janv. 09, 2026 5:52:39 AM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+INFOS: Unsupported notification method: $/setTrace
+janv. 09, 2026 5:52:39 AM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+INFOS: Unsupported notification method: $/setTrace
+janv. 09, 2026 5:52:39 AM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+INFOS: Unsupported notification method: $/setTrace
+janv. 09, 2026 5:52:39 AM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+INFOS: Unsupported notification method: $/setTrace
+janv. 09, 2026 5:52:39 AM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+INFOS: Unsupported notification method: $/setTrace
+janv. 09, 2026 5:52:39 AM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+INFOS: Unsupported notification method: $/setTrace
+janv. 09, 2026 5:52:39 AM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+INFOS: Unsupported notification method: $/setTrace
+janv. 09, 2026 5:52:39 AM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+INFOS: Unsupported notification method: $/setTrace
+janv. 09, 2026 5:52:39 AM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+INFOS: Unsupported notification method: $/setTrace
+janv. 09, 2026 5:52:39 AM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+INFOS: Unsupported notification method: $/setTrace
+janv. 09, 2026 5:52:39 AM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+INFOS: Unsupported notification method: $/setTrace
+janv. 09, 2026 5:52:39 AM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+INFOS: Unsupported notification method: $/setTrace
+janv. 09, 2026 5:52:39 AM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+INFOS: Unsupported notification method: $/setTrace
+janv. 09, 2026 5:52:39 AM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+INFOS: Unsupported notification method: $/setTrace
+janv. 09, 2026 5:52:39 AM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+INFOS: Unsupported notification method: $/setTrace
+janv. 09, 2026 5:52:39 AM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+INFOS: Unsupported notification method: $/setTrace
+janv. 09, 2026 5:52:39 AM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+INFOS: Unsupported notification method: $/setTrace
+janv. 09, 2026 5:52:39 AM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+INFOS: Unsupported notification method: $/setTrace
+janv. 09, 2026 5:52:39 AM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+INFOS: Unsupported notification method: $/setTrace
+janv. 09, 2026 5:52:39 AM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+INFOS: Unsupported notification method: $/setTrace
+janv. 09, 2026 5:52:39 AM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+INFOS: Unsupported notification method: $/setTrace
+janv. 09, 2026 5:52:39 AM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+INFOS: Unsupported notification method: $/setTrace
+janv. 09, 2026 5:52:39 AM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+INFOS: Unsupported notification method: $/setTrace
+janv. 09, 2026 5:52:39 AM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+INFOS: Unsupported notification method: $/setTrace
+janv. 09, 2026 5:52:39 AM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+INFOS: Unsupported notification method: $/setTrace
+janv. 09, 2026 5:52:39 AM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+INFOS: Unsupported notification method: $/setTrace
+janv. 09, 2026 5:52:39 AM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+INFOS: Unsupported notification method: $/setTrace
+janv. 09, 2026 5:52:39 AM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+INFOS: Unsupported notification method: $/setTrace
+janv. 09, 2026 5:52:39 AM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+INFOS: Unsupported notification method: $/setTrace
+janv. 09, 2026 5:52:39 AM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+INFOS: Unsupported notification method: $/setTrace
+janv. 09, 2026 5:52:39 AM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+INFOS: Unsupported notification method: $/setTrace
+janv. 09, 2026 5:52:39 AM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+INFOS: Unsupported notification method: $/setTrace
+janv. 09, 2026 5:52:39 AM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+INFOS: Unsupported notification method: $/setTrace
+janv. 09, 2026 5:52:39 AM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+INFOS: Unsupported notification method: $/setTrace
+janv. 09, 2026 5:52:39 AM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+INFOS: Unsupported notification method: $/setTrace
+janv. 09, 2026 5:52:39 AM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+INFOS: Unsupported notification method: $/setTrace
+janv. 09, 2026 5:52:39 AM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+INFOS: Unsupported notification method: $/setTrace
+janv. 09, 2026 5:52:39 AM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+INFOS: Unsupported notification method: $/setTrace
+janv. 09, 2026 5:52:57 AM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+INFOS: Unsupported notification method: $/setTrace
+janv. 09, 2026 5:52:57 AM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+INFOS: Unsupported notification method: $/setTrace
+janv. 09, 2026 5:52:57 AM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+INFOS: Unsupported notification method: $/setTrace
+janv. 09, 2026 5:52:57 AM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+INFOS: Unsupported notification method: $/setTrace
+2026.01.09 06:02:29 WARN  no build target for: D:\Cours\scala\SignaTech\scala\src\main\scala\com\signatech\websocket\client\PythonAIClient.scala
+2026.01.09 06:02:29 INFO  no build target found for D:\Cours\scala\SignaTech\scala\src\main\scala\com\signatech\websocket\client\PythonAIClient.scala. Using presentation compiler with project's scala-library version: 3.3.6
+2026.01.09 06:02:29 INFO  no build target found for D:\Cours\scala\SignaTech\scala\src\main\scala\com\signatech\websocket\client\PythonAIClient.scala. Using presentation compiler with project's scala-library version: 3.3.6
+2026.01.09 06:02:34 WARN  no build target for: D:\Cours\scala\SignaTech\scala\src\main\scala\com\signatech\Main.scala
+2026.01.09 06:02:34 INFO  no build target found for D:\Cours\scala\SignaTech\scala\src\main\scala\com\signatech\Main.scala. Using presentation compiler with project's scala-library version: 3.3.6
+2026.01.09 06:02:34 INFO  no build target found for D:\Cours\scala\SignaTech\scala\src\main\scala\com\signatech\Main.scala. Using presentation compiler with project's scala-library version: 3.3.6
+2026.01.09 06:02:34 INFO  no build target found for D:\Cours\scala\SignaTech\scala\src\main\scala\com\signatech\Main.scala. Using presentation compiler with project's scala-library version: 3.3.6
+2026.01.09 06:02:34 WARN  no build target for: D:\Cours\scala\SignaTech\scala\src\main\scala\com\signatech\websocket\WebSocketServer.scala
+2026.01.09 06:02:34 INFO  no build target found for D:\Cours\scala\SignaTech\scala\src\main\scala\com\signatech\websocket\WebSocketServer.scala. Using presentation compiler with project's scala-library version: 3.3.6
+2026.01.09 06:02:35 INFO  no build target found for D:\Cours\scala\SignaTech\scala\src\main\scala\com\signatech\websocket\WebSocketServer.scala. Using presentation compiler with project's scala-library version: 3.3.6
+2026.01.09 06:02:34 INFO  no build target found for D:\Cours\scala\SignaTech\scala\src\main\scala\com\signatech\websocket\WebSocketServer.scala. Using presentation compiler with project's scala-library version: 3.3.6
+2026.01.09 06:02:38 INFO  no build target found for D:\Cours\scala\SignaTech\scala\src\main\scala\com\signatech\websocket\WebSocketServer.scala. Using presentation compiler with project's scala-library version: 3.3.6
+2026.01.09 06:02:38 INFO  no build target found for D:\Cours\scala\SignaTech\scala\src\main\scala\com\signatech\websocket\WebSocketServer.scala. Using presentation compiler with project's scala-library version: 3.3.6
+2026.01.09 06:02:39 INFO  no build target found for D:\Cours\scala\SignaTech\scala\src\main\scala\com\signatech\websocket\WebSocketServer.scala. Using presentation compiler with project's scala-library version: 3.3.6
+2026.01.09 06:02:39 INFO  empty definition using pc, found symbol in pc: `<none>`. (full report at: "D:\Cours\scala\SignaTech\.metals\.reports\metals-full\2026-01-08\r_empty-definition_16-59-07-656.md")
+2026.01.09 06:02:46 WARN  no build target for: D:\Cours\scala\SignaTech\scala\src\main\scala\com\signatech\websocket\client\PythonAIClient.scala
+2026.01.09 06:02:46 INFO  no build target found for D:\Cours\scala\SignaTech\scala\src\main\scala\com\signatech\websocket\client\PythonAIClient.scala. Using presentation compiler with project's scala-library version: 3.3.6
+2026.01.09 06:02:46 INFO  no build target found for D:\Cours\scala\SignaTech\scala\src\main\scala\com\signatech\websocket\client\PythonAIClient.scala. Using presentation compiler with project's scala-library version: 3.3.6
+2026.01.09 06:03:05 INFO  no build target found for D:\Cours\scala\SignaTech\scala\src\main\scala\com\signatech\websocket\client\PythonAIClient.scala. Using presentation compiler with project's scala-library version: 3.3.6
+2026.01.09 06:03:05 INFO  no build target found for D:\Cours\scala\SignaTech\scala\src\main\scala\com\signatech\websocket\client\PythonAIClient.scala. Using presentation compiler with project's scala-library version: 3.3.6
+2026.01.09 06:03:58 WARN  no build target for: D:\Cours\scala\SignaTech\scala\src\main\scala\com\signatech\Main.scala
+2026.01.09 06:03:58 INFO  no build target found for D:\Cours\scala\SignaTech\scala\src\main\scala\com\signatech\Main.scala. Using presentation compiler with project's scala-library version: 3.3.6
+2026.01.09 06:03:58 INFO  no build target found for D:\Cours\scala\SignaTech\scala\src\main\scala\com\signatech\Main.scala. Using presentation compiler with project's scala-library version: 3.3.6
+2026.01.09 06:03:58 INFO  no build target found for D:\Cours\scala\SignaTech\scala\src\main\scala\com\signatech\Main.scala. Using presentation compiler with project's scala-library version: 3.3.6
+2026.01.09 06:04:00 INFO  no build target found for D:\Cours\scala\SignaTech\scala\src\main\scala\com\signatech\Main.scala. Using presentation compiler with project's scala-library version: 3.3.6
+2026.01.09 06:04:00 INFO  no build target found for D:\Cours\scala\SignaTech\scala\src\main\scala\com\signatech\Main.scala. Using presentation compiler with project's scala-library version: 3.3.6
+2026.01.09 06:04:00 INFO  no build target found for D:\Cours\scala\SignaTech\scala\src\main\scala\com\signatech\Main.scala. Using presentation compiler with project's scala-library version: 3.3.6
+2026.01.09 06:04:00 INFO  no build target found for D:\Cours\scala\SignaTech\scala\src\main\scala\com\signatech\Main.scala. Using presentation compiler with project's scala-library version: 3.3.6
+2026.01.09 06:04:00 INFO  no build target found for D:\Cours\scala\SignaTech\scala\src\main\scala\com\signatech\Main.scala. Using presentation compiler with project's scala-library version: 3.3.6
+2026.01.09 06:04:01 INFO  no build target found for D:\Cours\scala\SignaTech\scala\src\main\scala\com\signatech\Main.scala. Using presentation compiler with project's scala-library version: 3.3.6
+2026.01.09 06:04:01 INFO  no build target found for D:\Cours\scala\SignaTech\scala\src\main\scala\com\signatech\Main.scala. Using presentation compiler with project's scala-library version: 3.3.6
+2026.01.09 06:04:01 INFO  no build target found for D:\Cours\scala\SignaTech\scala\src\main\scala\com\signatech\Main.scala. Using presentation compiler with project's scala-library version: 3.3.6
+2026.01.09 06:04:01 INFO  no build target found for D:\Cours\scala\SignaTech\scala\src\main\scala\com\signatech\Main.scala. Using presentation compiler with project's scala-library version: 3.3.6
+2026.01.09 06:04:01 INFO  no build target found for D:\Cours\scala\SignaTech\scala\src\main\scala\com\signatech\Main.scala. Using presentation compiler with project's scala-library version: 3.3.6
+2026.01.09 06:04:01 INFO  no build target found for D:\Cours\scala\SignaTech\scala\src\main\scala\com\signatech\Main.scala. Using presentation compiler with project's scala-library version: 3.3.6
+2026.01.09 06:04:01 INFO  no build target found for D:\Cours\scala\SignaTech\scala\src\main\scala\com\signatech\Main.scala. Using presentation compiler with project's scala-library version: 3.3.6
+2026.01.09 06:04:01 INFO  no build target found for D:\Cours\scala\SignaTech\scala\src\main\scala\com\signatech\Main.scala. Using presentation compiler with project's scala-library version: 3.3.6
+2026.01.09 06:04:02 INFO  no build target found for D:\Cours\scala\SignaTech\scala\src\main\scala\com\signatech\Main.scala. Using presentation compiler with project's scala-library version: 3.3.6
+2026.01.09 06:04:01 INFO  no build target found for D:\Cours\scala\SignaTech\scala\src\main\scala\com\signatech\Main.scala. Using presentation compiler with project's scala-library version: 3.3.6
+2026.01.09 06:04:01 INFO  no build target found for D:\Cours\scala\SignaTech\scala\src\main\scala\com\signatech\Main.scala. Using presentation compiler with project's scala-library version: 3.3.6
+2026.01.09 06:04:02 INFO  no build target found for D:\Cours\scala\SignaTech\scala\src\main\scala\com\signatech\Main.scala. Using presentation compiler with project's scala-library version: 3.3.6
+2026.01.09 06:04:05 INFO  no build target found for D:\Cours\scala\SignaTech\scala\src\main\scala\com\signatech\Main.scala. Using presentation compiler with project's scala-library version: 3.3.6
+2026.01.09 06:04:05 INFO  no build target found for D:\Cours\scala\SignaTech\scala\src\main\scala\com\signatech\Main.scala. Using presentation compiler with project's scala-library version: 3.3.6
+2026.01.09 06:04:05 INFO  no build target found for D:\Cours\scala\SignaTech\scala\src\main\scala\com\signatech\Main.scala. Using presentation compiler with project's scala-library version: 3.3.6
+2026.01.09 06:04:05 INFO  no build target found for D:\Cours\scala\SignaTech\scala\src\main\scala\com\signatech\Main.scala. Using presentation compiler with project's scala-library version: 3.3.6
+2026.01.09 06:04:05 INFO  no build target found for D:\Cours\scala\SignaTech\scala\src\main\scala\com\signatech\Main.scala. Using presentation compiler with project's scala-library version: 3.3.6
+2026.01.09 06:04:05 INFO  no build target found for D:\Cours\scala\SignaTech\scala\src\main\scala\com\signatech\Main.scala. Using presentation compiler with project's scala-library version: 3.3.6
+2026.01.09 06:04:05 INFO  no build target found for D:\Cours\scala\SignaTech\scala\src\main\scala\com\signatech\Main.scala. Using presentation compiler with project's scala-library version: 3.3.6
+2026.01.09 06:04:05 INFO  no build target found for D:\Cours\scala\SignaTech\scala\src\main\scala\com\signatech\Main.scala. Using presentation compiler with project's scala-library version: 3.3.6
+2026.01.09 06:04:06 INFO  no build target found for D:\Cours\scala\SignaTech\scala\src\main\scala\com\signatech\Main.scala. Using presentation compiler with project's scala-library version: 3.3.6
+2026.01.09 06:04:06 INFO  no build target found for D:\Cours\scala\SignaTech\scala\src\main\scala\com\signatech\Main.scala. Using presentation compiler with project's scala-library version: 3.3.6
+2026.01.09 06:04:05 INFO  no build target found for D:\Cours\scala\SignaTech\scala\src\main\scala\com\signatech\Main.scala. Using presentation compiler with project's scala-library version: 3.3.6
+2026.01.09 06:04:09 INFO  no build target found for D:\Cours\scala\SignaTech\scala\src\main\scala\com\signatech\Main.scala. Using presentation compiler with project's scala-library version: 3.3.6
+2026.01.09 06:04:10 INFO  no build target found for D:\Cours\scala\SignaTech\scala\src\main\scala\com\signatech\Main.scala. Using presentation compiler with project's scala-library version: 3.3.6
+2026.01.09 06:04:10 INFO  no build target found for D:\Cours\scala\SignaTech\scala\src\main\scala\com\signatech\Main.scala. Using presentation compiler with project's scala-library version: 3.3.6
+2026.01.09 06:04:10 INFO  no build target found for D:\Cours\scala\SignaTech\scala\src\main\scala\com\signatech\Main.scala. Using presentation compiler with project's scala-library version: 3.3.6
+2026.01.09 06:04:18 WARN  no build target for: D:\Cours\scala\SignaTech\scala\src\main\scala\com\signatech\Main.scala
+2026.01.09 06:04:18 INFO  no build target found for D:\Cours\scala\SignaTech\scala\src\main\scala\com\signatech\Main.scala. Using presentation compiler with project's scala-library version: 3.3.6
+2026.01.09 06:04:20 WARN  no build target for: d:\Cours\scala\SignaTech\scala\src\main\scala\com\signatech\ai\model\SignPrediction.scala
+2026.01.09 06:04:20 INFO  no build target found for d:\Cours\scala\SignaTech\scala\src\main\scala\com\signatech\ai\model\SignPrediction.scala. Using presentation compiler with project's scala-library version: 3.3.6
+2026.01.09 06:04:20 INFO  no build target found for d:\Cours\scala\SignaTech\scala\src\main\scala\com\signatech\ai\model\SignPrediction.scala. Using presentation compiler with project's scala-library version: 3.3.6
+2026.01.09 06:04:20 INFO  no build target found for d:\Cours\scala\SignaTech\scala\src\main\scala\com\signatech\ai\model\SignPrediction.scala. Using presentation compiler with project's scala-library version: 3.3.6
+2026.01.09 06:04:20 INFO  no build target found for d:\Cours\scala\SignaTech\scala\src\main\scala\com\signatech\ai\model\SignPrediction.scala. Using presentation compiler with project's scala-library version: 3.3.6
+2026.01.09 06:04:21 WARN  no build target for: D:\Cours\scala\SignaTech\scala\src\main\scala\com\signatech\Main.scala
+2026.01.09 06:04:20 INFO  no build target found for D:\Cours\scala\SignaTech\scala\src\main\scala\com\signatech\Main.scala. Using presentation compiler with project's scala-library version: 3.3.6
+2026.01.09 06:04:20 INFO  no build target found for D:\Cours\scala\SignaTech\scala\src\main\scala\com\signatech\Main.scala. Using presentation compiler with project's scala-library version: 3.3.6
+janv. 09, 2026 6:11:43 AM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+INFOS: Unsupported notification method: $/setTrace
+janv. 09, 2026 6:11:43 AM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+INFOS: Unsupported notification method: $/setTrace
+janv. 09, 2026 6:11:43 AM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+INFOS: Unsupported notification method: $/setTrace
+janv. 09, 2026 6:11:43 AM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+INFOS: Unsupported notification method: $/setTrace
+2026.01.09 06:14:00 WARN  no build target for: D:\Cours\scala\SignaTech\scala\src\main\scala\com\signatech\Main.scala
+2026.01.09 06:14:00 INFO  no build target found for D:\Cours\scala\SignaTech\scala\src\main\scala\com\signatech\Main.scala. Using presentation compiler with project's scala-library version: 3.3.6
+2026.01.09 06:14:00 INFO  no build target found for D:\Cours\scala\SignaTech\scala\src\main\scala\com\signatech\Main.scala. Using presentation compiler with project's scala-library version: 3.3.6
+2026.01.09 06:14:08 INFO  no build target found for D:\Cours\scala\SignaTech\scala\src\main\scala\com\signatech\Main.scala. Using presentation compiler with project's scala-library version: 3.3.6
+2026.01.09 06:14:08 INFO  no build target found for D:\Cours\scala\SignaTech\scala\src\main\scala\com\signatech\Main.scala. Using presentation compiler with project's scala-library version: 3.3.6
+2026.01.09 06:14:19 INFO  no build target found for D:\Cours\scala\SignaTech\scala\src\main\scala\com\signatech\Main.scala. Using presentation compiler with project's scala-library version: 3.3.6
+2026.01.09 06:14:19 INFO  no build target found for D:\Cours\scala\SignaTech\scala\src\main\scala\com\signatech\Main.scala. Using presentation compiler with project's scala-library version: 3.3.6
+2026.01.09 06:14:20 INFO  no build target found for D:\Cours\scala\SignaTech\scala\src\main\scala\com\signatech\Main.scala. Using presentation compiler with project's scala-library version: 3.3.6
+2026.01.09 06:14:20 INFO  empty definition using pc, found symbol in pc: `<none>`. (full report at: "D:\Cours\scala\SignaTech\.metals\.reports\metals-full\2026-01-08\r_empty-definition_15-13-17-357.md")
