@@ -1,1 +1,33 @@
-dossier pour tous ce qui est lié à l'ia ainsi qu'au scrapping
+# Scala Backend - SignaTech
+
+## Architecture
+
+Ce module Scala gère :
+- WebSocket server pour la communication en temps réel
+- Service de scrapping (dans scrapping-scala2/)
+- Base de données PostgreSQL (gestion des établissements, classes, etc.)
+- Routage des requêtes vers le service AI Python
+
+## Structure
+
+- `src/main/scala/com/signatech/`
+  - `websocket/` - Serveur WebSocket Akka HTTP
+  - `service/` - Services métier
+  - `repository/` - Couche d'accès aux données
+  - `model/` - Modèles de données
+  - `db/` - Configuration base de données
+  - `bootstrap/` - Import automatique des données
+
+## Service AI
+
+L'intelligence artificielle (reconnaissance de langue des signes) a été déplacée dans le dossier `ai_service/` à la racine du projet. C'est un service Python indépendant utilisant PyTorch et MediaPipe.
+
+Le backend Scala doit communiquer avec ce service via HTTP/WebSocket.
+
+## Démarrage
+
+```bash
+sbt run
+```
+
+Le serveur WebSocket démarre sur `ws://localhost:8080/ws/translate`

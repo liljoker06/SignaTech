@@ -6,7 +6,6 @@ import akka.http.scaladsl.model.ws.{Message, TextMessage}
 import akka.http.scaladsl.server.Directives._
 import akka.http.scaladsl.server.Route
 import akka.stream.scaladsl.Flow
-import com.signatech.ai.inference.ModelRegistry
 import com.signatech.model.{SocketMessage, VideoFrame}
 import com.signatech.websocket.model.{PredictionPayload, PredictionResponse}
 import com.typesafe.config.ConfigFactory
@@ -56,7 +55,7 @@ class WebSocketServer(implicit system: ActorSystem[_], ec: ExecutionContext)
         msg.`type` match {
           case "video_frame" => processVideoFrame(msg.payload)
           case "ping"        => """{"type":"pong","payload":""}"""
-          case other         =>
+            case other         =>
             logger.warn(s"[WebSocket] Type inconnu: $other")
             s"""{"type":"error","payload":"Type de message inconnu: $other"}"""
         }
@@ -69,25 +68,19 @@ class WebSocketServer(implicit system: ActorSystem[_], ec: ExecutionContext)
   private def processVideoFrame(payload: String): String =
     decode[VideoFrame](payload) match {
       case Right(frame) =>
-        val startTime = System.currentTimeMillis()
-
-        // TODO: remplacer par vraie extraction de keypoints
-        val dummyPoseSequence: Array[Float] =
-          Array.fill(258)(0.0f)
-
-        val prediction =
-          ModelRegistry.signRecognitionModel.predict(dummyPoseSequence)
-
-        val processingTime = System.currentTimeMillis() - startTime
-
+        logger.info(s"[WebSocket] Frame reçu: ${frame.timestamp}")
+        
+        // TODO: Envoyer la frame au service Python AI (ai_service)
+        // et attendre la réponse de prédiction
+        
         PredictionResponse(
           `type` = "prediction",
           payload = PredictionPayload(
-            gesture = prediction.gesture,
-            confidence = prediction.confidence,
-            timestamp = prediction.timestamp,
-            alternatives = prediction.alternatives,
-            processingTimeMs = processingTime
+            gesture = "TODO",
+            confidence = 0.0,
+            timestamp = System.currentTimeMillis(),
+            alternatives = List.empty,
+            processingTimeMs = 0L
           )
         ).asJson.noSpaces
 
