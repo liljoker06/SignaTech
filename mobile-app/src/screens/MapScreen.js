@@ -1,5 +1,17 @@
 import React, { useState, useEffect } from 'react';
-import { View, StyleSheet, TextInput, ActivityIndicator, Platform, Text, TouchableOpacity } from 'react-native';
+import { 
+  View, 
+  StyleSheet, 
+  TextInput, 
+  ActivityIndicator, 
+  Platform, 
+  Text, 
+  TouchableOpacity,
+  Modal,
+  ScrollView,
+  Linking,
+  Alert
+} from 'react-native';
 import MapView, { Marker, PROVIDER_GOOGLE } from 'react-native-maps';
 import { useTranslation } from 'react-i18next';
 import * as Location from 'expo-location';
@@ -33,6 +45,9 @@ const MapScreen = () => {
     latitudeDelta: 5,
     longitudeDelta: 5,
   });
+  const [showSchoolsList, setShowSchoolsList] = useState(false);
+  const [selectedSchool, setSelectedSchool] = useState(null);
+  const [showSchoolDetail, setShowSchoolDetail] = useState(false);
 
   const { loading, error, data } = useQuery(GET_SCHOOLS);
 
@@ -98,6 +113,49 @@ const MapScreen = () => {
     } catch (error) {
       console.error('Error getting location:', error);
     }
+  };
+
+  const handleSchoolWebsite = async (website) => {
+    if (!website) {
+      Alert.alert('Information', 'Aucun site web disponible pour cette école');
+      return;
+    }
+
+    try {
+      const url = website.startsWith('http') ? website : `https://${website}`;
+      const canOpen = await Linking.canOpenURL(url);
+      
+      if (canOpen) {
+        await Linking.openURL(url);
+      } else {
+        Alert.alert('Erreur', 'Impossible d\'ouvrir le site web');
+      }
+    } catch (error) {
+      Alert.alert('Erreur', 'Impossible d\'ouvrir le site web');
+    }
+  };
+
+  const handleEmailContact = async (email) => {
+    if (!email) {
+      Alert.alert('Information', 'Aucun email disponible pour cette école');
+      return;
+    }
+
+    try {
+      await Linking.openURL(`mailto:${email}`);
+    } catch (error) {
+      Alert.alert('Erreur', 'Impossible d\'ouvrir l\'application email');
+    }
+  };
+
+  const handleSchoolPress = (school) => {
+    setSelectedSchool(school);
+    setShowSchoolDetail(true);
+  };
+
+  const handleCloseSchoolDetail = () => {
+    setShowSchoolDetail(false);
+    setTimeout(() => setSelectedSchool(null), 300);
   };
 
   if (loading) {
@@ -193,13 +251,18 @@ const MapScreen = () => {
         )}
       </View>
 
-      {/* Badge compteur de résultats */}
+      {/* Badge compteur de résultats - CLIQUABLE */}
       {search.length > 0 && (
-        <View style={styles.resultsBadge}>
+        <TouchableOpacity 
+          style={styles.resultsBadge}
+          onPress={() => setShowSchoolsList(true)}
+          activeOpacity={0.8}
+        >
           <Text style={styles.resultsBadgeText}>
             {filteredSchools.length} école{filteredSchools.length > 1 ? 's' : ''} trouvée{filteredSchools.length > 1 ? 's' : ''}
           </Text>
-        </View>
+          <Ionicons name="chevron-down" size={16} color="#000" style={{ marginLeft: 8 }} />
+        </TouchableOpacity>
       )}
 
       <MapView
@@ -220,6 +283,7 @@ const MapScreen = () => {
             title={school.name}
             description={`${school.city || ''}, ${school.country || ''}`}
             pinColor="#FFD700"
+            onPress={() => handleSchoolPress(school)}
           />
         ))}
       </MapView>
@@ -234,6 +298,248 @@ const MapScreen = () => {
           </TouchableOpacity>
         </View>
       )}
+
+      {/* Modal liste des écoles */}
+      <Modal
+        visible={showSchoolsList}
+        transparent
+        animationType="slide"
+        onRequestClose={() => setShowSchoolsList(false)}
+      >
+        <View style={styles.modalOverlay}>
+          <View style={styles.modalContainer}>
+            {/* Header du modal */}
+            <View style={styles.modalHeader}>
+              <Text style={styles.modalTitle}>
+                {filteredSchools.length} école{filteredSchools.length > 1 ? 's' : ''} trouvée{filteredSchools.length > 1 ? 's' : ''}
+              </Text>
+              <TouchableOpacity 
+                onPress={() => setShowSchoolsList(false)}
+                style={styles.modalCloseButton}
+              >
+                <Ionicons name="close" size={28} color="#FFD700" />
+              </TouchableOpacity>
+            </View>
+
+            {/* Liste des écoles */}
+            <ScrollView 
+              style={styles.schoolsList}
+              showsVerticalScrollIndicator={false}
+            >
+              {filteredSchools.map((school, index) => (
+                <TouchableOpacity
+                  key={school.id}
+                  style={styles.schoolCard}
+                  onPress={() => {
+                    setShowSchoolsList(false);
+                    setTimeout(() => handleSchoolPress(school), 300);
+                  }}
+                >
+                  {/* Numéro et nom */}
+                  <View style={styles.schoolHeader}>
+                    <View style={styles.schoolNumber}>
+                      <Text style={styles.schoolNumberText}>{index + 1}</Text>
+                    </View>
+                    <Text style={styles.schoolName}>{school.name}</Text>
+                  </View>
+
+                  {/* Détails */}
+                  <View style={styles.schoolDetails}>
+                    {/* Localisation */}
+                    {(school.city || school.country) && (
+                      <View style={styles.schoolDetailRow}>
+                        <Ionicons name="location" size={18} color="#FFD700" />
+                        <Text style={styles.schoolDetailText}>
+                          {school.city}{school.city && school.country ? ', ' : ''}{school.country}
+                        </Text>
+                      </View>
+                    )}
+
+                    {/* Description */}
+                    {school.description && (
+                      <View style={styles.schoolDetailRow}>
+                        <Ionicons name="information-circle" size={18} color="#FFD700" />
+                        <Text style={styles.schoolDetailText} numberOfLines={2}>
+                          {school.description}
+                        </Text>
+                      </View>
+                    )}
+
+                    {/* Boutons d'action */}
+                    <View style={styles.schoolActions}>
+                      {/* Bouton Voir détails */}
+                      <TouchableOpacity 
+                        style={[styles.actionButton, styles.actionButtonPrimary]}
+                        onPress={() => {
+                          setShowSchoolsList(false);
+                          setTimeout(() => handleSchoolPress(school), 300);
+                        }}
+                      >
+                        <Ionicons name="information-circle-outline" size={20} color="#000" />
+                        <Text style={styles.actionButtonTextPrimary}>Voir détails</Text>
+                      </TouchableOpacity>
+
+                      {/* Bouton Localiser sur la carte */}
+                      <TouchableOpacity 
+                        style={styles.actionButton}
+                        onPress={() => {
+                          setShowSchoolsList(false);
+                          setRegion({
+                            latitude: parseFloat(school.latitude),
+                            longitude: parseFloat(school.longitude),
+                            latitudeDelta: 0.05,
+                            longitudeDelta: 0.05,
+                          });
+                        }}
+                      >
+                        <Ionicons name="navigate-outline" size={20} color="#FFD700" />
+                        <Text style={styles.actionButtonText}>Localiser</Text>
+                      </TouchableOpacity>
+                    </View>
+                  </View>
+                </TouchableOpacity>
+              ))}
+            </ScrollView>
+          </View>
+        </View>
+      </Modal>
+
+      {/* Modal détail d'une école */}
+      <Modal
+        visible={showSchoolDetail}
+        transparent
+        animationType="slide"
+        onRequestClose={handleCloseSchoolDetail}
+      >
+        <View style={styles.modalOverlay}>
+          <View style={styles.detailModalContainer}>
+            {/* Header avec image de fond */}
+            <View style={styles.detailHeader}>
+              <View style={styles.detailHeaderGradient}>
+                <TouchableOpacity 
+                  onPress={handleCloseSchoolDetail}
+                  style={styles.detailCloseButton}
+                >
+                  <Ionicons name="close" size={28} color="#fff" />
+                </TouchableOpacity>
+                
+                <View style={styles.detailHeaderContent}>
+                  <View style={styles.schoolIconContainer}>
+                    <Ionicons name="school" size={50} color="#FFD700" />
+                  </View>
+                  <Text style={styles.detailSchoolName}>{selectedSchool?.name}</Text>
+                  {(selectedSchool?.city || selectedSchool?.country) && (
+                    <View style={styles.detailLocation}>
+                      <Ionicons name="location" size={18} color="#fff" />
+                      <Text style={styles.detailLocationText}>
+                        {selectedSchool?.city}{selectedSchool?.city && selectedSchool?.country ? ', ' : ''}{selectedSchool?.country}
+                      </Text>
+                    </View>
+                  )}
+                </View>
+              </View>
+            </View>
+
+            {/* Corps du modal avec détails */}
+            <ScrollView 
+              style={styles.detailBody}
+              showsVerticalScrollIndicator={false}
+            >
+              {/* Description */}
+              {selectedSchool?.description && (
+                <View style={styles.detailSection}>
+                  <View style={styles.detailSectionHeader}>
+                    <Ionicons name="document-text" size={24} color="#FFD700" />
+                    <Text style={styles.detailSectionTitle}>Description</Text>
+                  </View>
+                  <Text style={styles.detailDescription}>{selectedSchool.description}</Text>
+                </View>
+              )}
+
+              {/* Informations de contact */}
+              <View style={styles.detailSection}>
+                <View style={styles.detailSectionHeader}>
+                  <Ionicons name="call" size={24} color="#FFD700" />
+                  <Text style={styles.detailSectionTitle}>Contact</Text>
+                </View>
+
+                {selectedSchool?.website && (
+                  <TouchableOpacity 
+                    style={styles.detailInfoCard}
+                    onPress={() => handleSchoolWebsite(selectedSchool.website)}
+                  >
+                    <Ionicons name="globe" size={22} color="#4A90E2" />
+                    <View style={styles.detailInfoContent}>
+                      <Text style={styles.detailInfoLabel}>Site web</Text>
+                      <Text style={styles.detailInfoValue} numberOfLines={1}>
+                        {selectedSchool.website}
+                      </Text>
+                    </View>
+                    <Ionicons name="open-outline" size={20} color="#FFD700" />
+                  </TouchableOpacity>
+                )}
+
+                {selectedSchool?.contact_email && (
+                  <TouchableOpacity 
+                    style={styles.detailInfoCard}
+                    onPress={() => handleEmailContact(selectedSchool.contact_email)}
+                  >
+                    <Ionicons name="mail" size={22} color="#4CAF50" />
+                    <View style={styles.detailInfoContent}>
+                      <Text style={styles.detailInfoLabel}>Email</Text>
+                      <Text style={styles.detailInfoValue} numberOfLines={1}>
+                        {selectedSchool.contact_email}
+                      </Text>
+                    </View>
+                    <Ionicons name="send-outline" size={20} color="#FFD700" />
+                  </TouchableOpacity>
+                )}
+
+                {(!selectedSchool?.website && !selectedSchool?.contact_email) && (
+                  <Text style={styles.detailNoInfo}>
+                    Aucune information de contact disponible
+                  </Text>
+                )}
+              </View>
+
+              {/* Actions principales */}
+              <View style={styles.detailActionsSection}>
+                <TouchableOpacity 
+                  style={styles.detailActionButton}
+                  onPress={() => {
+                    handleCloseSchoolDetail();
+                    setTimeout(() => {
+                      setRegion({
+                        latitude: parseFloat(selectedSchool.latitude),
+                        longitude: parseFloat(selectedSchool.longitude),
+                        latitudeDelta: 0.01,
+                        longitudeDelta: 0.01,
+                      });
+                    }, 300);
+                  }}
+                >
+                  <View style={styles.detailActionIconContainer}>
+                    <Ionicons name="navigate" size={28} color="#FFD700" />
+                  </View>
+                  <Text style={styles.detailActionText}>Voir sur la carte</Text>
+                </TouchableOpacity>
+
+                {selectedSchool?.website && (
+                  <TouchableOpacity 
+                    style={styles.detailActionButton}
+                    onPress={() => handleSchoolWebsite(selectedSchool.website)}
+                  >
+                    <View style={styles.detailActionIconContainer}>
+                      <Ionicons name="globe" size={28} color="#FFD700" />
+                    </View>
+                    <Text style={styles.detailActionText}>Visiter le site</Text>
+                  </TouchableOpacity>
+                )}
+              </View>
+            </ScrollView>
+          </View>
+        </View>
+      </Modal>
     </View>
   );
 };
@@ -284,18 +590,21 @@ const styles = StyleSheet.create({
     position: 'absolute',
     top: 70,
     left: '50%',
-    marginLeft: -100,
-    width: 200,
+    marginLeft: -120,
+    width: 240,
     zIndex: 2,
     backgroundColor: 'rgba(255, 215, 0, 0.95)',
     paddingHorizontal: 20,
-    paddingVertical: 10,
-    borderRadius: 20,
+    paddingVertical: 12,
+    borderRadius: 25,
     elevation: 5,
     shadowColor: '#FFD700',
     shadowOffset: { width: 0, height: 2 },
     shadowOpacity: 0.5,
     shadowRadius: 4,
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'center',
   },
   resultsBadgeText: {
     color: '#000',
@@ -335,6 +644,262 @@ const styles = StyleSheet.create({
   },
   map: {
     flex: 1,
+  },
+  modalOverlay: {
+    flex: 1,
+    backgroundColor: 'rgba(0, 0, 0, 0.7)',
+    justifyContent: 'flex-end',
+  },
+  modalContainer: {
+    backgroundColor: '#1a1a2e',
+    borderTopLeftRadius: 25,
+    borderTopRightRadius: 25,
+    maxHeight: '80%',
+    paddingBottom: Platform.OS === 'ios' ? 30 : 10,
+  },
+  modalHeader: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    alignItems: 'center',
+    padding: 20,
+    borderBottomWidth: 2,
+    borderBottomColor: '#FFD700',
+  },
+  modalTitle: {
+    fontSize: 22,
+    fontWeight: 'bold',
+    color: '#FFD700',
+    flex: 1,
+  },
+  modalCloseButton: {
+    width: 44,
+    height: 44,
+    borderRadius: 22,
+    backgroundColor: 'rgba(255, 215, 0, 0.2)',
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+  schoolsList: {
+    padding: 15,
+  },
+  schoolCard: {
+    backgroundColor: 'rgba(255, 255, 255, 0.05)',
+    borderRadius: 15,
+    padding: 15,
+    marginBottom: 15,
+    borderWidth: 2,
+    borderColor: '#FFD700',
+  },
+  schoolHeader: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    marginBottom: 12,
+  },
+  schoolNumber: {
+    width: 35,
+    height: 35,
+    borderRadius: 18,
+    backgroundColor: '#FFD700',
+    justifyContent: 'center',
+    alignItems: 'center',
+    marginRight: 12,
+  },
+  schoolNumberText: {
+    color: '#000',
+    fontSize: 16,
+    fontWeight: 'bold',
+  },
+  schoolName: {
+    fontSize: 18,
+    fontWeight: 'bold',
+    color: '#fff',
+    flex: 1,
+  },
+  schoolDetails: {
+    gap: 10,
+  },
+  schoolDetailRow: {
+    flexDirection: 'row',
+    alignItems: 'flex-start',
+    gap: 10,
+  },
+  schoolDetailText: {
+    fontSize: 14,
+    color: '#b0b0b0',
+    flex: 1,
+    lineHeight: 20,
+  },
+  schoolActions: {
+    flexDirection: 'row',
+    flexWrap: 'wrap',
+    gap: 10,
+    marginTop: 10,
+  },
+  actionButton: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    backgroundColor: 'rgba(255, 215, 0, 0.15)',
+    paddingHorizontal: 15,
+    paddingVertical: 10,
+    borderRadius: 20,
+    borderWidth: 1,
+    borderColor: '#FFD700',
+    gap: 8,
+  },
+  actionButtonText: {
+    color: '#FFD700',
+    fontSize: 13,
+    fontWeight: '600',
+  },
+  detailModalContainer: {
+    backgroundColor: '#1a1a2e',
+    borderTopLeftRadius: 25,
+    borderTopRightRadius: 25,
+    maxHeight: '90%',
+    overflow: 'hidden',
+  },
+  detailHeader: {
+    height: 200,
+    backgroundColor: '#2c3e50',
+    overflow: 'hidden',
+  },
+  detailHeaderGradient: {
+    flex: 1,
+    backgroundColor: 'rgba(255, 215, 0, 0.2)',
+    padding: 20,
+  },
+  detailCloseButton: {
+    width: 44,
+    height: 44,
+    borderRadius: 22,
+    backgroundColor: 'rgba(0, 0, 0, 0.5)',
+    justifyContent: 'center',
+    alignItems: 'center',
+    alignSelf: 'flex-end',
+  },
+  detailHeaderContent: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+  schoolIconContainer: {
+    width: 80,
+    height: 80,
+    borderRadius: 40,
+    backgroundColor: 'rgba(26, 26, 46, 0.9)',
+    justifyContent: 'center',
+    alignItems: 'center',
+    marginBottom: 15,
+    borderWidth: 3,
+    borderColor: '#FFD700',
+  },
+  detailSchoolName: {
+    fontSize: 24,
+    fontWeight: 'bold',
+    color: '#fff',
+    textAlign: 'center',
+    marginBottom: 8,
+  },
+  detailLocation: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    gap: 5,
+  },
+  detailLocationText: {
+    fontSize: 16,
+    color: '#fff',
+  },
+  detailBody: {
+    padding: 20,
+  },
+  detailSection: {
+    marginBottom: 25,
+  },
+  detailSectionHeader: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    marginBottom: 15,
+    gap: 10,
+  },
+  detailSectionTitle: {
+    fontSize: 20,
+    fontWeight: 'bold',
+    color: '#fff',
+  },
+  detailDescription: {
+    fontSize: 16,
+    color: '#b0b0b0',
+    lineHeight: 24,
+  },
+  detailInfoCard: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    backgroundColor: 'rgba(255, 255, 255, 0.05)',
+    padding: 15,
+    borderRadius: 12,
+    marginBottom: 12,
+    gap: 15,
+    borderWidth: 1,
+    borderColor: 'rgba(255, 215, 0, 0.2)',
+  },
+  detailInfoContent: {
+    flex: 1,
+  },
+  detailInfoLabel: {
+    fontSize: 12,
+    color: '#999',
+    marginBottom: 4,
+  },
+  detailInfoValue: {
+    fontSize: 15,
+    color: '#fff',
+    fontWeight: '600',
+  },
+  detailNoInfo: {
+    fontSize: 14,
+    color: '#666',
+    fontStyle: 'italic',
+    textAlign: 'center',
+    paddingVertical: 15,
+  },
+  detailActionsSection: {
+    flexDirection: 'row',
+    gap: 15,
+    marginTop: 10,
+    marginBottom: 20,
+  },
+  detailActionButton: {
+    flex: 1,
+    backgroundColor: 'rgba(255, 215, 0, 0.15)',
+    padding: 20,
+    borderRadius: 15,
+    alignItems: 'center',
+    borderWidth: 2,
+    borderColor: '#FFD700',
+  },
+  detailActionIconContainer: {
+    width: 60,
+    height: 60,
+    borderRadius: 30,
+    backgroundColor: 'rgba(255, 215, 0, 0.2)',
+    justifyContent: 'center',
+    alignItems: 'center',
+    marginBottom: 10,
+  },
+  detailActionText: {
+    color: '#FFD700',
+    fontSize: 14,
+    fontWeight: '600',
+    textAlign: 'center',
+  },
+  actionButtonPrimary: {
+    backgroundColor: '#FFD700',
+    borderColor: '#FFD700',
+  },
+  actionButtonTextPrimary: {
+    color: '#000',
+    fontSize: 13,
+    fontWeight: '600',
   },
 });
 

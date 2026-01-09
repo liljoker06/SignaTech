@@ -6,5 +6,6 @@ export default function Index() {
 
   if (loading) return null;
 
-  return user ? <Redirect href="/(tabs)/map" /> : <Redirect href="/auth/login" />;
+  // ✅ Redirection vers Courses au lieu de Home/index
+  return user ? <Redirect href="/(tabs)/courses" /> : <Redirect href="/auth/login" />;
 }

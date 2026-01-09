@@ -1,29 +1,35 @@
-// Paramètres globaux
-ThisBuild / organization := "com.signatech"
-ThisBuild / scalaVersion := "2.13.14"
-
-// Infos projet
-name := "signatech-scala"
+name := "signatech-backend"
 version := "0.1.0"
+scalaVersion := "2.13.12"
 
-// Dépendances (packages)
+val circeVersion = "0.14.6"
+
 libraryDependencies ++= Seq(
-  // Serveur HTTP + WebSocket
+  // PostgreSQL JDBC Driver
+  "org.postgresql" % "postgresql" % "42.7.3",
+  
+  // Akka HTTP pour WebSocket
   "com.typesafe.akka" %% "akka-http" % "10.5.3",
-
-  // Streams (utile plus tard)
   "com.typesafe.akka" %% "akka-stream" % "2.8.5",
-
-  // Acteurs (concurrence)
   "com.typesafe.akka" %% "akka-actor-typed" % "2.8.5",
-
-  "io.circe" %% "circe-core" % "0.14.6",
-  "io.circe" %% "circe-generic" % "0.14.6",
-  "io.circe" %% "circe-parser" % "0.14.6",
   
-  // Client HTTP pour le scraping
-  "com.softwaremill.sttp.client3" %% "core" % "3.11.0",
+  // JSON avec Circe
+  "io.circe" %% "circe-core" % circeVersion,
+  "io.circe" %% "circe-generic" % circeVersion,
+  "io.circe" %% "circe-parser" % circeVersion,
+  "de.heikoseeberger" %% "akka-http-circe" % "1.39.2",
   
-  // Driver PostgreSQL
-  "org.postgresql" % "postgresql" % "42.7.3"
+  // HTTP Client
+  "com.softwaremill.sttp.client3" %% "core" % "3.9.1",
+  "com.softwaremill.sttp.client3" %% "akka-http-backend" % "3.9.1",
+  
+  // Configuration
+  "com.typesafe" % "config" % "1.4.3",
+  
+  // Logging
+  "ch.qos.logback" % "logback-classic" % "1.4.11",
+  "com.typesafe.scala-logging" %% "scala-logging" % "3.9.5",
+  
+  // Tests
+  "org.scalatest" %% "scalatest" % "3.2.17" % Test
 )
