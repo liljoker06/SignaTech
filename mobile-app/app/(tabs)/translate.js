@@ -13,7 +13,7 @@ import * as ImagePicker from 'expo-image-picker';
 import SignaTechLogo from '../../src/components/SignaTechLogo';
 import { styles, colors } from '../../styles/translate.styles';
 
-import { startTranslation, stopTranslation } from '../../src/services/websocket/translateSocket';
+import { startTranslation, stopTranslation, sendFrame } from '../../src/services/websocket/translateSocket';
 
 export default function TranslateScreen() {
   const [permission, requestPermission] = useCameraPermissions();
@@ -21,6 +21,9 @@ export default function TranslateScreen() {
   const [translatedText, setTranslatedText] = useState('');
   const [facing, setFacing] = useState('front');
   const [menuVisible, setMenuVisible] = useState(false);
+  const [cameraRef, setCameraRef] = useState(null);
+  const [frameInterval, setFrameInterval] = useState(null);
+  const [clearTextTimeout, setClearTextTimeout] = useState(null);
 
   if (!permission) {
     return <View style={styles.container} />;
@@ -47,18 +50,93 @@ export default function TranslateScreen() {
     );
   }
 
-const handleStartRecording = () => {
-  if (isRecording) return;
+const handleStartRecording = async () => {
+  if (isRecording || !cameraRef) {
+    console.log('[Recording] Conditions non remplies:', { isRecording, hasCameraRef: !!cameraRef });
+    return;
+  }
 
+  console.log('[Recording] 🎬 DÉMARRAGE de la capture');
   setIsRecording(true);
+  setTranslatedText(''); // Effacer le texte précédent
 
-  startTranslation((text) => {
-    setTranslatedText(text);
+  startTranslation((data) => {
+    console.log('[Recording] 📨 Reçu du backend:', data);
+    
+    if (data.type === 'letter') {
+      setTranslatedText(prev => prev + data.value);
+      
+      // Réinitialiser le timer d'effacement (3 secondes d'inactivité)
+      if (clearTextTimeout) {
+        clearTimeout(clearTextTimeout);
+      }
+      
+      const timeout = setTimeout(() => {
+        console.log('[Recording] ⏱️ 6 secondes d\'inactivité, effacement du texte');
+        setTranslatedText('');
+      }, 6000);
+      
+      setClearTextTimeout(timeout);
+    } else if (data.type === 'word') {
+      setTranslatedText(data.value);
+    }
   });
+
+  // Capturer et envoyer des frames toutes les 300ms (plus stable)
+  const interval = setInterval(async () => {
+    if (!cameraRef) {
+      console.log('[Recording] Pas de cameraRef dans intervalle');
+      return;
+    }
+    
+    console.log('[Recording] 📸 Tentative de capture...');
+    
+    try {
+      // Utiliser takePictureAsync avec gestion d'erreur silencieuse
+      const photo = await cameraRef.takePictureAsync({
+        quality: 0.3,
+        base64: true,
+        skipProcessing: true,
+      }).catch((err) => {
+        console.log('[Recording] ⚠️ Erreur capture (ignorée):', err.message);
+        return null;
+      });
+      
+      if (photo?.base64) {
+        console.log('[Recording] ✅ Frame capturée, envoi...');
+        sendFrame(photo.base64);
+      } else {
+        console.log('[Recording] ❌ Pas de photo.base64');
+      }
+    } catch (error) {
+      // Ignorer les erreurs de capture pour ne pas polluer les logs
+      console.log('[Recording] ⚠️ Exception capture:', error.message);
+    }
+  }, 300);
+  
+  setFrameInterval(interval);
+  console.log('[Recording] ✅ Intervalle configuré');
 };
 
 const handleStopRecording = () => {
+  console.log('[Recording] 🛑 ARRÊT de la capture');
   setIsRecording(false);
+  
+  // Arrêter la capture de frames
+  if (frameInterval) {
+    clearInterval(frameInterval);
+    setFrameInterval(null);
+  }
+  
+  // Arrêter le timer d'effacement
+  if (clearTextTimeout) {
+    clearTimeout(clearTextTimeout);
+    setClearTextTimeout(null);
+  }
+  
+  // Effacer le texte traduit
+  setTranslatedText('');
+  
   stopTranslation();
 };
 
@@ -98,7 +176,11 @@ const handleStopRecording = () => {
   return (
     <View style={styles.container}>
       <StatusBar barStyle="light-content" />
-      <CameraView style={styles.camera} facing={facing}>
+      <CameraView 
+        style={styles.camera} 
+        facing={facing}
+        ref={(ref) => setCameraRef(ref)}
+      >
         {/* Header avec menu et flip camera */}
         <View style={styles.header}>
           <TouchableOpacity style={styles.menuButton} onPress={() => setMenuVisible(!menuVisible)}>

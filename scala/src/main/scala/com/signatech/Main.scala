@@ -2,8 +2,7 @@ package com.signatech
 
 import akka.actor.typed.ActorSystem
 import akka.actor.typed.scaladsl.Behaviors
-import com.signatech.ai.inference.ModelRegistry
-import com.signatech.websocket.WebSocketServer
+import com.signatech.websocket.FilterWebSocketServer
 import com.typesafe.scalalogging.StrictLogging
 import com.signatech.bootstrap.AutoImport
 
@@ -21,31 +20,29 @@ object Main extends StrictLogging {
     implicit val ec: ExecutionContextExecutor =
       system.executionContext
 
-    // Import des données (optionnel - nécessite PostgreSQL)
+    // =====================
+    // IMPORT DONNÉES (NE PAS TOUCHER)
+    // =====================
     Try(AutoImport.run()) match {
       case Success(_) =>
         logger.info("✓ Données importées avec succès")
       case Failure(ex) =>
-        logger.warn(s"⚠ Import des données échoué (PostgreSQL non disponible?) : ${ex.getMessage}")
-        logger.info("→ L'application continue sans base de données")
+        logger.warn(s"⚠ Import échoué : ${ex.getMessage}")
+        logger.info("→ L'application continue sans DB")
     }
 
-    logger.info("SignaTech AI - Démarrage")
+    logger.info("SignaTech - Démarrage")
 
-    //Charger le modèle UNE SEULE FOIS (RAM / VRAM)
-    val signModel = ModelRegistry.signRecognitionModel
-    signModel.debug() // affiche inputs / outputs ONNX
-    signModel.debugIO()
-
-    logger.info("✓ Modèle de reconnaissance chargé")
-
-    // Démarrer le WebSocket
-    val wsServer = new WebSocketServer()
-    wsServer.start()
+    // =====================
+    // DÉMARRAGE WS SCALA (FILTRAGE)
+    // =====================
+    val filterServer = new FilterWebSocketServer()
+    filterServer.start()
 
     println("=" * 60)
-    println("✓ Scala SignaTech engine started")
-    println("✓ WebSocket server: ws://localhost:8080/ws/translate")
+    println("✓ Scala SignaTech Filter Server started")
+    println("✓ WebSocket filter: ws://localhost:8080/ws/filter")
+    println("✓ Filtre les répétitions de lettres prédites par Python")
     println("=" * 60)
     println("Press ENTER to stop...")
 

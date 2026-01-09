@@ -1,0 +1,5 @@
+model/checkpoint_nslt2000.pt
+
+datasets/asl_images/*
+/datasets/asl_images
+/datasets/asl_keypoints
