@@ -2,7 +2,6 @@ import cv2
 import numpy as np
 import base64
 import json
-import sys
 
 try:
     import mediapipe as mp
@@ -16,19 +15,8 @@ try:
         min_detection_confidence=0.5,
         min_tracking_confidence=0.5
     )
-except (ImportError, ModuleNotFoundError, AttributeError) as e:
-    print(f"❌ MediaPipe non installé correctement: {e}")
-    print(f"🐍 Version Python actuelle: {sys.version}")
-    print("\n⚠️  MediaPipe nécessite Python 3.11 (pas compatible avec Python 3.12+)")
-    print("\n💡 Solution:")
-    print("   1. Créer un environnement virtuel avec Python 3.11:")
-    print("      py -3.11 -m venv venv")
-    print("   2. Activer l'environnement:")
-    print("      .\\venv\\Scripts\\Activate.ps1")
-    print("   3. Installer les dépendances:")
-    print("      pip install -r requirements.txt")
-    print("   4. Lancer le serveur:")
-    print("      python -m uvicorn main:app --host 0.0.0.0 --port 8000")
+except AttributeError:
+    print("❌ MediaPipe non installé correctement")
     exit(1)
 
 
