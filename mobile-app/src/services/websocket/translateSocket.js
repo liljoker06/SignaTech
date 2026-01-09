@@ -11,9 +11,11 @@ export const startTranslation = (onTranslation) => {
   ws.connect(WS_URL, {
     onOpen: () => console.log('[TranslateWS] Connected'),
     onMessage: (event) => {
-      const data = JSON.parse(event.data);
-      if (data.type === 'translation') {
-        onTranslation(data.payload);
+      try {
+        const data = JSON.parse(event.data);
+        onTranslation(data);
+      } catch (e) {
+        console.error('[TranslateWS] Parse error:', e);
       }
     },
     onClose: () => console.log('[TranslateWS] Closed'),
@@ -23,4 +25,20 @@ export const startTranslation = (onTranslation) => {
 
 export const stopTranslation = () => {
   ws.disconnect();
+};
+
+export const sendFrame = (base64Image) => {
+  if (!ws.isConnected()) {
+    console.warn('[TranslateWS] Not connected, cannot send frame');
+    return;
+  }
+  
+  console.log('[TranslateWS] 📤 Envoi frame (longueur base64:', base64Image.length, ')');
+  
+  ws.send(JSON.stringify({
+    type: 'frame',
+    data: base64Image,
+  }));
+  
+  console.log('[TranslateWS] ✅ Frame envoyée');
 };

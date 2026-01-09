@@ -30,3 +30,9 @@ export const disconnect = () => {
 
 export const isConnected = () =>
   socket && socket.readyState === WebSocket.OPEN;
+
+export const send = (data) => {
+  if (socket && socket.readyState === WebSocket.OPEN) {
+    socket.send(data);
+  }
+};
